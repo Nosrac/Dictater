@@ -9,6 +9,6 @@ Replacement for built-in Speech services.
 
 ![Example Image](https://raw.githubusercontent.com/Nosrac/Dictater/master/example.png)
 
-
 ## Usage
+- Select text, right click, and choose Dictate!
 ![Usage Image](https://raw.githubusercontent.com/Nosrac/Dictater/master/usage.png)
