@@ -11,4 +11,5 @@ Replacement for built-in Speech services.
 
 ## Usage
 - Select text, right click, and choose Dictate!
+- Dictate might be under Services, depending on how many services you already have installed
 ![Usage Image](https://raw.githubusercontent.com/Nosrac/Dictater/master/usage.png)
