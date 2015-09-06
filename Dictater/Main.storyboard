@@ -386,7 +386,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="DictWindow" animationBehavior="default" id="IQv-IB-iLA" customClass="DictaterWindow" customModule="Dictater" customModuleProvider="target">
                         <windowStyleMask key="styleMask" fullSizeContentView="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" moveToActiveSpace="YES"/>
@@ -401,6 +401,125 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-16" y="167.5"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="523-cc-5RW">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="k29-t7-AzP" sceneMemberID="viewController">
+                    <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="l7d-5m-wB8">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="547" height="257"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <value key="minSize" type="size" width="547" height="257"/>
+                    </window>
+                    <connections>
+                        <segue destination="iPr-UU-04S" kind="relationship" relationship="window.shadowedContentViewController" id="RWp-QF-RKf"/>
+                    </connections>
+                </windowController>
+                <customObject id="DZ6-WF-dwh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="66.5"/>
+        </scene>
+        <!--Teleprompter-->
+        <scene sceneID="prZ-q5-Up7">
+            <objects>
+                <viewController id="iPr-UU-04S" customClass="Teleprompter" customModule="Dictater" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="G6G-Ql-wEA">
+                        <rect key="frame" x="0.0" y="0.0" width="547" height="299"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="uzd-QY-Mn3">
+                                <rect key="frame" x="0.0" y="255" width="547" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0Gf-1w-scK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="0.86507929080000001" green="0.86507929080000001" blue="0.86507929080000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-2r-Oiq">
+                                <rect key="frame" x="0.0" y="252" width="547" height="5"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="IFT-ox-UKc">
+                                <rect key="frame" x="20" y="0.0" width="507" height="299"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="REf-aN-Ofu">
+                                        <rect key="frame" x="0.0" y="256" width="507" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="WOm-nS-3nn"/>
+                                        </constraints>
+                                    </customView>
+                                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hei-uU-Nx7">
+                                        <rect key="frame" x="0.0" y="20" width="507" height="228"/>
+                                        <clipView key="contentView" id="SvI-jr-Af8">
+                                            <rect key="frame" x="1" y="1" width="505" height="226"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6Ey-fa-sA0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="508" height="226"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="minSize" width="505" height="226"/>
+                                                    <size key="maxSize" width="508" height="10000000"/>
+                                                    <attributedString key="textStorage">
+                                                        <fragment content="Blah">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="controlContent" size="11"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <size key="minSize" width="505" height="226"/>
+                                                    <size key="maxSize" width="508" height="10000000"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="eEf-YS-DO8">
+                                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="0R9-oc-aTP">
+                                            <rect key="frame" x="490" y="1" width="16" height="226"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Hei-uU-Nx7" secondAttribute="bottom" constant="20" id="Awl-NU-gOH"/>
+                                    <constraint firstItem="Hei-uU-Nx7" firstAttribute="leading" secondItem="IFT-ox-UKc" secondAttribute="leading" id="Toc-0d-Qhw"/>
+                                    <constraint firstItem="REf-aN-Ofu" firstAttribute="top" secondItem="IFT-ox-UKc" secondAttribute="top" id="X0S-rb-MyQ"/>
+                                    <constraint firstItem="REf-aN-Ofu" firstAttribute="leading" secondItem="IFT-ox-UKc" secondAttribute="leading" id="cjG-3s-BUc"/>
+                                    <constraint firstAttribute="width" constant="507" id="czP-QZ-4j2"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hei-uU-Nx7" secondAttribute="trailing" id="ezi-sU-Ee8"/>
+                                    <constraint firstAttribute="trailing" secondItem="REf-aN-Ofu" secondAttribute="trailing" id="mIg-vb-V6p"/>
+                                    <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="REf-aN-Ofu" secondAttribute="bottom" constant="8" id="yKq-qH-mnR"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="uzd-QY-Mn3" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" id="26H-Zd-BDK"/>
+                            <constraint firstItem="uzd-QY-Mn3" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="5h2-OS-whO"/>
+                            <constraint firstAttribute="trailing" secondItem="uzd-QY-Mn3" secondAttribute="trailing" id="FJn-KJ-B8Q"/>
+                            <constraint firstAttribute="trailing" secondItem="aqC-2r-Oiq" secondAttribute="trailing" id="OYR-Y1-MVo"/>
+                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="top" secondItem="uzd-QY-Mn3" secondAttribute="bottom" id="PzQ-d4-hI4"/>
+                            <constraint firstItem="IFT-ox-UKc" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" id="a8Y-x0-Uak"/>
+                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="hl6-8T-wuo"/>
+                            <constraint firstAttribute="bottom" secondItem="IFT-ox-UKc" secondAttribute="bottom" id="kRb-eD-7uX"/>
+                            <constraint firstItem="IFT-ox-UKc" firstAttribute="centerX" secondItem="G6G-Ql-wEA" secondAttribute="centerX" id="xJI-CV-aGH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="5nP-sQ-idW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452.5" y="111.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -427,7 +546,7 @@
                                         </connections>
                                     </button>
                                     <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jzq-h0-HER">
-                                        <rect key="frame" x="57" y="17" width="24" height="20"/>
+                                        <rect key="frame" x="60" y="17" width="21" height="20"/>
                                         <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Rz9-z9-Lw4">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="18" name="FontAwesome"/>
@@ -438,16 +557,15 @@
                                             <action selector="skipBackwards:" target="XfG-lQ-9wD" id="1bo-77-9sf"/>
                                         </connections>
                                     </button>
-                                    <button toolTip="Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up1-ZJ-vfh">
-                                        <rect key="frame" x="10" y="18" width="17" height="16"/>
-                                        <buttonCell key="cell" type="square" title="" alternateTitle="Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GSC-39-l5a">
+                                    <button toolTip="Follow Along" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4">
+                                        <rect key="frame" x="170" y="18" width="17" height="16"/>
+                                        <buttonCell key="cell" type="square" title="" alternateTitle="Follow Along" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name="FontAwesome"/>
                                         </buttonCell>
-                                        <accessibility description="Options"/>
+                                        <accessibility description="Follow Along"/>
                                         <connections>
-                                            <action selector="openMenu:" target="XfG-lQ-9wD" id="tA5-MC-T4A"/>
-                                            <outlet property="menu" destination="6M7-Z9-ggD" id="pik-YK-Pst"/>
+                                            <segue destination="k29-t7-AzP" kind="show" id="DMB-NT-eUV"/>
                                         </connections>
                                     </button>
                                     <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aau-N4-wSr">
@@ -476,6 +594,18 @@ IA
                                         <accessibility description="Play Pause"/>
                                         <connections>
                                             <action selector="playPause:" target="XfG-lQ-9wD" id="QXJ-es-FNO"/>
+                                        </connections>
+                                    </button>
+                                    <button toolTip="Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up1-ZJ-vfh">
+                                        <rect key="frame" x="10" y="18" width="17" height="16"/>
+                                        <buttonCell key="cell" type="square" title="" alternateTitle="Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GSC-39-l5a">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="13" name="FontAwesome"/>
+                                        </buttonCell>
+                                        <accessibility description="Options"/>
+                                        <connections>
+                                            <action selector="openMenu:" target="XfG-lQ-9wD" id="tA5-MC-T4A"/>
+                                            <outlet property="menu" destination="6M7-Z9-ggD" id="pik-YK-Pst"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -567,7 +697,7 @@ IA
         <!--Window Controller-->
         <scene sceneID="TRJ-wW-9b0">
             <objects>
-                <windowController storyboardIdentifier="howToUse" id="4Ic-dl-039" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="howToUse" showSeguePresentationStyle="single" id="4Ic-dl-039" sceneMemberID="viewController">
                     <window key="window" title="How to Use" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="kSm-M1-oQU">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" canJoinAllSpaces="YES"/>
@@ -674,7 +804,7 @@ IA
         <!--Window Controller-->
         <scene sceneID="zto-3f-0uU">
             <objects>
-                <windowController storyboardIdentifier="enableDictater" id="aK3-7w-LpH" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="enableDictater" showSeguePresentationStyle="single" id="aK3-7w-LpH" sceneMemberID="viewController">
                     <window key="window" title="Enable Dictater" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="oGR-kX-SB7">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" canJoinAllSpaces="YES"/>
@@ -756,7 +886,7 @@ Steps
         <image name="usage" width="882" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8vm-5d-it0"/>
-        <segue reference="7VE-Ic-2fp"/>
+        <segue reference="vef-bf-I9r"/>
+        <segue reference="OGh-cy-NHB"/>
     </inferredMetricsTieBreakers>
 </document>

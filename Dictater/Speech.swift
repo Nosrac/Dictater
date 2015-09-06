@@ -16,7 +16,7 @@ class Speech
 		return Speech()
 	}()
 	
-	private var text = ""
+	var text = ""
 	
 	var vocalization : Vocalization?
 	
