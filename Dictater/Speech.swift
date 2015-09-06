@@ -59,7 +59,7 @@ class Speech
 		if let range = self.range
 		{
 			progress.totalUnitCount = Int64(text.characters.count)
-			progress.completedUnitCount = Int64(range.location + range.length)
+			progress.completedUnitCount = Int64(range.location)
 		}
 		return progress
 	}

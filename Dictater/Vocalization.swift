@@ -78,5 +78,6 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 	func speechSynthesizer(sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool) {
 		self.didFinish = true
 		self.isSpeaking = false
+		self.currentRange = NSRange.init(location: text.characters.count, length: 0)
 	}
 }
