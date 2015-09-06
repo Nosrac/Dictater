@@ -20,6 +20,8 @@ class Teleprompter : NSViewController
 		super.init(coder: coder)
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
+		
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
 	}
 	
 	override func viewDidLoad() {
@@ -46,6 +48,8 @@ class Teleprompter : NSViewController
 		self.playPauseButton?.enabled = Speech.Controls.sharedControls.canPlayPause
 		self.skipBackwardsButton?.enabled = Speech.Controls.sharedControls.canSkipBackwards
 		self.skipForwardButton?.enabled = Speech.Controls.sharedControls.canSkipForward
+		
+		self.playPauseButton?.title = Speech.Controls.sharedControls.playPauseIcon
 	}
 	
 	func update()
@@ -77,7 +81,7 @@ class Teleprompter : NSViewController
 	}
 	
 	let highlightAttributes : [String:AnyObject] = [
-//		NSBackgroundColorAttributeName: NSColor(red:1, green:0.832, blue:0.473, alpha:0.5),
+		NSBackgroundColorAttributeName: NSColor(red:1, green:0.832, blue:0.473, alpha:0.5),
 		NSUnderlineColorAttributeName: NSColor(red:1, green:0.832, blue:0.473, alpha:1),
 		NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleThick.rawValue
 	]
