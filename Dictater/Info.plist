@@ -32,6 +32,8 @@
 	<string>Dictater.Application</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>ATSApplicationFontsPath</key>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome.otf</string>

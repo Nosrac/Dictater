@@ -406,13 +406,11 @@
         <scene sceneID="523-cc-5RW">
             <objects>
                 <windowController storyboardIdentifier="teleprompter" showSeguePresentationStyle="single" id="k29-t7-AzP" sceneMemberID="viewController">
-                    <window key="window" title="Teleprompter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="l7d-5m-wB8">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Teleprompter" allowsToolTipsWhenApplicationIsInactive="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="teleprompter" animationBehavior="default" id="l7d-5m-wB8">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="657" height="257"/>
+                        <rect key="contentRect" x="447" y="340" width="700" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                        <value key="minSize" type="size" width="657" height="257"/>
-                        <value key="maxSize" type="size" width="900" height="800"/>
                     </window>
                     <connections>
                         <segue destination="iPr-UU-04S" kind="relationship" relationship="window.shadowedContentViewController" id="RWp-QF-RKf"/>
@@ -427,17 +425,17 @@
             <objects>
                 <viewController id="iPr-UU-04S" customClass="Teleprompter" customModule="Dictater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="G6G-Ql-wEA">
-                        <rect key="frame" x="0.0" y="0.0" width="657" height="299"/>
+                        <rect key="frame" x="0.0" y="0.0" width="657" height="422"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-2r-Oiq">
-                                <rect key="frame" x="0.0" y="251" width="657" height="5"/>
+                                <rect key="frame" x="0.0" y="374" width="657" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="UfA-tM-WhQ">
-                                <rect key="frame" x="0.0" y="254" width="657" height="45"/>
+                                <rect key="frame" x="0.0" y="377" width="657" height="45"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="t7e-XD-E1e">
                                         <rect key="frame" x="20" y="0.0" width="617" height="45"/>
@@ -516,28 +514,28 @@ DQ
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hei-uU-Nx7">
-                                <rect key="frame" x="20" y="20" width="617" height="222"/>
+                                <rect key="frame" x="20" y="20" width="617" height="345"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="SvI-jr-Af8">
-                                    <rect key="frame" x="0.0" y="0.0" width="617" height="222"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="617" height="345"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6Ey-fa-sA0">
-                                            <rect key="frame" x="0.0" y="0.0" width="620" height="222"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="620" height="345"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="617" height="222"/>
+                                            <size key="minSize" width="617" height="345"/>
                                             <size key="maxSize" width="620" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment>
                                                     <mutableString key="content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</mutableString>
                                                     <attributes>
-                                                        <font key="NSFont" metaFont="controlContent" size="11"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        <font key="NSFont" size="13" name=".HelveticaNeueDeskInterface-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" lineHeightMultiple="1.2"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="617" height="222"/>
+                                            <size key="minSize" width="617" height="345"/>
                                             <size key="maxSize" width="620" height="10000000"/>
                                         </textView>
                                     </subviews>
@@ -551,7 +549,7 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="0R9-oc-aTP">
-                                    <rect key="frame" x="601" y="0.0" width="16" height="222"/>
+                                    <rect key="frame" x="601" y="0.0" width="16" height="345"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -580,7 +578,7 @@ DQ
                 </viewController>
                 <customObject id="5nP-sQ-idW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1507.5" y="111.5"/>
+            <point key="canvasLocation" x="1507.5" y="173"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
