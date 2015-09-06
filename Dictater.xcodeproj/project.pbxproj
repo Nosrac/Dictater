@@ -25,6 +25,7 @@
 		274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039ED1B99023F00D80E23 /* DictaterService.swift */; settings = {ASSET_TAGS = (); }; };
 		274039F01B9914A200D80E23 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
 		2797D23F1B9A61BC0019D12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2797D23E1B9A61BC0019D12D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		2797D2411B9CCA7C0019D12D /* usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2797D2401B9CCA7C0019D12D /* usage.png */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F71B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F81B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F91B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
@@ -78,6 +79,7 @@
 		274039ED1B99023F00D80E23 /* DictaterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictaterService.swift; sourceTree = "<group>"; };
 		274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+Animate.swift"; sourceTree = "<group>"; };
 		2797D23E1B9A61BC0019D12D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2797D2401B9CCA7C0019D12D /* usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usage.png; sourceTree = "<group>"; };
 		27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		27EDB7FA1B9A148500BE21BF /* instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instructions.png; sourceTree = "<group>"; };
 		27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnableServiceController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		274039F31B99195C00D80E23 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2797D2401B9CCA7C0019D12D /* usage.png */,
 				27EDB7FA1B9A148500BE21BF /* instructions.png */,
 				27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */,
 			);
@@ -325,6 +328,7 @@
 				27EDB7FB1B9A148500BE21BF /* instructions.png in Resources */,
 				272B76571B979D5900712AA5 /* Assets.xcassets in Resources */,
 				27EDB7F71B9932CD00BE21BF /* FontAwesome.otf in Resources */,
+				2797D2411B9CCA7C0019D12D /* usage.png in Resources */,
 				2797D23F1B9A61BC0019D12D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

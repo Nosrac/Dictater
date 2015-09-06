@@ -16,8 +16,7 @@ class DictaterService
 		if let string = pboard.stringForType(NSStringPboardType)
 		{
 			Speech.sharedSpeech.speak( string )
+			Dictater.hasBeenUsed = true
 		}
-//		NSApp.hide(self)
-//		NSApp.unhide(self)
 	}
 }

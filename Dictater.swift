@@ -13,6 +13,7 @@ class Dictater
 	enum PreferenceKeys : String
 	{
 		case SkipBoundary = "skipBoundary"
+		case HasBeenUsed = "hasBeenUsed"
 	}
 	
 	static func setupDefaults()
@@ -20,21 +21,37 @@ class Dictater
 		NSUserDefaults.standardUserDefaults().registerDefaults(
 			[
 				PreferenceKeys.SkipBoundary.rawValue : Speech.Boundary.Sentence.rawValue,
+				PreferenceKeys.HasBeenUsed.rawValue : false,
 			])
 	}
 	
 	static var skipBoundary : Speech.Boundary
-		{
-		get {
-		let rawValue = NSUserDefaults.standardUserDefaults().integerForKey(PreferenceKeys.SkipBoundary.rawValue)
-		if let boundary = Speech.Boundary(rawValue: rawValue)
 	{
-		return boundary
+		get
+		{
+			let rawValue = NSUserDefaults.standardUserDefaults().integerForKey(PreferenceKeys.SkipBoundary.rawValue)
+			if let boundary = Speech.Boundary(rawValue: rawValue)
+			{
+				return boundary
+			}
+			return .Sentence
 		}
-		return .Sentence
-		}
-		set {
+		set
+		{
 			NSUserDefaults.standardUserDefaults().setInteger(newValue.rawValue, forKey: PreferenceKeys.SkipBoundary.rawValue)
+		}
+	}
+	
+	static var hasBeenUsed : Bool
+	{
+		get
+		{
+			return NSUserDefaults.standardUserDefaults().boolForKey(PreferenceKeys.HasBeenUsed.rawValue)
+		}
+		set
+		{
+			NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.HasBeenUsed.rawValue)
+			
 		}
 	}
 	
