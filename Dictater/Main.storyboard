@@ -405,13 +405,14 @@
         <!--Window Controller-->
         <scene sceneID="523-cc-5RW">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="k29-t7-AzP" sceneMemberID="viewController">
-                    <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="l7d-5m-wB8">
+                <windowController storyboardIdentifier="teleprompter" showSeguePresentationStyle="single" id="k29-t7-AzP" sceneMemberID="viewController">
+                    <window key="window" title="Teleprompter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="l7d-5m-wB8">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="547" height="257"/>
+                        <rect key="contentRect" x="196" y="240" width="657" height="257"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                        <value key="minSize" type="size" width="547" height="257"/>
+                        <value key="minSize" type="size" width="657" height="257"/>
+                        <value key="maxSize" type="size" width="900" height="800"/>
                     </window>
                     <connections>
                         <segue destination="iPr-UU-04S" kind="relationship" relationship="window.shadowedContentViewController" id="RWp-QF-RKf"/>
@@ -426,13 +427,87 @@
             <objects>
                 <viewController id="iPr-UU-04S" customClass="Teleprompter" customModule="Dictater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="G6G-Ql-wEA">
-                        <rect key="frame" x="0.0" y="0.0" width="547" height="299"/>
+                        <rect key="frame" x="0.0" y="0.0" width="657" height="299"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="uzd-QY-Mn3">
-                                <rect key="frame" x="0.0" y="255" width="547" height="44"/>
+                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-2r-Oiq">
+                                <rect key="frame" x="0.0" y="251" width="657" height="5"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="UfA-tM-WhQ">
+                                <rect key="frame" x="0.0" y="254" width="657" height="45"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="t7e-XD-E1e">
+                                        <rect key="frame" x="20" y="0.0" width="617" height="45"/>
+                                        <subviews>
+                                            <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-RH-UPd">
+                                                <rect key="frame" x="334" y="12" width="24" height="20"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nli-Tv-Tk5">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="18" name="FontAwesome"/>
+                                                    <string key="keyEquivalent"></string>
+                                                </buttonCell>
+                                                <accessibility description="Skip"/>
+                                                <connections>
+                                                    <action selector="skipAhead:" target="iPr-UU-04S" id="OQR-Zj-ssg"/>
+                                                    <outlet property="menu" destination="EPC-gg-xPZ" id="kAG-Gx-055"/>
+                                                </connections>
+                                            </button>
+                                            <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWY-ZF-M8j">
+                                                <rect key="frame" x="258" y="12" width="21" height="20"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="467-zw-2gB">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="18" name="FontAwesome"/>
+                                                    <string key="keyEquivalent"></string>
+                                                </buttonCell>
+                                                <accessibility description="Skip Backward"/>
+                                                <connections>
+                                                    <action selector="skipBackwards:" target="iPr-UU-04S" id="4Ui-yW-Y51"/>
+                                                </connections>
+                                            </button>
+                                            <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-HK-Xuc">
+                                                <rect key="frame" x="294" y="10" width="25" height="25"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aOI-r5-wlN">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <string key="keyEquivalent" base64-UTF8="YES">
+IA
+</string>
+                                                </buttonCell>
+                                                <accessibility description="Play Pause"/>
+                                                <connections>
+                                                    <action selector="playPause:" target="iPr-UU-04S" id="LZG-2V-ONZ"/>
+                                                </connections>
+                                            </button>
+                                            <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIR-is-jxe">
+                                                <rect key="frame" x="600" y="14" width="17" height="16"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Dc6-9U-Snf">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="13" name="FontAwesome"/>
+                                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                                </buttonCell>
+                                                <accessibility description="Done"/>
+                                                <connections>
+                                                    <action selector="terminate:" target="5nP-sQ-idW" id="qc4-mi-hBK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="617" id="0tT-5F-9iV"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="0Gf-1w-scK"/>
+                                    <constraint firstItem="t7e-XD-E1e" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="top" id="7vk-bN-z0K"/>
+                                    <constraint firstItem="t7e-XD-E1e" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="top" id="F0a-VC-5wO"/>
+                                    <constraint firstAttribute="bottom" secondItem="t7e-XD-E1e" secondAttribute="bottom" id="Uf1-4q-ka4"/>
+                                    <constraint firstAttribute="bottom" secondItem="t7e-XD-E1e" secondAttribute="bottom" id="iod-MC-ehg"/>
+                                    <constraint firstItem="t7e-XD-E1e" firstAttribute="centerX" secondItem="UfA-tM-WhQ" secondAttribute="centerX" id="o5R-Z1-rPP"/>
+                                    <constraint firstAttribute="height" constant="45" id="oD2-Tg-BrF"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -440,86 +515,72 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>
-                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-2r-Oiq">
-                                <rect key="frame" x="0.0" y="252" width="547" height="5"/>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <font key="titleFont" metaFont="system"/>
-                            </box>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="IFT-ox-UKc">
-                                <rect key="frame" x="20" y="0.0" width="507" height="299"/>
-                                <subviews>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="REf-aN-Ofu">
-                                        <rect key="frame" x="0.0" y="256" width="507" height="43"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="43" id="WOm-nS-3nn"/>
-                                        </constraints>
-                                    </customView>
-                                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hei-uU-Nx7">
-                                        <rect key="frame" x="0.0" y="20" width="507" height="228"/>
-                                        <clipView key="contentView" id="SvI-jr-Af8">
-                                            <rect key="frame" x="1" y="1" width="505" height="226"/>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hei-uU-Nx7">
+                                <rect key="frame" x="20" y="20" width="617" height="222"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="SvI-jr-Af8">
+                                    <rect key="frame" x="0.0" y="0.0" width="617" height="222"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6Ey-fa-sA0">
+                                            <rect key="frame" x="0.0" y="0.0" width="620" height="222"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6Ey-fa-sA0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="508" height="226"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="minSize" width="505" height="226"/>
-                                                    <size key="maxSize" width="508" height="10000000"/>
-                                                    <attributedString key="textStorage">
-                                                        <fragment content="Blah">
-                                                            <attributes>
-                                                                <font key="NSFont" metaFont="controlContent" size="11"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="505" height="226"/>
-                                                    <size key="maxSize" width="508" height="10000000"/>
-                                                </textView>
-                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="eEf-YS-DO8">
-                                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="0R9-oc-aTP">
-                                            <rect key="frame" x="490" y="1" width="16" height="226"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                    </scrollView>
-                                </subviews>
+                                            <size key="minSize" width="617" height="222"/>
+                                            <size key="maxSize" width="620" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment>
+                                                    <mutableString key="content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</mutableString>
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="controlContent" size="11"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="617" height="222"/>
+                                            <size key="maxSize" width="620" height="10000000"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Hei-uU-Nx7" secondAttribute="bottom" constant="20" id="Awl-NU-gOH"/>
-                                    <constraint firstItem="Hei-uU-Nx7" firstAttribute="leading" secondItem="IFT-ox-UKc" secondAttribute="leading" id="Toc-0d-Qhw"/>
-                                    <constraint firstItem="REf-aN-Ofu" firstAttribute="top" secondItem="IFT-ox-UKc" secondAttribute="top" id="X0S-rb-MyQ"/>
-                                    <constraint firstItem="REf-aN-Ofu" firstAttribute="leading" secondItem="IFT-ox-UKc" secondAttribute="leading" id="cjG-3s-BUc"/>
-                                    <constraint firstAttribute="width" constant="507" id="czP-QZ-4j2"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hei-uU-Nx7" secondAttribute="trailing" id="ezi-sU-Ee8"/>
-                                    <constraint firstAttribute="trailing" secondItem="REf-aN-Ofu" secondAttribute="trailing" id="mIg-vb-V6p"/>
-                                    <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="REf-aN-Ofu" secondAttribute="bottom" constant="8" id="yKq-qH-mnR"/>
+                                    <constraint firstAttribute="width" constant="617" id="oej-oG-pIE"/>
                                 </constraints>
-                            </customView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="eEf-YS-DO8">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="0R9-oc-aTP">
+                                    <rect key="frame" x="601" y="0.0" width="16" height="222"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="uzd-QY-Mn3" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" id="26H-Zd-BDK"/>
-                            <constraint firstItem="uzd-QY-Mn3" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="5h2-OS-whO"/>
-                            <constraint firstAttribute="trailing" secondItem="uzd-QY-Mn3" secondAttribute="trailing" id="FJn-KJ-B8Q"/>
-                            <constraint firstAttribute="trailing" secondItem="aqC-2r-Oiq" secondAttribute="trailing" id="OYR-Y1-MVo"/>
-                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="top" secondItem="uzd-QY-Mn3" secondAttribute="bottom" id="PzQ-d4-hI4"/>
-                            <constraint firstItem="IFT-ox-UKc" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" id="a8Y-x0-Uak"/>
-                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="hl6-8T-wuo"/>
-                            <constraint firstAttribute="bottom" secondItem="IFT-ox-UKc" secondAttribute="bottom" id="kRb-eD-7uX"/>
-                            <constraint firstItem="IFT-ox-UKc" firstAttribute="centerX" secondItem="G6G-Ql-wEA" secondAttribute="centerX" id="xJI-CV-aGH"/>
+                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="bottom" id="2K0-bZ-kf5"/>
+                            <constraint firstItem="UfA-tM-WhQ" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="4cW-YU-oQf"/>
+                            <constraint firstAttribute="trailing" secondItem="aqC-2r-Oiq" secondAttribute="trailing" id="4dh-iT-giA"/>
+                            <constraint firstAttribute="trailing" secondItem="aqC-2r-Oiq" secondAttribute="trailing" id="BeX-Pe-WJ1"/>
+                            <constraint firstAttribute="bottom" secondItem="Hei-uU-Nx7" secondAttribute="bottom" constant="20" id="Dij-Wg-trq"/>
+                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="centerX" secondItem="G6G-Ql-wEA" secondAttribute="centerX" id="LxK-Hq-5nq"/>
+                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="Lyy-2P-6F8"/>
+                            <constraint firstItem="UfA-tM-WhQ" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" id="Wp2-ih-Bnq"/>
+                            <constraint firstAttribute="trailing" secondItem="UfA-tM-WhQ" secondAttribute="trailing" id="Yz0-hR-Cil"/>
+                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="bottom" id="ahq-VR-VU2"/>
+                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="gvt-eU-XGb"/>
+                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="aqC-2r-Oiq" secondAttribute="bottom" constant="11" id="jM2-J5-h5P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playPauseButton" destination="P7f-HK-Xuc" id="ft8-9M-r1w"/>
+                        <outlet property="skipBackwardsButton" destination="rm5-RH-UPd" id="bHb-HR-Fcy"/>
+                        <outlet property="skipForwardButton" destination="MWY-ZF-M8j" id="rUN-7W-Gcm"/>
+                        <outlet property="textView" destination="6Ey-fa-sA0" id="CGr-9d-XHv"/>
+                    </connections>
                 </viewController>
                 <customObject id="5nP-sQ-idW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1452.5" y="111.5"/>
+            <point key="canvasLocation" x="1507.5" y="111.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -557,13 +618,13 @@
                                             <action selector="skipBackwards:" target="XfG-lQ-9wD" id="1bo-77-9sf"/>
                                         </connections>
                                     </button>
-                                    <button toolTip="Follow Along" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4">
+                                    <button toolTip="Teleprompter" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4">
                                         <rect key="frame" x="170" y="18" width="17" height="16"/>
-                                        <buttonCell key="cell" type="square" title="" alternateTitle="Follow Along" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
+                                        <buttonCell key="cell" type="square" title="" alternateTitle="Teleprompter" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="13" name="FontAwesome"/>
                                         </buttonCell>
-                                        <accessibility description="Follow Along"/>
+                                        <accessibility description="Teleprompter"/>
                                         <connections>
                                             <segue destination="k29-t7-AzP" kind="show" id="DMB-NT-eUV"/>
                                         </connections>
@@ -630,6 +691,7 @@ IA
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="openTeleprompterButton" destination="DVg-IP-FI4" id="AEN-Cq-I4n"/>
                         <outlet property="playPauseButton" destination="soJ-iS-tQO" id="TlW-Y4-3GN"/>
                         <outlet property="progressIndicator" destination="L43-z1-53l" id="Eds-w8-1Eq"/>
                         <outlet property="skipBackwardsButton" destination="Jzq-h0-HER" id="ESf-Fx-G0a"/>

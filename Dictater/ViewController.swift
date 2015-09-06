@@ -16,19 +16,27 @@ class ViewController: NSViewController {
 	@IBOutlet var playPauseButton : NSButton?
 	@IBOutlet var skipForwardButton : NSButton?
 	@IBOutlet var skipBackwardsButton : NSButton?
+	@IBOutlet var openTeleprompterButton : NSButton?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		self.setupSkipDurationMenuItem()
-		self.enableButtons()
+		self.update()
 		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateProgress", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "updatePlayPauseIcon", name: Vocalization.IsSpeakingChangedNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
 	}
 	
-	func updateProgress()
+	func update()
 	{
+		self.playPauseButton?.title = Speech.Controls.sharedControls.playPauseIcon
+
+		self.playPauseButton?.enabled = Speech.Controls.sharedControls.canPlayPause
+		self.skipBackwardsButton?.enabled = Speech.Controls.sharedControls.canSkipBackwards
+		self.skipForwardButton?.enabled = Speech.Controls.sharedControls.canSkipForward
+		self.openTeleprompterButton?.enabled = Speech.Controls.sharedControls.canOpenTeleprompter
+		
 		if let view = self.progressIndicator
 		{
 			let progress = Speech.sharedSpeech.progress
@@ -38,58 +46,9 @@ class ViewController: NSViewController {
 		}
 	}
 	
-	static let PauseIcon = ""
-	static let PlayIcon = ""
-	
-	func updatePlayPauseIcon()
-	{
-		if let view = self.playPauseButton,
-		let vocalization = Speech.sharedSpeech.vocalization
-		{
-			if vocalization.isSpeaking
-			{
-				view.title = ViewController.PauseIcon
-			} else {
-				view.title = ViewController.PlayIcon
-			}
-		}
-		self.enableButtons()
-	}
-	
-	func enableButtons()
-	{
-		var playPauseEnabled = true
-		var skipForwardEnabled = true
-		
-		if let vocalization = Speech.sharedSpeech.vocalization
-		{
-			if vocalization.didFinish
-			{
-				skipForwardEnabled = false
-			}
-		} else {
-			playPauseEnabled = false
-			skipForwardEnabled = false
-		}
-		
-		self.playPauseButton?.enabled = playPauseEnabled
-		self.skipBackwardsButton?.enabled = playPauseEnabled
-		
-		self.skipForwardButton?.enabled = skipForwardEnabled
-	}
-	
 	@IBAction func playPause(target: AnyObject?)
 	{
 		Speech.sharedSpeech.playPause()
-	}
-	
-	@IBAction func openMenu(target: AnyObject?)
-	{
-		if let menu = target?.menu,
-		let view = target as? NSView
-		{
-			menu?.popUpMenuPositioningItem(nil, atLocation: view.frame.origin, inView: view.superview)
-		}
 	}
 	
 	@IBAction func skipAhead(target: AnyObject?)
@@ -105,6 +64,15 @@ class ViewController: NSViewController {
 	@IBAction func openSpeechPreferences(target: AnyObject?)
 	{
 		NSWorkspace.sharedWorkspace().openFile("/System/Library/PreferencePanes/Speech.prefPane")
+	}
+	
+	@IBAction func openMenu(target: AnyObject?)
+	{
+		if let menu = target?.menu,
+			let view = target as? NSView
+		{
+			menu?.popUpMenuPositioningItem(nil, atLocation: view.frame.origin, inView: view.superview)
+		}
 	}
 	
 	// Skip Duration Settings

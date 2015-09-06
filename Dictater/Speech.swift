@@ -11,6 +11,79 @@ import Cocoa
 
 class Speech
 {
+	class Controls
+	{
+		let speech : Speech
+		
+		init(speech: Speech)
+		{
+			self.speech = speech
+		}
+		
+		static let PauseIcon = ""
+		static let PlayIcon = ""
+		
+		var canPlayPause : Bool
+		{
+			if let _ = Speech.sharedSpeech.vocalization
+			{
+				return true
+			} else {
+				return false
+			}
+		}
+		
+		var playPauseIcon : String
+		{
+			if let vocalization = self.speech.vocalization
+			where vocalization.isSpeaking
+			{
+				return Controls.PauseIcon
+			} else {
+				return Controls.PlayIcon
+			}
+		}
+		
+		var canSkipForward : Bool
+		{
+			guard let vocalization = Speech.sharedSpeech.vocalization else {
+				return false
+			}
+			
+			if vocalization.didFinish
+			{
+				return false
+			} else {
+				return true
+			}
+		}
+		
+		var canSkipBackwards : Bool
+		{
+			if let _ = Speech.sharedSpeech.vocalization
+			{
+				return true
+			} else {
+				return false
+			}
+		}
+		
+		var canOpenTeleprompter : Bool
+		{
+			if let _ = Speech.sharedSpeech.vocalization
+			{
+				return true
+			} else {
+				return false
+			}
+		}
+		
+		static var sharedControls : Controls
+		{
+			return Controls(speech: Speech.sharedSpeech)
+		}
+	}
+	
 	static var sharedSpeech : Speech =
 	{
 		return Speech()

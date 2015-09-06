@@ -12,6 +12,9 @@ import Cocoa
 class Teleprompter : NSViewController
 {
 	@IBOutlet var textView : NSTextView?
+	@IBOutlet var playPauseButton : NSButton?
+	@IBOutlet var skipBackwardsButton : NSButton?
+	@IBOutlet var skipForwardButton : NSButton?
 	
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
@@ -19,8 +22,30 @@ class Teleprompter : NSViewController
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
 	}
 	
-	override func viewWillAppear() {
+	override func viewDidLoad() {
 		self.update()
+	}
+	
+	@IBAction func playPause(target: AnyObject?)
+	{
+		Speech.sharedSpeech.playPause()
+	}
+	
+	@IBAction func skipAhead(target: AnyObject?)
+	{
+		Speech.sharedSpeech.skip(by: Dictater.skipBoundary)
+	}
+	
+	@IBAction func skipBackwards(target: AnyObject?)
+	{
+		Speech.sharedSpeech.skip(by: .Sentence, forward: false)
+	}
+	
+	func enableButtons()
+	{
+		self.playPauseButton?.enabled = Speech.Controls.sharedControls.canPlayPause
+		self.skipBackwardsButton?.enabled = Speech.Controls.sharedControls.canSkipBackwards
+		self.skipForwardButton?.enabled = Speech.Controls.sharedControls.canSkipForward
 	}
 	
 	func update()
@@ -35,9 +60,6 @@ class Teleprompter : NSViewController
 			if let textStorage = textView.textStorage
 			{
 				textStorage.beginEditing()
-				defer {
-					textStorage.endEditing()
-				}
 				
 				let fullRange = NSRange.init(location: 0, length: Speech.sharedSpeech.text.characters.count)
 				for (key, _) in self.highlightAttributes
@@ -48,8 +70,10 @@ class Teleprompter : NSViewController
 				{
 					textStorage.addAttributes(self.highlightAttributes, range: newRange)
 				}
+				textStorage.endEditing()
 			}
 		}
+		self.enableButtons()
 	}
 	
 	let highlightAttributes : [String:AnyObject] = [
