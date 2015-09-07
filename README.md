@@ -7,8 +7,11 @@
 - Skip forward by sentences or paragraphs
 - Replay sentences
 - Progress Indicator
+- Teleprompter Mode - Read along with audio
 
 ![Example Image](https://raw.githubusercontent.com/Nosrac/Dictater/master/example.png)
+
+![Teleprompter Example](https://raw.githubusercontent.com/Nosrac/Dictater/master/teleprompter.png)
 
 ## Usage
 - Select text, right click, and choose Dictate!
