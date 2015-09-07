@@ -236,6 +236,8 @@ class Speech
 		var options = boundary.enumerationOption
 		let currentLocation = self.range?.location ?? 0
 		
+		let vocalization = self.vocalization
+		
 		if let vocalization = self.vocalization
 		where forward && vocalization.didFinish
 		{
@@ -245,6 +247,16 @@ class Speech
 		let range : NSRange
 		var index : Int?
 		var skip : Bool = true
+		
+		let paused : Bool
+		if let vocalization = vocalization
+		{
+			paused = !vocalization.isSpeaking
+		} else {
+			paused = false
+		}
+		
+		print("Paused : \(paused)")
 		
 		if forward
 		{
@@ -288,6 +300,11 @@ class Speech
 		if let index = index
 		{
 			self.speak(fromIndex: index)
+			
+			if paused
+			{
+				self.pause()
+			}
 		}
 		
 	}

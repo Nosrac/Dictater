@@ -210,19 +210,11 @@
 		2797D23C1B9A3E390019D12D /* ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				2797D23D1B9A3E3F0019D12D /* Services */,
 				272B76521B979D5900712AA5 /* AppDelegate.swift */,
 				274039EB1B98FECA00D80E23 /* Application.swift */,
-			);
-			name = ObjC;
-			sourceTree = "<group>";
-		};
-		2797D23D1B9A3E3F0019D12D /* Services */ = {
-			isa = PBXGroup;
-			children = (
 				274039ED1B99023F00D80E23 /* DictaterService.swift */,
 			);
-			name = Services;
+			name = ObjC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
