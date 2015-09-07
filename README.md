@@ -1,6 +1,6 @@
 # Dictater
 - Replacement for OS X's built-in Speech services.
-- [Download App](https://github.com/Nosrac/Dictater/releases/download/1.0b1/Dictater.zip)
+- [Download App](https://github.com/Nosrac/Dictater/releases/download/1.0b2/Dictater.zip)
 
 ## Features
 - Pause the audio
