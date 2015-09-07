@@ -56,12 +56,14 @@ class Teleprompter : NSViewController
 	{
 		if let textView = self.textView
 		{
+			
 			if textView.string != Speech.sharedSpeech.text
 			{
 				textView.string = Speech.sharedSpeech.text
 			}
 			
-			if let textStorage = textView.textStorage
+			if let textStorage = textView.textStorage,
+			let newRange = Speech.sharedSpeech.range
 			{
 				textStorage.beginEditing()
 				
@@ -70,11 +72,11 @@ class Teleprompter : NSViewController
 				{
 					textStorage.removeAttribute(key, range: fullRange)
 				}
-				if let newRange = Speech.sharedSpeech.range
-				{
-					textStorage.addAttributes(self.highlightAttributes, range: newRange)
-				}
+				
+				textStorage.addAttributes(self.highlightAttributes, range: newRange)
 				textStorage.endEditing()
+				
+				textView.scrollRangeToVisible(newRange)
 			}
 		}
 		self.enableButtons()
