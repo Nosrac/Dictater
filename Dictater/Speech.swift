@@ -256,8 +256,6 @@ class Speech
 			paused = false
 		}
 		
-		print("Paused : \(paused)")
-		
 		if forward
 		{
 			range = NSRange(location: currentLocation, length: self.text.characters.count - currentLocation)

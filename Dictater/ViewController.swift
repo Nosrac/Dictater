@@ -40,9 +40,11 @@ class ViewController: NSViewController {
 		if let view = self.progressIndicator
 		{
 			let progress = Speech.sharedSpeech.progress
-			
-			view.maxValue = Double(progress.totalUnitCount)
-			view.animateToDoubleValue( Double(progress.completedUnitCount) )
+			if progress.totalUnitCount > 0
+			{
+				view.maxValue = Double(progress.totalUnitCount)
+				view.animateToDoubleValue( Double(progress.completedUnitCount) )
+			}
 		}
 	}
 	

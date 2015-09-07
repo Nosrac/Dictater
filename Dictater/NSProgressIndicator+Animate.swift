@@ -22,7 +22,7 @@ class ESSProgressBarAnimation : NSAnimation
 		self.initialValue = progressIndicator.doubleValue
 		self.newValue = newValue
 		
-		super.init(duration: 0.15, animationCurve: NSAnimationCurve.EaseIn)
+		super.init(duration: 0.1, animationCurve: NSAnimationCurve.Linear)
 		self.animationBlockingMode = .NonblockingThreaded
 	}
 

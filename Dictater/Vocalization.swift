@@ -25,7 +25,7 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 		return synth
 	}()
 	
-	var currentRange : NSRange?
+	var currentRange : NSRange? = NSRange()
 	{
 		didSet {
 			NSNotificationCenter.defaultCenter().postNotificationName(Vocalization.ProgressChangedNotification, object: self)
