@@ -406,7 +406,7 @@
         <scene sceneID="523-cc-5RW">
             <objects>
                 <windowController storyboardIdentifier="teleprompter" showSeguePresentationStyle="single" id="k29-t7-AzP" sceneMemberID="viewController">
-                    <window key="window" title="Teleprompter" allowsToolTipsWhenApplicationIsInactive="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="teleprompter" animationBehavior="default" id="l7d-5m-wB8">
+                    <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="teleprompter" animationBehavior="default" id="l7d-5m-wB8">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="447" y="340" width="700" height="500"/>
@@ -419,6 +419,136 @@
                 <customObject id="DZ6-WF-dwh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="635" y="66.5"/>
+        </scene>
+        <!--Teleprompter Preferences Controller-->
+        <scene sceneID="QFh-c9-God">
+            <objects>
+                <viewController id="dKQ-UF-5j5" customClass="TeleprompterPreferencesController" customModule="Dictater" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="3Rn-mF-XiB">
+                        <rect key="frame" x="0.0" y="0.0" width="279" height="141"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gG1-if-lRN">
+                                <rect key="frame" x="60" y="103" width="36" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Font:" id="LdF-UL-uQl">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-1M-4rL">
+                                <rect key="frame" x="62" y="76" width="34" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Size:" id="5vq-e3-Q3Y">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Asn-Jf-kTA">
+                                <rect key="frame" x="164" y="76" width="32" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="16pt" id="pma-au-a72">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDM-rk-UUP">
+                                <rect key="frame" x="96" y="93" width="169" height="32"/>
+                                <buttonCell key="cell" type="push" title="System Font Regular" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cTC-dy-gsp">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openFontPanel:" target="dKQ-UF-5j5" id="f9D-bA-0ff"/>
+                                </connections>
+                            </button>
+                            <button toolTip="Smaller Text Size" verticalHuggingPriority="750" fixedFrame="YES" tag="-1" translatesAutoresizingMaskIntoConstraints="NO" id="goY-rs-fDO">
+                                <rect key="frame" x="96" y="67" width="52" height="32"/>
+                                <buttonCell key="cell" type="push" title="-" alternateTitle="Smaller Text Size" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g9T-dm-VrR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <accessibility description="Smaller Text Size"/>
+                                <connections>
+                                    <action selector="changeFontSize:" target="dKQ-UF-5j5" id="gCZ-2O-cvg"/>
+                                </connections>
+                            </button>
+                            <button toolTip="Bigger Text Size" verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="P8F-JP-RrD">
+                                <rect key="frame" x="210" y="67" width="55" height="32"/>
+                                <buttonCell key="cell" type="push" title="+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8bt-R9-mV4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <accessibility description="Bigger Text Size"/>
+                                <connections>
+                                    <action selector="changeFontSize:" target="dKQ-UF-5j5" id="saZ-Ej-xRc"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-Ah-Jtx">
+                                <rect key="frame" x="18" y="50" width="78" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Line Height:" id="T5y-bi-mgh">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Hie-wI-RjX">
+                                <rect key="frame" x="96" y="41" width="52" height="32"/>
+                                <buttonCell key="cell" type="push" title="-" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g4J-az-q8n">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeLineHeightMultiple:" target="dKQ-UF-5j5" id="dDy-CQ-Hzo"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="7vx-An-oQJ">
+                                <rect key="frame" x="210" y="41" width="55" height="32"/>
+                                <buttonCell key="cell" type="push" title="+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aix-wk-KTC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeLineHeightMultiple:" target="dKQ-UF-5j5" id="kdp-Uv-JKF"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Quw-Pp-1Uf">
+                                <rect key="frame" x="96" y="13" width="169" height="32"/>
+                                <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NG0-rI-AxP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissController:" target="dKQ-UF-5j5" id="8Ay-mm-JNZ"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vE-Kj-Sjr">
+                                <rect key="frame" x="161" y="50" width="38" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1.20x" id="gFc-Eq-Js1">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                <color key="value" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="LineHeightMultipleText" destination="0vE-Kj-Sjr" id="ZIy-x0-efa"/>
+                        <outlet property="fontButton" destination="EDM-rk-UUP" id="kCZ-ep-ZRd"/>
+                        <outlet property="fontSizeText" destination="Asn-Jf-kTA" id="HwY-wq-aQD"/>
+                    </connections>
+                </viewController>
+                <customObject id="Q1F-qc-K8O" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1502.5" y="-195.5"/>
         </scene>
         <!--Teleprompter-->
         <scene sceneID="prZ-q5-Up7">
@@ -440,50 +570,23 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="t7e-XD-E1e">
                                         <rect key="frame" x="20" y="0.0" width="617" height="45"/>
                                         <subviews>
-                                            <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-RH-UPd">
-                                                <rect key="frame" x="334" y="12" width="24" height="20"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nli-Tv-Tk5">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="18" name="FontAwesome"/>
-                                                    <string key="keyEquivalent"></string>
-                                                </buttonCell>
-                                                <accessibility description="Skip"/>
-                                                <connections>
-                                                    <action selector="skipAhead:" target="iPr-UU-04S" id="OQR-Zj-ssg"/>
-                                                    <outlet property="menu" destination="EPC-gg-xPZ" id="kAG-Gx-055"/>
-                                                </connections>
-                                            </button>
-                                            <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWY-ZF-M8j">
-                                                <rect key="frame" x="258" y="12" width="21" height="20"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="467-zw-2gB">
+                                            <button toolTip="Text Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-LZ-ck8">
+                                                <rect key="frame" x="0.0" y="0.0" width="21" height="45"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Text Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Q8E-JO-mCi">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="18" name="FontAwesome"/>
                                                     <string key="keyEquivalent"></string>
                                                 </buttonCell>
-                                                <accessibility description="Skip Backward"/>
+                                                <accessibility description="Text Options"/>
                                                 <connections>
-                                                    <action selector="skipBackwards:" target="iPr-UU-04S" id="4Ui-yW-Y51"/>
-                                                </connections>
-                                            </button>
-                                            <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-HK-Xuc">
-                                                <rect key="frame" x="294" y="10" width="25" height="25"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aOI-r5-wlN">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="FontAwesome"/>
-                                                    <string key="keyEquivalent" base64-UTF8="YES">
-IA
-</string>
-                                                </buttonCell>
-                                                <accessibility description="Play Pause"/>
-                                                <connections>
-                                                    <action selector="playPause:" target="iPr-UU-04S" id="LZG-2V-ONZ"/>
+                                                    <segue destination="dKQ-UF-5j5" kind="popover" popoverAnchorView="mg2-LZ-ck8" popoverBehavior="t" preferredEdge="maxY" id="dox-R6-8ro"/>
                                                 </connections>
                                             </button>
                                             <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIR-is-jxe">
-                                                <rect key="frame" x="600" y="14" width="17" height="16"/>
+                                                <rect key="frame" x="588" y="0.0" width="29" height="45"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Dc6-9U-Snf">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="13" name="FontAwesome"/>
+                                                    <font key="font" size="20" name="FontAwesome"/>
                                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -493,11 +596,50 @@ DQ
                                                     <action selector="terminate:" target="5nP-sQ-idW" id="qc4-mi-hBK"/>
                                                 </connections>
                                             </button>
+                                            <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWY-ZF-M8j">
+                                                <rect key="frame" x="243" y="0.0" width="23" height="45"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="467-zw-2gB">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <string key="keyEquivalent"></string>
+                                                </buttonCell>
+                                                <accessibility description="Skip Backward"/>
+                                                <connections>
+                                                    <action selector="skipBackwards:" target="iPr-UU-04S" id="4Ui-yW-Y51"/>
+                                                </connections>
+                                            </button>
+                                            <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-RH-UPd">
+                                                <rect key="frame" x="351" y="0.0" width="23" height="45"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nli-Tv-Tk5">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <string key="keyEquivalent"></string>
+                                                </buttonCell>
+                                                <accessibility description="Skip"/>
+                                                <connections>
+                                                    <action selector="skipAhead:" target="iPr-UU-04S" id="OQR-Zj-ssg"/>
+                                                    <outlet property="menu" destination="EPC-gg-xPZ" id="kAG-Gx-055"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="617" id="0tT-5F-9iV"/>
                                         </constraints>
                                     </customView>
+                                    <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-HK-Xuc">
+                                        <rect key="frame" x="316" y="0.0" width="25" height="45"/>
+                                        <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aOI-r5-wlN">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="20" name="FontAwesome"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+IA
+</string>
+                                        </buttonCell>
+                                        <accessibility description="Play Pause"/>
+                                        <connections>
+                                            <action selector="playPause:" target="iPr-UU-04S" id="LZG-2V-ONZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="t7e-XD-E1e" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="top" id="7vk-bN-z0K"/>
@@ -509,7 +651,7 @@ DQ
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="0.86507929080000001" green="0.86507929080000001" blue="0.86507929080000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.83987879301238932" green="0.83987879301238932" blue="0.83987879301238932" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>

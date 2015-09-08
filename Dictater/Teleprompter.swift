@@ -22,6 +22,13 @@ class Teleprompter : NSViewController
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
+		
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateFont", name: Dictater.TextAppearanceChangedNotification, object: nil)
+	}
+	
+	func updateFont() {
+		self.textView?.font = Dictater.font
+		print("Change paragraph style here")
 	}
 	
 	override func viewDidLoad() {

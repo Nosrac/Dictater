@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 class Dictater
 {
@@ -14,14 +15,23 @@ class Dictater
 	{
 		case SkipBoundary = "skipBoundary"
 		case HasBeenUsed = "hasBeenUsed"
+		case FontName = "fontName"
+		case FontSize = "fontSize"
+		case LineHeightMultiple = "lineHeightMultiple"
 	}
+	
+	static let TextAppearanceChangedNotification = "Dictater.FontChanged"
 	
 	static func setupDefaults()
 	{
+		let font = self.defaultFont
 		NSUserDefaults.standardUserDefaults().registerDefaults(
 			[
 				PreferenceKeys.SkipBoundary.rawValue : Speech.Boundary.Sentence.rawValue,
 				PreferenceKeys.HasBeenUsed.rawValue : false,
+				PreferenceKeys.FontName.rawValue : font.fontName,
+				PreferenceKeys.FontSize.rawValue : Double(font.pointSize),
+				PreferenceKeys.LineHeightMultiple.rawValue : 1.2,
 			])
 	}
 	
@@ -52,6 +62,69 @@ class Dictater
 		{
 			NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.HasBeenUsed.rawValue)
 			
+		}
+	}
+	
+	static var font : NSFont
+	{
+		let cgfloat = CGFloat(self.fontSize)
+		return NSFont(name: self.fontName, size: cgfloat) ?? self.defaultFont
+		
+	}
+	
+	static var defaultFont : NSFont
+	{
+		return NSFont.messageFontOfSize(14)
+	}
+	
+	
+	static var fontName : String
+	{
+		get {
+			if let string = NSUserDefaults.standardUserDefaults().stringForKey(PreferenceKeys.FontName.rawValue)
+			{
+				return string
+			} else {
+				return self.defaultFont.fontName
+			}
+		}
+		
+		set {
+			NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: PreferenceKeys.FontName.rawValue)
+			NSNotificationCenter.defaultCenter().postNotificationName(self.TextAppearanceChangedNotification, object: nil)
+		}
+	}
+	
+	static var fontSize : Double
+	{
+		get {
+			return NSUserDefaults.standardUserDefaults().doubleForKey(PreferenceKeys.FontSize.rawValue)
+		}
+		
+		set {
+			NSUserDefaults.standardUserDefaults().setDouble(newValue, forKey: PreferenceKeys.FontSize.rawValue)
+			NSNotificationCenter.defaultCenter().postNotificationName(self.TextAppearanceChangedNotification, object: nil)
+		}
+	}
+	
+	static var lineHeightMultiple : Double
+	{
+		get {
+			return NSUserDefaults.standardUserDefaults().doubleForKey(PreferenceKeys.LineHeightMultiple.rawValue)
+		}
+		
+		set {
+			NSUserDefaults.standardUserDefaults().setDouble(newValue, forKey: PreferenceKeys.LineHeightMultiple.rawValue)
+			NSNotificationCenter.defaultCenter().postNotificationName(self.TextAppearanceChangedNotification, object: nil)
+		}
+	}
+	
+	class ParagraphStyle : NSParagraphStyle
+	{
+		let multiple = Dictater.lineHeightMultiple
+		override var lineHeightMultiple : CGFloat
+		{
+			return CGFloat(self.multiple)
 		}
 	}
 	
