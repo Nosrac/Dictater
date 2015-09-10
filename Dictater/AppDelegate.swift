@@ -19,9 +19,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		{
 			self.openHowToUseWindow()
 		}
-		Speech.sharedSpeech.speak( "Lorem" )
-		Speech.sharedSpeech.skip(by: .Sentence)
-		Speech.sharedSpeech.skip(by: .Sentence)
 	}
 	
 	func applicationWillTerminate(aNotification: NSNotification) {
