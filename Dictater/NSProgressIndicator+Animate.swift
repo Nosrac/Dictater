@@ -47,9 +47,10 @@ class ESSProgressBarAnimation : NSAnimation
 
 extension NSProgressIndicator
 {
-	func animateToDoubleValue(value: Double)
+	func animateToDoubleValue(value: Double) -> NSAnimation
 	{
 		let animation = ESSProgressBarAnimation(self, newValue: value)
 		animation.startAnimation()
+		return animation
 	}
 }

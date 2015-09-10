@@ -28,6 +28,8 @@ class ViewController: NSViewController {
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
 	}
 	
+	var progressAnimation : NSAnimation?
+	
 	func update()
 	{
 		self.playPauseButton?.title = Speech.Controls.sharedControls.playPauseIcon
@@ -39,11 +41,16 @@ class ViewController: NSViewController {
 		
 		if let view = self.progressIndicator
 		{
+			self.progressAnimation?.stopAnimation()
+			
 			let progress = Speech.sharedSpeech.progress
 			if progress.totalUnitCount > 0
 			{
 				view.maxValue = Double(progress.totalUnitCount)
-				view.animateToDoubleValue( Double(progress.completedUnitCount) )
+				self.progressAnimation = view.animateToDoubleValue( Double(progress.completedUnitCount) )
+			} else {
+				view.maxValue = 1
+				self.progressAnimation = view.animateToDoubleValue( 1.0 )
 			}
 		}
 	}
