@@ -18,21 +18,30 @@ class Teleprompter : NSViewController
 	
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
+	}
+	
+	override func viewDidLoad() {
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateFont", name: Dictater.TextAppearanceChangedNotification, object: nil)
+		
+		self.update()
+		self.updateFont()
 	}
 	
 	func updateFont() {
-		self.textView?.font = Dictater.font
-		print("Change paragraph style here")
-	}
-	
-	override func viewDidLoad() {
-		self.update()
+		if let textView = self.textView
+		{
+			textView.font = Dictater.font
+			let paragraphStyle = Dictater.ParagraphStyle()
+			textView.defaultParagraphStyle = paragraphStyle
+			
+			let range = NSMakeRange(0, textView.attributedString().length)
+			textView.textStorage?.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: range)
+		}
 	}
 	
 	@IBAction func playPause(target: AnyObject?)
