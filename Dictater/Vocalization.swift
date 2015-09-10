@@ -29,6 +29,7 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 	{
 		didSet {
 			NSNotificationCenter.defaultCenter().postNotificationName(Vocalization.ProgressChangedNotification, object: self)
+
 		}
 	}
 	

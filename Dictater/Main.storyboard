@@ -888,6 +888,12 @@ IA
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="dPr-Yr-k9w"/>
+                        <menuItem title="About Dictater" id="sMC-lV-ms3">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="orderFrontStandardAboutPanel:" target="rPt-NT-nkU" id="vlg-jc-hYJ"/>
+                            </connections>
+                        </menuItem>
                         <menuItem title="Quit Dictater" keyEquivalent="q" id="MxT-GB-wjU">
                             <connections>
                                 <action selector="terminate:" target="rPt-NT-nkU" id="5eb-Le-E5e"/>
@@ -1091,7 +1097,7 @@ Steps
         <image name="usage" width="882" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vef-bf-I9r"/>
-        <segue reference="OGh-cy-NHB"/>
+        <segue reference="8vm-5d-it0"/>
+        <segue reference="7VE-Ic-2fp"/>
     </inferredMetricsTieBreakers>
 </document>
