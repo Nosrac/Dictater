@@ -165,6 +165,8 @@ class Speech
 	{
 		if let vocalization = self.vocalization
 		{
+			NSNotificationCenter.defaultCenter().removeObserver(self, name: Vocalization.ProgressChangedNotification, object: vocalization)
+			
 			vocalization.pause()
 			self.vocalization = nil
 		}
@@ -234,7 +236,10 @@ class Speech
 	func skip(by boundary: Speech.Boundary, forward: Bool = true)
 	{
 		var options = boundary.enumerationOption
-		let currentLocation = self.range?.location ?? 0
+		let currentRange = self.range ?? NSRange()
+		let currentLocation = currentRange.location
+		
+		print("Currently at \(currentLocation)")
 		
 		let vocalization = self.vocalization
 		
@@ -279,6 +284,7 @@ class Speech
 			if skip
 			{
 				skip = false
+				
 				return
 			}
 			

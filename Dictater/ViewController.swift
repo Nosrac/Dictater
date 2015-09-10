@@ -23,9 +23,16 @@ class ViewController: NSViewController {
 		
 		self.setupSkipDurationMenuItem()
 		self.update()
+	}
+	
+	override func viewWillAppear() {
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
+	}
+	
+	override func viewWillDisappear() {
+		NSNotificationCenter.defaultCenter().removeObserver(self)
 	}
 	
 	var progressAnimation : NSAnimation?

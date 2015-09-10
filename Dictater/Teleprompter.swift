@@ -20,7 +20,7 @@ class Teleprompter : NSViewController
 		super.init(coder: coder)
 	}
 	
-	override func viewDidLoad() {
+	override func viewWillAppear() {
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
 		
@@ -30,6 +30,10 @@ class Teleprompter : NSViewController
 		
 		self.update()
 		self.updateFont()
+	}
+	
+	override func viewWillDisappear() {
+		NSNotificationCenter.defaultCenter().removeObserver(self)
 	}
 	
 	func updateFont() {
