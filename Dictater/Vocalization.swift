@@ -55,11 +55,19 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 
 	func start()
 	{
-		self.currentRange = self.firstWordRange
-		self.synthesizer.startSpeakingString(self.text)
-		
-		self.isSpeaking = true
-		self.didFinish = false
+		if self.text.characters.count > 0
+		{
+			self.currentRange = self.firstWordRange
+			self.synthesizer.startSpeakingString(self.text)
+			
+			self.isSpeaking = true
+			self.didFinish = false
+		} else {
+			self.isSpeaking = false
+			self.didFinish = true
+			
+			self.currentRange = NSRange.init(location: 0, length: self.text.characters.count)
+		}
 	}
 	
 	func pause()

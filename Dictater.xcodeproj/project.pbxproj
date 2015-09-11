@@ -28,6 +28,8 @@
 		2797D2411B9CCA7C0019D12D /* usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2797D2401B9CCA7C0019D12D /* usage.png */; settings = {ASSET_TAGS = (); }; };
 		2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797D2421B9CD90A0019D12D /* Teleprompter.swift */; settings = {ASSET_TAGS = (); }; };
 		27A31CA11B9E0F0B003293C7 /* TeleprompterPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */; settings = {ASSET_TAGS = (); }; };
+		27BD0DBD1BA385D700D13D45 /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD0DBC1BA385D700D13D45 /* HoverButton.swift */; settings = {ASSET_TAGS = (); }; };
+		27BD0DBF1BA3897400D13D45 /* SpeechButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F71B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F81B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F91B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
@@ -84,6 +86,8 @@
 		2797D2401B9CCA7C0019D12D /* usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usage.png; sourceTree = "<group>"; };
 		2797D2421B9CD90A0019D12D /* Teleprompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teleprompter.swift; sourceTree = "<group>"; };
 		27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleprompterPreferencesController.swift; sourceTree = "<group>"; };
+		27BD0DBC1BA385D700D13D45 /* HoverButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
+		27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechButtonManager.swift; sourceTree = "<group>"; };
 		27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		27EDB7FA1B9A148500BE21BF /* instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instructions.png; sourceTree = "<group>"; };
 		27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnableServiceController.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			children = (
 				274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */,
 				272B76811B979D7100712AA5 /* NSView+backgroundColor.swift */,
+				27BD0DBC1BA385D700D13D45 /* HoverButton.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */,
 				2797D2421B9CD90A0019D12D /* Teleprompter.swift */,
 				27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */,
+				27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -360,10 +366,12 @@
 				274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */,
 				274039EC1B98FECA00D80E23 /* Application.swift in Sources */,
 				272B76971B97AE3A00712AA5 /* Dictater.swift in Sources */,
+				27BD0DBD1BA385D700D13D45 /* HoverButton.swift in Sources */,
 				2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */,
 				27EDB8081B9A1CF400BE21BF /* Speech.swift in Sources */,
 				272B76821B979D7100712AA5 /* NSView+backgroundColor.swift in Sources */,
 				272B768B1B979DD400712AA5 /* DictaterWindow.swift in Sources */,
+				27BD0DBF1BA3897400D13D45 /* SpeechButtonManager.swift in Sources */,
 				27EDB7FF1B9A17BA00BE21BF /* EnableServiceController.swift in Sources */,
 				272B76531B979D5900712AA5 /* AppDelegate.swift in Sources */,
 				274039F01B9914A200D80E23 /* NSProgressIndicator+Animate.swift in Sources */,

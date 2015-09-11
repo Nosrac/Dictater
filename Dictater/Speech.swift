@@ -241,12 +241,6 @@ class Speech
 		
 		let vocalization = self.vocalization
 		
-		if let vocalization = self.vocalization
-		where forward && vocalization.didFinish
-		{
-			return
-		}
-		
 		let range : NSRange
 		var index : Int?
 		var skip : Bool = true
@@ -293,7 +287,7 @@ class Speech
 		{
 			if forward
 			{
-				index = self.text.characters.count - 1
+				index = self.text.characters.count
 			} else {
 				index = 0
 			}
@@ -307,6 +301,8 @@ class Speech
 			{
 				self.pause()
 			}
+		} else {
+			print("Shoo")
 		}
 		
 	}
