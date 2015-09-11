@@ -425,11 +425,11 @@
             <objects>
                 <viewController id="dKQ-UF-5j5" customClass="TeleprompterPreferencesController" customModule="Dictater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="3Rn-mF-XiB">
-                        <rect key="frame" x="0.0" y="0.0" width="279" height="141"/>
+                        <rect key="frame" x="0.0" y="0.0" width="279" height="181"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gG1-if-lRN">
-                                <rect key="frame" x="60" y="103" width="36" height="17"/>
+                                <rect key="frame" x="60" y="143" width="36" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Font:" id="LdF-UL-uQl">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -437,7 +437,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-1M-4rL">
-                                <rect key="frame" x="62" y="76" width="34" height="17"/>
+                                <rect key="frame" x="62" y="116" width="34" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Size:" id="5vq-e3-Q3Y">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -445,7 +445,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Asn-Jf-kTA">
-                                <rect key="frame" x="164" y="76" width="32" height="17"/>
+                                <rect key="frame" x="164" y="116" width="32" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="16pt" id="pma-au-a72">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -453,7 +453,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDM-rk-UUP">
-                                <rect key="frame" x="96" y="93" width="169" height="32"/>
+                                <rect key="frame" x="96" y="133" width="169" height="32"/>
                                 <buttonCell key="cell" type="push" title="System Font Regular" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cTC-dy-gsp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -463,7 +463,7 @@
                                 </connections>
                             </button>
                             <button toolTip="Smaller Text Size" verticalHuggingPriority="750" fixedFrame="YES" tag="-1" translatesAutoresizingMaskIntoConstraints="NO" id="goY-rs-fDO">
-                                <rect key="frame" x="96" y="67" width="52" height="32"/>
+                                <rect key="frame" x="96" y="107" width="52" height="32"/>
                                 <buttonCell key="cell" type="push" title="-" alternateTitle="Smaller Text Size" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g9T-dm-VrR">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -474,7 +474,7 @@
                                 </connections>
                             </button>
                             <button toolTip="Bigger Text Size" verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="P8F-JP-RrD">
-                                <rect key="frame" x="210" y="67" width="55" height="32"/>
+                                <rect key="frame" x="210" y="107" width="55" height="32"/>
                                 <buttonCell key="cell" type="push" title="+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8bt-R9-mV4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -485,7 +485,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-Ah-Jtx">
-                                <rect key="frame" x="18" y="50" width="78" height="17"/>
+                                <rect key="frame" x="18" y="90" width="78" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Line Height:" id="T5y-bi-mgh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -493,7 +493,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" tag="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Hie-wI-RjX">
-                                <rect key="frame" x="96" y="41" width="52" height="32"/>
+                                <rect key="frame" x="96" y="81" width="52" height="32"/>
                                 <buttonCell key="cell" type="push" title="-" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g4J-az-q8n">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -503,7 +503,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="7vx-An-oQJ">
-                                <rect key="frame" x="210" y="41" width="55" height="32"/>
+                                <rect key="frame" x="210" y="81" width="55" height="32"/>
                                 <buttonCell key="cell" type="push" title="+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aix-wk-KTC">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -512,8 +512,32 @@
                                     <action selector="changeLineHeightMultiple:" target="dKQ-UF-5j5" id="kdp-Uv-JKF"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vE-Kj-Sjr">
+                                <rect key="frame" x="161" y="90" width="38" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1.20x" id="gFc-Eq-Js1">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ozz-GT-4y9">
+                                <rect key="frame" x="62" y="52" width="156" height="18"/>
+                                <buttonCell key="cell" type="check" title="Progress Bar Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EUQ-VD-Hee">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="Jtz-nI-74Y" name="value" keyPath="values.progressBarEnabled" id="Lyq-Xs-yfb"/>
+                                </connections>
+                            </button>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-2o-CtW">
+                                <rect key="frame" x="91" y="75" width="96" height="5"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Quw-Pp-1Uf">
-                                <rect key="frame" x="96" y="13" width="169" height="32"/>
+                                <rect key="frame" x="55" y="13" width="169" height="32"/>
                                 <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NG0-rI-AxP">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -525,14 +549,6 @@ DQ
                                     <action selector="dismissController:" target="dKQ-UF-5j5" id="8Ay-mm-JNZ"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vE-Kj-Sjr">
-                                <rect key="frame" x="161" y="50" width="38" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1.20x" id="gFc-Eq-Js1">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -549,8 +565,9 @@ DQ
                     </connections>
                 </viewController>
                 <customObject id="Q1F-qc-K8O" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController id="Jtz-nI-74Y"/>
             </objects>
-            <point key="canvasLocation" x="1392.5" y="-241.5"/>
+            <point key="canvasLocation" x="1392.5" y="-221.5"/>
         </scene>
         <!--Teleprompter-->
         <scene sceneID="prZ-q5-Up7">
@@ -716,9 +733,6 @@ IA
                             <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="gvt-eU-XGb"/>
                             <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="aqC-2r-Oiq" secondAttribute="bottom" constant="11" id="jM2-J5-h5P"/>
                         </constraints>
-                        <connections>
-                            <outlet property="menu" destination="fIz-jM-Nfy" id="BEC-9r-40c"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="playPauseButton" destination="P7f-HK-Xuc" id="ft8-9M-r1w"/>
@@ -729,16 +743,6 @@ IA
                     </connections>
                 </viewController>
                 <customObject id="5nP-sQ-idW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu id="fIz-jM-Nfy">
-                    <items>
-                        <menuItem title="Progress Bar Visible" state="on" id="Vb7-7Z-Isw">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <binding destination="cAm-V1-vyt" name="value" keyPath="values.progressBarEnabled" id="xmA-Dj-BlP"/>
-                            </connections>
-                        </menuItem>
-                    </items>
-                </menu>
                 <userDefaultsController id="cAm-V1-vyt"/>
             </objects>
             <point key="canvasLocation" x="1507.5" y="173"/>
