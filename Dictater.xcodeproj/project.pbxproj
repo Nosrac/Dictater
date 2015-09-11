@@ -21,7 +21,6 @@
 		272B76971B97AE3A00712AA5 /* Dictater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76961B97AE3A00712AA5 /* Dictater.swift */; };
 		272B76981B97AE3A00712AA5 /* Dictater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76961B97AE3A00712AA5 /* Dictater.swift */; };
 		272B76991B97AE3A00712AA5 /* Dictater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76961B97AE3A00712AA5 /* Dictater.swift */; };
-		274009611BA39D2200785917 /* Delete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274009601BA39D2200785917 /* Delete.storyboard */; settings = {ASSET_TAGS = (); }; };
 		274039EC1B98FECA00D80E23 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EB1B98FECA00D80E23 /* Application.swift */; settings = {ASSET_TAGS = (); }; };
 		274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039ED1B99023F00D80E23 /* DictaterService.swift */; settings = {ASSET_TAGS = (); }; };
 		274039F01B9914A200D80E23 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
@@ -80,7 +79,6 @@
 		272B76811B979D7100712AA5 /* NSView+backgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+backgroundColor.swift"; sourceTree = "<group>"; };
 		272B768A1B979DD400712AA5 /* DictaterWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictaterWindow.swift; sourceTree = "<group>"; };
 		272B76961B97AE3A00712AA5 /* Dictater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dictater.swift; path = ../Dictater.swift; sourceTree = "<group>"; };
-		274009601BA39D2200785917 /* Delete.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Delete.storyboard; sourceTree = "<group>"; };
 		274039EB1B98FECA00D80E23 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		274039ED1B99023F00D80E23 /* DictaterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictaterService.swift; sourceTree = "<group>"; };
 		274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+Animate.swift"; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 			children = (
 				2797D23E1B9A61BC0019D12D /* Main.storyboard */,
 				272B76541B979D5900712AA5 /* ViewController.swift */,
-				274009601BA39D2200785917 /* Delete.storyboard */,
 				272B768A1B979DD400712AA5 /* DictaterWindow.swift */,
 				27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */,
 				2797D2421B9CD90A0019D12D /* Teleprompter.swift */,
@@ -335,7 +332,6 @@
 				27EDB7FB1B9A148500BE21BF /* instructions.png in Resources */,
 				272B76571B979D5900712AA5 /* Assets.xcassets in Resources */,
 				27EDB7F71B9932CD00BE21BF /* FontAwesome.otf in Resources */,
-				274009611BA39D2200785917 /* Delete.storyboard in Resources */,
 				2797D2411B9CCA7C0019D12D /* usage.png in Resources */,
 				2797D23F1B9A61BC0019D12D /* Main.storyboard in Resources */,
 			);
