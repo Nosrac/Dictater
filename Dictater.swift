@@ -95,14 +95,14 @@ class Dictater
 		}
 	}
 	
-	static var fontSize : Double
+	static var fontSize : Int
 	{
 		get {
-			return NSUserDefaults.standardUserDefaults().doubleForKey(PreferenceKeys.FontSize.rawValue)
+			return NSUserDefaults.standardUserDefaults().integerForKey(PreferenceKeys.FontSize.rawValue)
 		}
 		
 		set {
-			NSUserDefaults.standardUserDefaults().setDouble(newValue, forKey: PreferenceKeys.FontSize.rawValue)
+			NSUserDefaults.standardUserDefaults().setInteger(newValue, forKey: PreferenceKeys.FontSize.rawValue)
 			NSNotificationCenter.defaultCenter().postNotificationName(self.TextAppearanceChangedNotification, object: nil)
 		}
 	}

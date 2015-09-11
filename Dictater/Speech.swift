@@ -239,8 +239,6 @@ class Speech
 		let currentRange = self.range ?? NSRange()
 		let currentLocation = currentRange.location
 		
-		print("Currently at \(currentLocation)")
-		
 		let vocalization = self.vocalization
 		
 		if let vocalization = self.vocalization

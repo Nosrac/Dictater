@@ -543,7 +543,9 @@ DQ
                     <connections>
                         <outlet property="LineHeightMultipleText" destination="0vE-Kj-Sjr" id="ZIy-x0-efa"/>
                         <outlet property="fontButton" destination="EDM-rk-UUP" id="kCZ-ep-ZRd"/>
+                        <outlet property="fontSizeDecrementButton" destination="goY-rs-fDO" id="os9-8y-SRg"/>
                         <outlet property="fontSizeText" destination="Asn-Jf-kTA" id="HwY-wq-aQD"/>
+                        <outlet property="lineHeightMultipleDecrementButton" destination="Hie-wI-RjX" id="SC9-7z-2R5"/>
                     </connections>
                 </viewController>
                 <customObject id="Q1F-qc-K8O" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -845,11 +847,11 @@ IA
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="6M7-Z9-ggD">
                     <items>
-                        <menuItem title="Skip by…" id="eE1-ip-Xs6">
+                        <menuItem title="Skip Forward by…" id="eE1-ip-Xs6">
                             <modifierMask key="keyEquivalentModifierMask"/>
-                            <menu key="submenu" title="Skip by…" id="EPC-gg-xPZ">
+                            <menu key="submenu" title="Skip Forward by…" id="EPC-gg-xPZ">
                                 <items>
-                                    <menuItem title="Skip by…" tag="5" enabled="NO" id="zZB-hl-hW6">
+                                    <menuItem title="Skip Forward by…" tag="5" enabled="NO" id="zZB-hl-hW6">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
                                     <menuItem isSeparatorItem="YES" id="XU1-p1-e5h"/>
@@ -868,7 +870,7 @@ IA
                                 </items>
                             </menu>
                         </menuItem>
-                        <menuItem title="Voice Settings" id="Pnr-a9-qxW">
+                        <menuItem title="Speech Settings" id="Pnr-a9-qxW">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="openSpeechPreferences:" target="XfG-lQ-9wD" id="Uef-ab-Qvu"/>
@@ -1097,7 +1099,7 @@ Steps
         <image name="usage" width="882" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8vm-5d-it0"/>
-        <segue reference="7VE-Ic-2fp"/>
+        <segue reference="OGh-cy-NHB"/>
+        <segue reference="vef-bf-I9r"/>
     </inferredMetricsTieBreakers>
 </document>

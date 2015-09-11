@@ -15,11 +15,17 @@ class TeleprompterPreferencesController : NSViewController
 	@IBOutlet var fontSizeText : NSTextField?
 	@IBOutlet var LineHeightMultipleText : NSTextField?
 	
+	@IBOutlet var lineHeightMultipleDecrementButton : NSButton?
+	@IBOutlet var fontSizeDecrementButton : NSButton?
+	
+	let minLineHeightMultiple = 0.85
+	let minFontSize = 10
+	
 	@IBAction func changeFontSize (sender: AnyObject?)
 	{
 		if let changeInSize = sender?.tag()
 		{
-			Dictater.fontSize += Double(changeInSize)
+			Dictater.fontSize += changeInSize
 			
 			self.update()
 		}
@@ -30,7 +36,6 @@ class TeleprompterPreferencesController : NSViewController
 		{
 			Dictater.lineHeightMultiple += Double(changeInSize) / 100.0
 			
-			print(Dictater.lineHeightMultiple)
 			self.update()
 		}
 	}
@@ -56,8 +61,27 @@ class TeleprompterPreferencesController : NSViewController
 		}
 		
 		fontButton?.title = name
-		fontSizeText?.stringValue = "\(Int(Dictater.fontSize))pt"
+		
+		let fontSize = Dictater.fontSize
+		if fontSize > self.minFontSize
+		{
+			self.fontSizeDecrementButton?.enabled = true
+		} else {
+			self.fontSizeDecrementButton?.enabled = false
+		}
+		
+		
+		let lineHeightMultiple = Dictater.lineHeightMultiple
+		if lineHeightMultiple - self.minLineHeightMultiple > 0.01
+		{
+			self.lineHeightMultipleDecrementButton?.enabled = true
+		} else {
+			self.lineHeightMultipleDecrementButton?.enabled = false
+		}
+		
+		fontSizeText?.stringValue = "\(fontSize)pt"
 		LineHeightMultipleText?.stringValue = "\(Dictater.lineHeightMultiple)x"
+		
 	}
 	
 	var fontPanel : NSFontPanel?
@@ -80,7 +104,7 @@ class TeleprompterPreferencesController : NSViewController
 		if let font = NSFontManager.sharedFontManager().selectedFont
 		{
 			Dictater.fontName = font.fontName
-			Dictater.fontSize = Double(font.pointSize)
+			Dictater.fontSize = Int(font.pointSize)
 			
 			self.update()
 		}
