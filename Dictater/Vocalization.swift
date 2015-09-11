@@ -44,9 +44,18 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 			}
 		}
 	}
+	
+	var firstWordRange : NSRange
+	{
+		let words = self.text.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+		let length = words.first?.characters.count ?? 0
+		
+		return NSRange.init(location: 0, length: length)
+	}
 
 	func start()
 	{
+		self.currentRange = self.firstWordRange
 		self.synthesizer.startSpeakingString(self.text)
 		
 		self.isSpeaking = true
