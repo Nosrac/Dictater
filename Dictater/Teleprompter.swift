@@ -16,17 +16,30 @@ class Teleprompter : NSViewController
 	@IBOutlet var skipBackwardsButton : NSButton?
 	@IBOutlet var skipForwardButton : NSButton?
 	
+	let speech = Speech.sharedSpeech
+	let buttonController = SpeechButtonManager(speech: Speech.sharedSpeech)
+	
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 	}
 	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+//		self.buttonController.progressIndicator = self.progressIndicator
+		self.buttonController.playPauseButton = self.playPauseButton
+		self.buttonController.skipForwardButton = self.skipForwardButton
+		self.buttonController.skipBackwardsButton = self.skipBackwardsButton
+		
+		self.buttonController.update()
+	}
+	
 	override func viewWillAppear() {
 		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
-		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
+		self.buttonController.registerEvents()
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateFont", name: Dictater.TextAppearanceChangedNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: self.speech)
 		
 		self.update()
 		self.updateFont()
@@ -34,6 +47,8 @@ class Teleprompter : NSViewController
 	
 	override func viewWillDisappear() {
 		NSNotificationCenter.defaultCenter().removeObserver(self)
+		
+		self.buttonController.deregisterEvents()
 	}
 	
 	func updateFont() {
@@ -48,46 +63,22 @@ class Teleprompter : NSViewController
 		}
 	}
 	
-	@IBAction func playPause(target: AnyObject?)
-	{
-		Speech.sharedSpeech.playPause()
-	}
-	
-	@IBAction func skipAhead(target: AnyObject?)
-	{
-		Speech.sharedSpeech.skip(by: Dictater.skipBoundary)
-	}
-	
-	@IBAction func skipBackwards(target: AnyObject?)
-	{
-		Speech.sharedSpeech.skip(by: .Sentence, forward: false)
-	}
-	
-	func enableButtons()
-	{
-		self.playPauseButton?.enabled = Speech.Controls.sharedControls.canPlayPause
-		self.skipBackwardsButton?.enabled = Speech.Controls.sharedControls.canSkipBackwards
-		self.skipForwardButton?.enabled = Speech.Controls.sharedControls.canSkipForward
-		
-		self.playPauseButton?.title = Speech.Controls.sharedControls.playPauseIcon
-	}
-	
 	func update()
 	{
 		if let textView = self.textView
 		{
 			
-			if textView.string != Speech.sharedSpeech.text
+			if textView.string != self.speech.text
 			{
-				textView.string = Speech.sharedSpeech.text
+				textView.string = self.speech.text
 			}
 			
 			if let textStorage = textView.textStorage,
-			let newRange = Speech.sharedSpeech.range
+			let newRange = self.speech.range
 			{
 				textStorage.beginEditing()
 				
-				let fullRange = NSRange.init(location: 0, length: Speech.sharedSpeech.text.characters.count)
+				let fullRange = NSRange.init(location: 0, length: self.speech.text.characters.count)
 				for (key, _) in self.highlightAttributes
 				{
 					textStorage.removeAttribute(key, range: fullRange)
@@ -99,7 +90,6 @@ class Teleprompter : NSViewController
 				textView.scrollRangeToVisible(newRange)
 			}
 		}
-		self.enableButtons()
 	}
 	
 	let highlightAttributes : [String:AnyObject] = [

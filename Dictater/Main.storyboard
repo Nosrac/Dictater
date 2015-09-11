@@ -606,9 +606,6 @@ DQ
                                                     <string key="keyEquivalent"></string>
                                                 </buttonCell>
                                                 <accessibility description="Skip Backward"/>
-                                                <connections>
-                                                    <action selector="skipBackwards:" target="iPr-UU-04S" id="4Ui-yW-Y51"/>
-                                                </connections>
                                             </button>
                                             <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-RH-UPd">
                                                 <rect key="frame" x="351" y="0.0" width="23" height="45"/>
@@ -619,7 +616,6 @@ DQ
                                                 </buttonCell>
                                                 <accessibility description="Skip"/>
                                                 <connections>
-                                                    <action selector="skipAhead:" target="iPr-UU-04S" id="OQR-Zj-ssg"/>
                                                     <outlet property="menu" destination="EPC-gg-xPZ" id="kAG-Gx-055"/>
                                                 </connections>
                                             </button>
@@ -638,9 +634,6 @@ IA
 </string>
                                         </buttonCell>
                                         <accessibility description="Play Pause"/>
-                                        <connections>
-                                            <action selector="playPause:" target="iPr-UU-04S" id="LZG-2V-ONZ"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -735,7 +728,7 @@ IA
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="m40-Xv-gII">
                                 <rect key="frame" x="0.0" y="0.0" width="216" height="52"/>
                                 <subviews>
-                                    <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRe-PP-DlP">
+                                    <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRe-PP-DlP" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
                                         <rect key="frame" x="136" y="17" width="24" height="20"/>
                                         <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="qmy-kp-ZCU">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -744,11 +737,10 @@ IA
                                         </buttonCell>
                                         <accessibility description="Skip"/>
                                         <connections>
-                                            <action selector="skipAhead:" target="XfG-lQ-9wD" id="RvF-yM-ukW"/>
                                             <outlet property="menu" destination="EPC-gg-xPZ" id="tZ6-II-lyD"/>
                                         </connections>
                                     </button>
-                                    <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jzq-h0-HER">
+                                    <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jzq-h0-HER" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
                                         <rect key="frame" x="60" y="17" width="21" height="20"/>
                                         <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Rz9-z9-Lw4">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -756,11 +748,8 @@ IA
                                             <string key="keyEquivalent"></string>
                                         </buttonCell>
                                         <accessibility description="Skip Backward"/>
-                                        <connections>
-                                            <action selector="skipBackwards:" target="XfG-lQ-9wD" id="1bo-77-9sf"/>
-                                        </connections>
                                     </button>
-                                    <button toolTip="Teleprompter" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4">
+                                    <button toolTip="Teleprompter" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
                                         <rect key="frame" x="170" y="18" width="17" height="16"/>
                                         <buttonCell key="cell" type="square" title="" alternateTitle="Teleprompter" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -771,7 +760,7 @@ IA
                                             <segue destination="k29-t7-AzP" kind="show" id="DMB-NT-eUV"/>
                                         </connections>
                                     </button>
-                                    <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aau-N4-wSr">
+                                    <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aau-N4-wSr" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
                                         <rect key="frame" x="189" y="18" width="17" height="16"/>
                                         <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9Yu-Yw-uCd">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -785,7 +774,7 @@ DQ
                                             <action selector="terminate:" target="rPt-NT-nkU" id="ard-SN-cyL"/>
                                         </connections>
                                     </button>
-                                    <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-iS-tQO">
+                                    <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-iS-tQO" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
                                         <rect key="frame" x="96" y="15" width="25" height="25"/>
                                         <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5Hy-Do-i9J">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -795,11 +784,8 @@ IA
 </string>
                                         </buttonCell>
                                         <accessibility description="Play Pause"/>
-                                        <connections>
-                                            <action selector="playPause:" target="XfG-lQ-9wD" id="QXJ-es-FNO"/>
-                                        </connections>
                                     </button>
-                                    <button toolTip="Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up1-ZJ-vfh">
+                                    <button toolTip="Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up1-ZJ-vfh" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
                                         <rect key="frame" x="10" y="18" width="17" height="16"/>
                                         <buttonCell key="cell" type="square" title="" alternateTitle="Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GSC-39-l5a">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

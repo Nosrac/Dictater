@@ -10,6 +10,8 @@ import Cocoa
 
 class ViewController: NSViewController {
 	
+	var buttonController = SpeechButtonManager(speech: Speech.sharedSpeech)
+	
 	@IBOutlet var skipDurationMenuItem : NSMenuItem?
 	
 	@IBOutlet var progressIndicator	: NSProgressIndicator?
@@ -22,59 +24,22 @@ class ViewController: NSViewController {
 		super.viewDidLoad()
 		
 		self.setupSkipDurationMenuItem()
-		self.update()
+		
+		self.buttonController.openTeleprompterButton = self.openTeleprompterButton
+		self.buttonController.progressIndicator = self.progressIndicator
+		self.buttonController.playPauseButton = self.playPauseButton
+		self.buttonController.skipForwardButton = self.skipForwardButton
+		self.buttonController.skipBackwardsButton = self.skipBackwardsButton
+		
+		self.buttonController.update()
 	}
 	
 	override func viewWillAppear() {
-		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: Speech.sharedSpeech)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
+		self.buttonController.registerEvents()
 	}
 	
 	override func viewWillDisappear() {
-		NSNotificationCenter.defaultCenter().removeObserver(self)
-	}
-	
-	var progressAnimation : NSAnimation?
-	
-	func update()
-	{
-		self.playPauseButton?.title = Speech.Controls.sharedControls.playPauseIcon
-
-		self.playPauseButton?.enabled = Speech.Controls.sharedControls.canPlayPause
-		self.skipBackwardsButton?.enabled = Speech.Controls.sharedControls.canSkipBackwards
-		self.skipForwardButton?.enabled = Speech.Controls.sharedControls.canSkipForward
-		self.openTeleprompterButton?.enabled = Speech.Controls.sharedControls.canOpenTeleprompter
-		
-		if let view = self.progressIndicator
-		{
-			self.progressAnimation?.stopAnimation()
-			
-			let progress = Speech.sharedSpeech.progress
-			if progress.totalUnitCount > 0
-			{
-				view.maxValue = Double(progress.totalUnitCount)
-				self.progressAnimation = view.animateToDoubleValue( Double(progress.completedUnitCount) )
-			} else {
-				view.maxValue = 1
-				self.progressAnimation = view.animateToDoubleValue( 1.0 )
-			}
-		}
-	}
-	
-	@IBAction func playPause(target: AnyObject?)
-	{
-		Speech.sharedSpeech.playPause()
-	}
-	
-	@IBAction func skipAhead(target: AnyObject?)
-	{
-		Speech.sharedSpeech.skip(by: Dictater.skipBoundary)
-	}
-	
-	@IBAction func skipBackwards(target: AnyObject?)
-	{
-		Speech.sharedSpeech.skip(by: .Sentence, forward: false)
+		self.buttonController.deregisterEvents()
 	}
 	
 	@IBAction func openSpeechPreferences(target: AnyObject?)
