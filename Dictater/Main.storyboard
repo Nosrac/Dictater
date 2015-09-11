@@ -407,7 +407,7 @@
             <objects>
                 <windowController storyboardIdentifier="teleprompter" showSeguePresentationStyle="single" id="k29-t7-AzP" sceneMemberID="viewController">
                     <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="teleprompter" animationBehavior="default" id="l7d-5m-wB8">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="447" y="340" width="700" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
@@ -589,6 +589,17 @@ DQ
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="t7e-XD-E1e">
                                         <rect key="frame" x="20" y="0.0" width="617" height="45"/>
                                         <subviews>
+                                            <button toolTip="Play Pause" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-HK-Xuc">
+                                                <rect key="frame" x="298" y="10" width="22" height="25"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aOI-r5-wlN">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <string key="keyEquivalent" base64-UTF8="YES">
+IA
+</string>
+                                                </buttonCell>
+                                                <accessibility description="Play Pause"/>
+                                            </button>
                                             <button toolTip="Text Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-LZ-ck8">
                                                 <rect key="frame" x="0.0" y="0.0" width="21" height="45"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Text Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Q8E-JO-mCi">
@@ -639,19 +650,10 @@ DQ
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="617" id="0tT-5F-9iV"/>
+                                            <constraint firstItem="P7f-HK-Xuc" firstAttribute="centerX" secondItem="t7e-XD-E1e" secondAttribute="centerX" id="feP-kE-uil"/>
+                                            <constraint firstItem="P7f-HK-Xuc" firstAttribute="centerY" secondItem="t7e-XD-E1e" secondAttribute="centerY" id="hCe-NR-DBo"/>
                                         </constraints>
                                     </customView>
-                                    <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-HK-Xuc">
-                                        <rect key="frame" x="316" y="0.0" width="25" height="45"/>
-                                        <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aOI-r5-wlN">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="20" name="FontAwesome"/>
-                                            <string key="keyEquivalent" base64-UTF8="YES">
-IA
-</string>
-                                        </buttonCell>
-                                        <accessibility description="Play Pause"/>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="t7e-XD-E1e" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="top" id="7vk-bN-z0K"/>
