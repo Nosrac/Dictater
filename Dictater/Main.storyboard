@@ -351,6 +351,12 @@
                                                 <segue destination="4Ic-dl-039" kind="show" id="7VE-Ic-2fp"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Enter Full Screen" keyEquivalent="f" id="cbo-eS-9HP">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="XFN-gz-9Fy"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -408,6 +414,7 @@
                 <windowController storyboardIdentifier="teleprompter" showSeguePresentationStyle="single" id="k29-t7-AzP" sceneMemberID="viewController">
                     <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="teleprompter" animationBehavior="default" id="l7d-5m-wB8">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="447" y="340" width="700" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
@@ -605,7 +612,6 @@ IA
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Text Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Q8E-JO-mCi">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="18" name="FontAwesome"/>
-                                                    <string key="keyEquivalent"></string>
                                                 </buttonCell>
                                                 <accessibility description="Text Options"/>
                                                 <connections>
@@ -1117,7 +1123,7 @@ Steps
         <image name="usage" width="882" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OGh-cy-NHB"/>
-        <segue reference="vef-bf-I9r"/>
+        <segue reference="7VE-Ic-2fp"/>
+        <segue reference="8vm-5d-it0"/>
     </inferredMetricsTieBreakers>
 </document>
