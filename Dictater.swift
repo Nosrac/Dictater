@@ -18,6 +18,7 @@ class Dictater
 		case FontName = "fontName"
 		case FontSize = "fontSize"
 		case LineHeightMultiple = "lineHeightMultiple"
+		case ProgressBarEnabled = "progressBarEnabled"
 	}
 	
 	static let TextAppearanceChangedNotification = "Dictater.FontChanged"
@@ -32,6 +33,7 @@ class Dictater
 				PreferenceKeys.FontName.rawValue : font.fontName,
 				PreferenceKeys.FontSize.rawValue : Double(font.pointSize),
 				PreferenceKeys.LineHeightMultiple.rawValue : 1.2,
+				PreferenceKeys.ProgressBarEnabled.rawValue : true
 			])
 	}
 	

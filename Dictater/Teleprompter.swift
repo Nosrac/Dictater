@@ -15,6 +15,7 @@ class Teleprompter : NSViewController
 	@IBOutlet var playPauseButton : NSButton?
 	@IBOutlet var skipBackwardsButton : NSButton?
 	@IBOutlet var skipForwardButton : NSButton?
+	@IBOutlet var progressIndicator : NSProgressIndicator?
 	
 	let speech = Speech.sharedSpeech
 	let buttonController = SpeechButtonManager(speech: Speech.sharedSpeech)
@@ -26,7 +27,7 @@ class Teleprompter : NSViewController
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-//		self.buttonController.progressIndicator = self.progressIndicator
+		self.buttonController.progressIndicator = self.progressIndicator
 		self.buttonController.playPauseButton = self.playPauseButton
 		self.buttonController.skipForwardButton = self.skipForwardButton
 		self.buttonController.skipBackwardsButton = self.skipBackwardsButton

@@ -550,7 +550,7 @@ DQ
                 </viewController>
                 <customObject id="Q1F-qc-K8O" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1502.5" y="-195.5"/>
+            <point key="canvasLocation" x="1392.5" y="-241.5"/>
         </scene>
         <!--Teleprompter-->
         <scene sceneID="prZ-q5-Up7">
@@ -690,6 +690,17 @@ IA
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <progressIndicator fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="yck-xg-jp5">
+                                <rect key="frame" x="0.0" y="368" width="657" height="20"/>
+                                <connections>
+                                    <binding destination="cAm-V1-vyt" name="hidden" keyPath="values.progressBarEnabled" id="61s-FU-YuV">
+                                        <dictionary key="options">
+                                            <integer key="NSNullPlaceholder" value="0"/>
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstItem="aqC-2r-Oiq" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="bottom" id="2K0-bZ-kf5"/>
@@ -705,15 +716,30 @@ IA
                             <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="gvt-eU-XGb"/>
                             <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="aqC-2r-Oiq" secondAttribute="bottom" constant="11" id="jM2-J5-h5P"/>
                         </constraints>
+                        <connections>
+                            <outlet property="menu" destination="fIz-jM-Nfy" id="BEC-9r-40c"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="playPauseButton" destination="P7f-HK-Xuc" id="ft8-9M-r1w"/>
+                        <outlet property="progressIndicator" destination="yck-xg-jp5" id="VXX-8X-9cN"/>
                         <outlet property="skipBackwardsButton" destination="MWY-ZF-M8j" id="eRl-kg-AbY"/>
                         <outlet property="skipForwardButton" destination="rm5-RH-UPd" id="CCB-sm-jU4"/>
                         <outlet property="textView" destination="6Ey-fa-sA0" id="CGr-9d-XHv"/>
                     </connections>
                 </viewController>
                 <customObject id="5nP-sQ-idW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="fIz-jM-Nfy">
+                    <items>
+                        <menuItem title="Progress Bar Visible" state="on" id="Vb7-7Z-Isw">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <binding destination="cAm-V1-vyt" name="value" keyPath="values.progressBarEnabled" id="xmA-Dj-BlP"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
+                <userDefaultsController id="cAm-V1-vyt"/>
             </objects>
             <point key="canvasLocation" x="1507.5" y="173"/>
         </scene>
