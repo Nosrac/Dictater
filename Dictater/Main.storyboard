@@ -782,7 +782,7 @@ DQ
                                         <rect key="frame" x="20" y="0.0" width="176" height="52"/>
                                         <beginningViews>
                                             <button toolTip="Read Along" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="14.5" width="22" height="23"/>
+                                                <rect key="frame" x="0.0" y="14.5" width="26" height="23"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Read Along" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="18" name="FontAwesome"/>
@@ -829,7 +829,7 @@ IA
                                         </middleViews>
                                         <endViews>
                                             <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aau-N4-wSr" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="17.5" width="17" height="17"/>
+                                                <rect key="frame" x="0.0" y="17.5" width="26" height="17"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9Yu-Yw-uCd">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="13" name="FontAwesome"/>
