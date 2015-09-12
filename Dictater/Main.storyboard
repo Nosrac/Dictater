@@ -597,8 +597,8 @@ DQ
                                         <rect key="frame" x="20" y="0.0" width="617" height="45"/>
                                         <beginningViews>
                                             <button toolTip="Text Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-LZ-ck8">
-                                                <rect key="frame" x="0.0" y="11" width="214.5" height="23"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Text Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="Q8E-JO-mCi">
+                                                <rect key="frame" x="0.0" y="11" width="21" height="23"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Text Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Q8E-JO-mCi">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="18" name="FontAwesome"/>
                                                 </buttonCell>
@@ -607,10 +607,13 @@ DQ
                                                     <segue destination="dKQ-UF-5j5" kind="popover" popoverAnchorView="mg2-LZ-ck8" popoverBehavior="t" preferredEdge="maxY" id="dox-R6-8ro"/>
                                                 </connections>
                                             </button>
+                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jme-Mm-Ubq">
+                                                <rect key="frame" x="51" y="0.0" width="163.5" height="45"/>
+                                            </customView>
                                         </beginningViews>
                                         <middleViews>
                                             <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWY-ZF-M8j">
-                                                <rect key="frame" x="0.0" y="10" width="23" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="23" height="45"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="467-zw-2gB">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="20" name="FontAwesome"/>
@@ -619,7 +622,7 @@ DQ
                                                 <accessibility description="Skip Backward"/>
                                             </button>
                                             <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-HK-Xuc">
-                                                <rect key="frame" x="53" y="10" width="22" height="25"/>
+                                                <rect key="frame" x="53" y="0.0" width="22" height="45"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aOI-r5-wlN">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="20" name="FontAwesome"/>
@@ -643,8 +646,11 @@ IA
                                             </button>
                                         </middleViews>
                                         <endViews>
+                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PW-Qo-3Do">
+                                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="45"/>
+                                            </customView>
                                             <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIR-is-jxe">
-                                                <rect key="frame" x="0.0" y="10" width="214.5" height="25"/>
+                                                <rect key="frame" x="190.5" y="10" width="24" height="25"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="right" imageScaling="proportionallyUpOrDown" inset="2" id="Dc6-9U-Snf">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="20" name="FontAwesome"/>
@@ -664,8 +670,12 @@ DQ
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
