@@ -584,7 +584,7 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="657" height="422"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-2r-Oiq">
+                            <box verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-2r-Oiq">
                                 <rect key="frame" x="0.0" y="374" width="657" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -593,11 +593,33 @@ DQ
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="UfA-tM-WhQ">
                                 <rect key="frame" x="0.0" y="377" width="657" height="45"/>
                                 <subviews>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="t7e-XD-E1e">
+                                    <stackView orientation="horizontal" alignment="centerY" spacing="30" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7qC-32-W7B">
                                         <rect key="frame" x="20" y="0.0" width="617" height="45"/>
-                                        <subviews>
+                                        <beginningViews>
+                                            <button toolTip="Text Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-LZ-ck8">
+                                                <rect key="frame" x="0.0" y="0.0" width="214.5" height="45"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Text Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="left" imageScaling="proportionallyUpOrDown" inset="2" id="Q8E-JO-mCi">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="18" name="FontAwesome"/>
+                                                </buttonCell>
+                                                <accessibility description="Text Options"/>
+                                                <connections>
+                                                    <segue destination="dKQ-UF-5j5" kind="popover" popoverAnchorView="mg2-LZ-ck8" popoverBehavior="t" preferredEdge="maxY" id="dox-R6-8ro"/>
+                                                </connections>
+                                            </button>
+                                        </beginningViews>
+                                        <middleViews>
+                                            <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWY-ZF-M8j">
+                                                <rect key="frame" x="0.0" y="0.0" width="23" height="45"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="467-zw-2gB">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <string key="keyEquivalent"></string>
+                                                </buttonCell>
+                                                <accessibility description="Skip Backward"/>
+                                            </button>
                                             <button toolTip="Play Pause" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-HK-Xuc">
-                                                <rect key="frame" x="298" y="10" width="22" height="25"/>
+                                                <rect key="frame" x="53" y="10" width="22" height="25"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aOI-r5-wlN">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="20" name="FontAwesome"/>
@@ -607,9 +629,23 @@ IA
                                                 </buttonCell>
                                                 <accessibility description="Play Pause"/>
                                             </button>
-                                            <button toolTip="Done" translatesAutoresizingMaskIntoConstraints="NO" id="TIR-is-jxe">
-                                                <rect key="frame" x="593" y="0.0" width="24" height="45"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Dc6-9U-Snf">
+                                            <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-RH-UPd">
+                                                <rect key="frame" x="105" y="10" width="23" height="25"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nli-Tv-Tk5">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <string key="keyEquivalent"></string>
+                                                </buttonCell>
+                                                <accessibility description="Skip"/>
+                                                <connections>
+                                                    <outlet property="menu" destination="EPC-gg-xPZ" id="kAG-Gx-055"/>
+                                                </connections>
+                                            </button>
+                                        </middleViews>
+                                        <endViews>
+                                            <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIR-is-jxe">
+                                                <rect key="frame" x="0.0" y="0.0" width="214.5" height="45"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="right" imageScaling="proportionallyUpOrDown" inset="2" id="Dc6-9U-Snf">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="20" name="FontAwesome"/>
                                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -621,66 +657,29 @@ DQ
                                                     <action selector="terminate:" target="5nP-sQ-idW" id="qc4-mi-hBK"/>
                                                 </connections>
                                             </button>
-                                            <button toolTip="Skip Backward" translatesAutoresizingMaskIntoConstraints="NO" id="MWY-ZF-M8j">
-                                                <rect key="frame" x="245" y="0.0" width="23" height="45"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="467-zw-2gB">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="FontAwesome"/>
-                                                    <string key="keyEquivalent"></string>
-                                                </buttonCell>
-                                                <accessibility description="Skip Backward"/>
-                                            </button>
-                                            <button toolTip="Skip" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-RH-UPd">
-                                                <rect key="frame" x="350" y="0.0" width="23" height="45"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nli-Tv-Tk5">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="FontAwesome"/>
-                                                    <string key="keyEquivalent"></string>
-                                                </buttonCell>
-                                                <accessibility description="Skip"/>
-                                                <connections>
-                                                    <outlet property="menu" destination="EPC-gg-xPZ" id="kAG-Gx-055"/>
-                                                </connections>
-                                            </button>
-                                            <button toolTip="Text Options" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-LZ-ck8">
-                                                <rect key="frame" x="0.0" y="0.0" width="21" height="45"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Text Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Q8E-JO-mCi">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="18" name="FontAwesome"/>
-                                                </buttonCell>
-                                                <accessibility description="Text Options"/>
-                                                <connections>
-                                                    <segue destination="dKQ-UF-5j5" kind="popover" popoverAnchorView="mg2-LZ-ck8" popoverBehavior="t" preferredEdge="maxY" id="dox-R6-8ro"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="mg2-LZ-ck8" secondAttribute="bottom" id="1nR-sg-Rh7"/>
-                                            <constraint firstItem="P7f-HK-Xuc" firstAttribute="leading" secondItem="MWY-ZF-M8j" secondAttribute="trailing" constant="30" id="37V-uY-SwM"/>
-                                            <constraint firstItem="rm5-RH-UPd" firstAttribute="top" secondItem="t7e-XD-E1e" secondAttribute="top" id="8Fs-EY-AdM"/>
-                                            <constraint firstItem="mg2-LZ-ck8" firstAttribute="top" secondItem="t7e-XD-E1e" secondAttribute="top" id="GjL-R8-d5T"/>
-                                            <constraint firstItem="MWY-ZF-M8j" firstAttribute="top" secondItem="t7e-XD-E1e" secondAttribute="top" id="Koe-0w-Axf"/>
-                                            <constraint firstAttribute="bottom" secondItem="rm5-RH-UPd" secondAttribute="bottom" id="LpP-7e-yK8"/>
-                                            <constraint firstItem="TIR-is-jxe" firstAttribute="top" secondItem="t7e-XD-E1e" secondAttribute="top" id="PhZ-o4-cW9"/>
-                                            <constraint firstAttribute="bottom" secondItem="MWY-ZF-M8j" secondAttribute="bottom" id="Qlc-VI-rMT"/>
-                                            <constraint firstItem="P7f-HK-Xuc" firstAttribute="centerX" secondItem="t7e-XD-E1e" secondAttribute="centerX" id="feP-kE-uil"/>
-                                            <constraint firstAttribute="trailing" secondItem="TIR-is-jxe" secondAttribute="trailing" id="gev-vI-1xn"/>
-                                            <constraint firstItem="P7f-HK-Xuc" firstAttribute="centerY" secondItem="t7e-XD-E1e" secondAttribute="centerY" id="hCe-NR-DBo"/>
-                                            <constraint firstAttribute="bottom" secondItem="TIR-is-jxe" secondAttribute="bottom" id="hGb-gm-wkN"/>
-                                            <constraint firstItem="rm5-RH-UPd" firstAttribute="leading" secondItem="P7f-HK-Xuc" secondAttribute="trailing" constant="30" id="o4G-Ak-iqB"/>
-                                            <constraint firstItem="mg2-LZ-ck8" firstAttribute="leading" secondItem="t7e-XD-E1e" secondAttribute="leading" id="qp4-5n-37a"/>
-                                        </constraints>
-                                    </customView>
+                                        </endViews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="t7e-XD-E1e" firstAttribute="leading" secondItem="UfA-tM-WhQ" secondAttribute="leading" constant="20" id="6P9-Kh-KUx"/>
-                                    <constraint firstItem="t7e-XD-E1e" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="top" id="7vk-bN-z0K"/>
-                                    <constraint firstItem="t7e-XD-E1e" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="top" id="F0a-VC-5wO"/>
-                                    <constraint firstAttribute="bottom" secondItem="t7e-XD-E1e" secondAttribute="bottom" id="Uf1-4q-ka4"/>
-                                    <constraint firstAttribute="bottom" secondItem="t7e-XD-E1e" secondAttribute="bottom" id="iod-MC-ehg"/>
-                                    <constraint firstAttribute="trailing" secondItem="t7e-XD-E1e" secondAttribute="trailing" constant="20" id="nEA-2E-94d"/>
-                                    <constraint firstItem="t7e-XD-E1e" firstAttribute="centerX" secondItem="UfA-tM-WhQ" secondAttribute="centerX" id="o5R-Z1-rPP"/>
-                                    <constraint firstAttribute="height" constant="45" id="oD2-Tg-BrF"/>
+                                    <constraint firstAttribute="height" constant="45" id="5gk-ZP-VgE"/>
+                                    <constraint firstAttribute="trailing" secondItem="7qC-32-W7B" secondAttribute="trailing" constant="20" id="Gcc-KN-1VJ"/>
+                                    <constraint firstItem="7qC-32-W7B" firstAttribute="leading" secondItem="UfA-tM-WhQ" secondAttribute="leading" constant="20" id="IPz-h9-tpd"/>
+                                    <constraint firstAttribute="bottom" secondItem="7qC-32-W7B" secondAttribute="bottom" id="aaf-gg-gMI"/>
+                                    <constraint firstItem="7qC-32-W7B" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="top" id="et4-nZ-t80"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -738,22 +737,18 @@ DQ
                             </progressIndicator>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="bottom" id="2K0-bZ-kf5"/>
-                            <constraint firstItem="UfA-tM-WhQ" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="4cW-YU-oQf"/>
-                            <constraint firstAttribute="trailing" secondItem="aqC-2r-Oiq" secondAttribute="trailing" id="4dh-iT-giA"/>
-                            <constraint firstAttribute="trailing" secondItem="yck-xg-jp5" secondAttribute="trailing" id="8Ng-Gy-7uB"/>
-                            <constraint firstAttribute="trailing" secondItem="aqC-2r-Oiq" secondAttribute="trailing" id="BeX-Pe-WJ1"/>
-                            <constraint firstAttribute="bottom" secondItem="Hei-uU-Nx7" secondAttribute="bottom" constant="20" id="Dij-Wg-trq"/>
-                            <constraint firstItem="yck-xg-jp5" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" constant="35" id="Etu-PF-wSW"/>
-                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="centerX" secondItem="G6G-Ql-wEA" secondAttribute="centerX" id="LxK-Hq-5nq"/>
-                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="Lyy-2P-6F8"/>
-                            <constraint firstItem="UfA-tM-WhQ" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" id="Wp2-ih-Bnq"/>
-                            <constraint firstAttribute="trailing" secondItem="UfA-tM-WhQ" secondAttribute="trailing" id="Yz0-hR-Cil"/>
-                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="bottom" id="ahq-VR-VU2"/>
-                            <constraint firstItem="yck-xg-jp5" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="gST-BU-faf"/>
-                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="gvt-eU-XGb"/>
-                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="width" secondItem="t7e-XD-E1e" secondAttribute="width" id="h9l-rc-BBX"/>
-                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="aqC-2r-Oiq" secondAttribute="bottom" constant="11" id="jM2-J5-h5P"/>
+                            <constraint firstItem="UfA-tM-WhQ" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" id="13n-UR-CkS"/>
+                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" constant="20" id="5ly-0H-C1J"/>
+                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="yck-xg-jp5" secondAttribute="bottom" constant="4" id="AGC-xL-Csd"/>
+                            <constraint firstItem="yck-xg-jp5" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" constant="35" id="Ce8-WS-hLo"/>
+                            <constraint firstItem="UfA-tM-WhQ" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="GIX-0o-HRe"/>
+                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="Jpm-tA-a3E"/>
+                            <constraint firstAttribute="trailing" secondItem="yck-xg-jp5" secondAttribute="trailing" id="Mcc-li-2kw"/>
+                            <constraint firstAttribute="trailing" secondItem="Hei-uU-Nx7" secondAttribute="trailing" constant="20" id="O4R-Df-0fX"/>
+                            <constraint firstItem="yck-xg-jp5" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="aRF-De-XPZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Hei-uU-Nx7" secondAttribute="bottom" constant="20" id="rDG-SG-3eb"/>
+                            <constraint firstAttribute="trailing" secondItem="aqC-2r-Oiq" secondAttribute="trailing" id="s0u-4g-spb"/>
+                            <constraint firstAttribute="trailing" secondItem="UfA-tM-WhQ" secondAttribute="trailing" id="uZd-LM-jjr"/>
                         </constraints>
                     </view>
                     <connections>
