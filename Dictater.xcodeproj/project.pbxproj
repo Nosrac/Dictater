@@ -30,6 +30,9 @@
 		27A31CA11B9E0F0B003293C7 /* TeleprompterPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */; settings = {ASSET_TAGS = (); }; };
 		27BD0DBD1BA385D700D13D45 /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD0DBC1BA385D700D13D45 /* HoverButton.swift */; settings = {ASSET_TAGS = (); }; };
 		27BD0DBF1BA3897400D13D45 /* SpeechButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */; settings = {ASSET_TAGS = (); }; };
+		27D3DA5F1BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
+		27D3DA601BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
+		27D3DA611BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
 		27E170271BA3AF41003FFBCA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 27E170261BA3AF41003FFBCA /* Credits.rtf */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F71B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F81B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
@@ -89,6 +92,7 @@
 		27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleprompterPreferencesController.swift; sourceTree = "<group>"; };
 		27BD0DBC1BA385D700D13D45 /* HoverButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
 		27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechButtonManager.swift; sourceTree = "<group>"; };
+		27D3DA5E1BA63552001AC20B /* logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_small.png; sourceTree = "<group>"; };
 		27E170261BA3AF41003FFBCA /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		27EDB7FA1B9A148500BE21BF /* instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instructions.png; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		274039F31B99195C00D80E23 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				27D3DA5E1BA63552001AC20B /* logo_small.png */,
 				2797D2401B9CCA7C0019D12D /* usage.png */,
 				27EDB7FA1B9A148500BE21BF /* instructions.png */,
 				27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */,
@@ -332,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D3DA5F1BA63552001AC20B /* logo_small.png in Resources */,
 				27EDB7FB1B9A148500BE21BF /* instructions.png in Resources */,
 				27E170271BA3AF41003FFBCA /* Credits.rtf in Resources */,
 				272B76571B979D5900712AA5 /* Assets.xcassets in Resources */,
@@ -347,6 +353,7 @@
 			files = (
 				27EDB7F81B9932CD00BE21BF /* FontAwesome.otf in Resources */,
 				27EDB7FC1B9A148500BE21BF /* instructions.png in Resources */,
+				27D3DA601BA63552001AC20B /* logo_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +363,7 @@
 			files = (
 				27EDB7F91B9932CD00BE21BF /* FontAwesome.otf in Resources */,
 				27EDB7FD1B9A148500BE21BF /* instructions.png in Resources */,
+				27D3DA611BA63552001AC20B /* logo_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

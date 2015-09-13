@@ -406,7 +406,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="167.5"/>
+            <point key="canvasLocation" x="-202" y="133.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="523-cc-5RW">
@@ -584,7 +584,7 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="657" height="422"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-2r-Oiq">
+                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-2r-Oiq">
                                 <rect key="frame" x="0.0" y="374" width="657" height="5"/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -749,15 +749,16 @@ DQ
                         <constraints>
                             <constraint firstItem="UfA-tM-WhQ" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" id="13n-UR-CkS"/>
                             <constraint firstItem="Hei-uU-Nx7" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" constant="20" id="5ly-0H-C1J"/>
+                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="trailing" secondItem="yck-xg-jp5" secondAttribute="trailing" id="6lu-Ut-zTR"/>
                             <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="yck-xg-jp5" secondAttribute="bottom" constant="4" id="AGC-xL-Csd"/>
                             <constraint firstItem="yck-xg-jp5" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" constant="35" id="Ce8-WS-hLo"/>
                             <constraint firstItem="UfA-tM-WhQ" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="GIX-0o-HRe"/>
-                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="Jpm-tA-a3E"/>
                             <constraint firstAttribute="trailing" secondItem="yck-xg-jp5" secondAttribute="trailing" id="Mcc-li-2kw"/>
                             <constraint firstAttribute="trailing" secondItem="Hei-uU-Nx7" secondAttribute="trailing" constant="20" id="O4R-Df-0fX"/>
+                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="aqC-2r-Oiq" secondAttribute="bottom" constant="11" id="QYZ-TN-d2s"/>
+                            <constraint firstItem="aqC-2r-Oiq" firstAttribute="leading" secondItem="yck-xg-jp5" secondAttribute="leading" id="Y67-7w-kzD"/>
                             <constraint firstItem="yck-xg-jp5" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="aRF-De-XPZ"/>
                             <constraint firstAttribute="bottom" secondItem="Hei-uU-Nx7" secondAttribute="bottom" constant="20" id="rDG-SG-3eb"/>
-                            <constraint firstAttribute="trailing" secondItem="aqC-2r-Oiq" secondAttribute="trailing" id="s0u-4g-spb"/>
                             <constraint firstAttribute="trailing" secondItem="UfA-tM-WhQ" secondAttribute="trailing" id="uZd-LM-jjr"/>
                         </constraints>
                     </view>
@@ -779,27 +780,25 @@ DQ
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Dictater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="216" height="52"/>
+                        <rect key="frame" x="0.0" y="0.0" width="243" height="52"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <progressIndicator maxValue="100" doubleValue="35" displayedWhenStopped="NO" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="L43-z1-53l">
-                                <rect key="frame" x="0.0" y="-11" width="216" height="20"/>
-                            </progressIndicator>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="m40-Xv-gII">
-                                <rect key="frame" x="0.0" y="0.0" width="216" height="52"/>
+                                <rect key="frame" x="0.0" y="0.0" width="243" height="52"/>
                                 <subviews>
-                                    <stackView orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-na-lRy">
-                                        <rect key="frame" x="20" y="0.0" width="176" height="52"/>
+                                    <stackView orientation="horizontal" alignment="centerY" spacing="15" hasEqualSpacing="YES" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-na-lRy">
+                                        <rect key="frame" x="20" y="0.0" width="203" height="52"/>
                                         <beginningViews>
-                                            <button toolTip="Read Along" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="14.5" width="26" height="23"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Read Along" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
+                                            <button toolTip="Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up1-ZJ-vfh" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="52"/>
+                                                <buttonCell key="cell" type="square" title="" alternateTitle="Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GSC-39-l5a">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="18" name="FontAwesome"/>
                                                 </buttonCell>
-                                                <accessibility description="Read Along"/>
+                                                <accessibility description="Options"/>
                                                 <connections>
-                                                    <segue destination="k29-t7-AzP" kind="show" id="DMB-NT-eUV"/>
+                                                    <action selector="openMenu:" target="XfG-lQ-9wD" id="tA5-MC-T4A"/>
+                                                    <outlet property="menu" destination="6M7-Z9-ggD" id="pik-YK-Pst"/>
                                                 </connections>
                                             </button>
                                         </beginningViews>
@@ -838,20 +837,46 @@ IA
                                             </button>
                                         </middleViews>
                                         <endViews>
-                                            <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aau-N4-wSr" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="17.5" width="26" height="17"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9Yu-Yw-uCd">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="13" name="FontAwesome"/>
-                                                    <string key="keyEquivalent" base64-UTF8="YES">
+                                            <stackView orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXE-1b-cFx">
+                                                <rect key="frame" x="0.0" y="14.5" width="43" height="23"/>
+                                                <beginningViews>
+                                                    <button toolTip="Read Along" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="23"/>
+                                                        <buttonCell key="cell" type="square" title="" alternateTitle="Read Along" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" size="18" name="FontAwesome"/>
+                                                        </buttonCell>
+                                                        <accessibility description="Read Along"/>
+                                                        <connections>
+                                                            <segue destination="k29-t7-AzP" kind="show" id="DMB-NT-eUV"/>
+                                                        </connections>
+                                                    </button>
+                                                </beginningViews>
+                                                <endViews>
+                                                    <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aau-N4-wSr" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="3" width="17" height="17"/>
+                                                        <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9Yu-Yw-uCd">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" size="13" name="FontAwesome"/>
+                                                            <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
-                                                </buttonCell>
-                                                <accessibility description="Done"/>
-                                                <connections>
-                                                    <action selector="terminate:" target="rPt-NT-nkU" id="ard-SN-cyL"/>
-                                                </connections>
-                                            </button>
+                                                        </buttonCell>
+                                                        <accessibility description="Done"/>
+                                                        <connections>
+                                                            <action selector="terminate:" target="rPt-NT-nkU" id="ard-SN-cyL"/>
+                                                        </connections>
+                                                    </button>
+                                                </endViews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
                                         </endViews>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
@@ -868,18 +893,9 @@ DQ
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <button toolTip="Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up1-ZJ-vfh" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="30" width="21" height="22"/>
-                                        <buttonCell key="cell" type="square" title="" alternateTitle="Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GSC-39-l5a">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="9" name="FontAwesome"/>
-                                        </buttonCell>
-                                        <accessibility description="Options"/>
-                                        <connections>
-                                            <action selector="openMenu:" target="XfG-lQ-9wD" id="tA5-MC-T4A"/>
-                                            <outlet property="menu" destination="6M7-Z9-ggD" id="pik-YK-Pst"/>
-                                        </connections>
-                                    </button>
+                                    <progressIndicator fixedFrame="YES" maxValue="100" doubleValue="35" displayedWhenStopped="NO" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="L43-z1-53l">
+                                        <rect key="frame" x="0.0" y="-10" width="243" height="20"/>
+                                    </progressIndicator>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -890,11 +906,8 @@ DQ
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="m40-Xv-gII" secondAttribute="trailing" id="8YY-h1-7UA"/>
-                            <constraint firstItem="L43-z1-53l" firstAttribute="leading" secondItem="m40-Xv-gII" secondAttribute="leading" id="EMF-4Q-iQr"/>
-                            <constraint firstItem="L43-z1-53l" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="44" id="HN4-9V-gZt"/>
                             <constraint firstItem="m40-Xv-gII" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="IGV-Kd-00U"/>
                             <constraint firstItem="m40-Xv-gII" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="JAO-OC-rsd"/>
-                            <constraint firstItem="L43-z1-53l" firstAttribute="trailing" secondItem="m40-Xv-gII" secondAttribute="trailing" id="umd-Gd-sk3"/>
                             <constraint firstAttribute="bottom" secondItem="m40-Xv-gII" secondAttribute="bottom" id="wA0-9y-rF4"/>
                         </constraints>
                         <connections>
@@ -971,7 +984,7 @@ DQ
                 </menu>
                 <userDefaultsController representsSharedInstance="YES" id="PNG-Vo-LzM"/>
             </objects>
-            <point key="canvasLocation" x="75" y="358"/>
+            <point key="canvasLocation" x="88.5" y="358"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="TRJ-wW-9b0">
