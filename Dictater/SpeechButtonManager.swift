@@ -18,10 +18,13 @@ class SpeechButtonManager : NSObject
 	weak var openTeleprompterButton : NSButton?
 	
 	let speech : Speech
+	let controls : Speech.Controls
 	
 	init(speech: Speech)
 	{
 		self.speech = speech
+		self.controls = Speech.Controls(speech: speech)
+		
 		super.init()
 	}
 	
@@ -40,7 +43,6 @@ class SpeechButtonManager : NSObject
 		
 		self.skipBackwardsButton?.target = self
 		self.skipBackwardsButton?.action = "skipBackwards"
-		self.skipBackwardsButton?.menu = self.backwardsButtonMenu()
 	}
 	
 	func deregisterEvents()
@@ -50,12 +52,14 @@ class SpeechButtonManager : NSObject
 	
 	func update()
 	{
-		self.playPauseButton?.title = Speech.Controls.sharedControls.playPauseIcon
+		self.playPauseButton?.title = self.controls.playPauseIcon
 		
-		self.playPauseButton?.enabled = Speech.Controls.sharedControls.canPlayPause
-		self.skipBackwardsButton?.enabled = Speech.Controls.sharedControls.canSkipBackwards
-		self.skipForwardButton?.enabled = Speech.Controls.sharedControls.canSkipForward
-		self.openTeleprompterButton?.enabled = Speech.Controls.sharedControls.canOpenTeleprompter
+		self.playPauseButton?.enabled = self.controls.canPlayPause
+		self.skipBackwardsButton?.enabled = self.controls.canSkipBackwards
+		self.skipForwardButton?.enabled = self.controls.canSkipForward
+		self.openTeleprompterButton?.enabled = self.controls.canOpenTeleprompter
+		
+		self.skipBackwardsButton?.menu = self.backwardsButtonMenu()
 		
 		if let view = self.progressIndicator
 		{
@@ -77,7 +81,10 @@ class SpeechButtonManager : NSObject
 	{
 		let menu = NSMenu();
 		let restartButton = NSMenuItem(title: "Restart", action: "restart", keyEquivalent: "")
-		restartButton.target = self
+		if self.controls.canSkipBackwards
+		{	
+			restartButton.target = self
+		}
 		
 		menu.addItem(restartButton)
 		
