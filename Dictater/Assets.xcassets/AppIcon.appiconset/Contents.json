@@ -38,19 +38,19 @@
     {
       "size" : "256x256",
       "idiom" : "mac",
-      "filename" : "lips512-1.png",
+      "filename" : "lips_only512.png",
       "scale" : "2x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "lips512.png",
+      "filename" : "lips_only512-1.png",
       "scale" : "1x"
     },
     {
       "size" : "512x512",
       "idiom" : "mac",
-      "filename" : "lips.png",
+      "filename" : "lips_only.png",
       "scale" : "2x"
     }
   ],
