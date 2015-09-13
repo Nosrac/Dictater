@@ -932,6 +932,31 @@ DQ
                                 <action selector="orderFrontStandardAboutPanel:" target="rPt-NT-nkU" id="6In-di-YQ2"/>
                             </connections>
                         </menuItem>
+                        <menuItem title="Quit Dictater" keyEquivalent="q" id="MxT-GB-wjU">
+                            <connections>
+                                <action selector="terminate:" target="rPt-NT-nkU" id="5eb-Le-E5e"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="sXc-f5-Gkj"/>
+                        <menuItem title="Enable Dictater" id="bGd-M2-S5h">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <segue destination="aK3-7w-LpH" kind="show" id="vef-bf-I9r"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="How to Use" id="g08-sz-Rrz">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <segue destination="4Ic-dl-039" kind="show" id="OGh-cy-NHB"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="dPr-Yr-k9w"/>
+                        <menuItem title="Speech Settings" id="Pnr-a9-qxW">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="openSpeechPreferences:" target="XfG-lQ-9wD" id="Uef-ab-Qvu"/>
+                            </connections>
+                        </menuItem>
                         <menuItem title="Skip Forward by…" id="eE1-ip-Xs6">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <menu key="submenu" title="Skip Forward by…" id="EPC-gg-xPZ">
@@ -954,31 +979,6 @@ DQ
                                     </menuItem>
                                 </items>
                             </menu>
-                        </menuItem>
-                        <menuItem title="Speech Settings" id="Pnr-a9-qxW">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="openSpeechPreferences:" target="XfG-lQ-9wD" id="Uef-ab-Qvu"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="FOG-2U-Dth"/>
-                        <menuItem title="Enable Dictater" id="bGd-M2-S5h">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <segue destination="aK3-7w-LpH" kind="show" id="vef-bf-I9r"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="How to Use" id="g08-sz-Rrz">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <segue destination="4Ic-dl-039" kind="show" id="OGh-cy-NHB"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="dPr-Yr-k9w"/>
-                        <menuItem title="Quit Dictater" keyEquivalent="q" id="MxT-GB-wjU">
-                            <connections>
-                                <action selector="terminate:" target="rPt-NT-nkU" id="5eb-Le-E5e"/>
-                            </connections>
                         </menuItem>
                     </items>
                 </menu>
