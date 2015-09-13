@@ -932,11 +932,6 @@ DQ
                                 <action selector="orderFrontStandardAboutPanel:" target="rPt-NT-nkU" id="6In-di-YQ2"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Quit Dictater" keyEquivalent="q" id="MxT-GB-wjU">
-                            <connections>
-                                <action selector="terminate:" target="rPt-NT-nkU" id="5eb-Le-E5e"/>
-                            </connections>
-                        </menuItem>
                         <menuItem isSeparatorItem="YES" id="sXc-f5-Gkj"/>
                         <menuItem title="Enable Dictater" id="bGd-M2-S5h">
                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -979,6 +974,12 @@ DQ
                                     </menuItem>
                                 </items>
                             </menu>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="S5a-03-xev"/>
+                        <menuItem title="Quit Dictater" keyEquivalent="q" id="MxT-GB-wjU">
+                            <connections>
+                                <action selector="terminate:" target="rPt-NT-nkU" id="5eb-Le-E5e"/>
+                            </connections>
                         </menuItem>
                     </items>
                 </menu>
