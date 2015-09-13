@@ -40,6 +40,7 @@ class SpeechButtonManager : NSObject
 		
 		self.skipBackwardsButton?.target = self
 		self.skipBackwardsButton?.action = "skipBackwards"
+		self.skipBackwardsButton?.menu = self.backwardsButtonMenu()
 	}
 	
 	func deregisterEvents()
@@ -72,6 +73,21 @@ class SpeechButtonManager : NSObject
 		}
 	}
 	
+	func backwardsButtonMenu() -> NSMenu
+	{
+		let menu = NSMenu();
+		let restartButton = NSMenuItem(title: "Restart", action: "restart", keyEquivalent: "")
+		restartButton.target = self
+		
+		menu.addItem(restartButton)
+		
+		return menu
+	}
+	
+	func restart()
+	{
+		self.speech.speak( self.speech.text )
+	}
 	
 	func playPause()
 	{
