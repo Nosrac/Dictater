@@ -339,6 +339,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
                                     <items>
+                                        <menuItem title="Follow Along" keyEquivalent="1" id="hPZ-hb-UeI">
+                                            <connections>
+                                                <segue destination="k29-t7-AzP" kind="show" id="rCP-7i-2gt"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="qvt-9u-6rD"/>
                                         <menuItem title="Enable Dictater" id="6rM-G8-09c">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -844,13 +850,15 @@ IA
                                             <stackView orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXE-1b-cFx">
                                                 <rect key="frame" x="0.0" y="14.5" width="43" height="23"/>
                                                 <beginningViews>
-                                                    <button toolTip="Read Along" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
+                                                    <button toolTip="Read Along (⌘1)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4" customClass="HoverButton" customModule="Dictater" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="23"/>
-                                                        <buttonCell key="cell" type="square" title="" alternateTitle="Read Along" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
+                                                        <buttonCell key="cell" type="square" title="" alternateTitle="Read Along (⌘1)" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" size="18" name="FontAwesome"/>
+                                                            <string key="keyEquivalent">1</string>
+                                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                                         </buttonCell>
-                                                        <accessibility description="Read Along"/>
+                                                        <accessibility description="Read Along (⌘1)"/>
                                                         <connections>
                                                             <segue destination="k29-t7-AzP" kind="show" id="DMB-NT-eUV"/>
                                                         </connections>
@@ -1184,7 +1192,8 @@ Steps
         <image name="usage" width="882" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vef-bf-I9r"/>
+        <segue reference="DMB-NT-eUV"/>
         <segue reference="OGh-cy-NHB"/>
+        <segue reference="vef-bf-I9r"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -68,28 +68,36 @@ class Teleprompter : NSViewController
 	{
 		if let textView = self.textView
 		{
-			
 			if textView.string != self.speech.text
 			{
 				textView.string = self.speech.text
 			}
 			
-			if let textStorage = textView.textStorage,
-			let newRange = self.speech.range
+			self.highlightText()
+			
+			if let range = self.speech.range
 			{
-				textStorage.beginEditing()
-				
-				let fullRange = NSRange.init(location: 0, length: self.speech.text.characters.count)
-				for (key, _) in self.highlightAttributes
-				{
-					textStorage.removeAttribute(key, range: fullRange)
-				}
-				
-				textStorage.addAttributes(self.highlightAttributes, range: newRange)
-				textStorage.endEditing()
-				
-				textView.scrollRangeToVisible(newRange)
+				textView.scrollRangeToVisible(range, smart: true)
 			}
+		}
+	}
+	
+	func highlightText()
+	{
+		if let textView = self.textView,
+		let textStorage = textView.textStorage,
+		newRange = self.speech.range
+		{
+			textStorage.beginEditing()
+			
+			let fullRange = NSRange.init(location: 0, length: self.speech.text.characters.count)
+			for (key, _) in self.highlightAttributes
+			{
+				textStorage.removeAttribute(key, range: fullRange)
+			}
+			
+			textStorage.addAttributes(self.highlightAttributes, range: newRange)
+			textStorage.endEditing()
 		}
 	}
 	

@@ -24,6 +24,7 @@
 		274039EC1B98FECA00D80E23 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EB1B98FECA00D80E23 /* Application.swift */; settings = {ASSET_TAGS = (); }; };
 		274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039ED1B99023F00D80E23 /* DictaterService.swift */; settings = {ASSET_TAGS = (); }; };
 		274039F01B9914A200D80E23 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
+		2776B1141BA76AA70009D641 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		2797D23F1B9A61BC0019D12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2797D23E1B9A61BC0019D12D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		2797D2411B9CCA7C0019D12D /* usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2797D2401B9CCA7C0019D12D /* usage.png */; settings = {ASSET_TAGS = (); }; };
 		2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797D2421B9CD90A0019D12D /* Teleprompter.swift */; settings = {ASSET_TAGS = (); }; };
@@ -86,6 +87,7 @@
 		274039EB1B98FECA00D80E23 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		274039ED1B99023F00D80E23 /* DictaterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictaterService.swift; sourceTree = "<group>"; };
 		274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+Animate.swift"; sourceTree = "<group>"; };
+		2776B1131BA76AA70009D641 /* NSTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextView.swift; sourceTree = "<group>"; };
 		2797D23E1B9A61BC0019D12D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2797D2401B9CCA7C0019D12D /* usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usage.png; sourceTree = "<group>"; };
 		2797D2421B9CD90A0019D12D /* Teleprompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teleprompter.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */,
 				272B76811B979D7100712AA5 /* NSView+backgroundColor.swift */,
+				2776B1131BA76AA70009D641 /* NSTextView.swift */,
 				27BD0DBC1BA385D700D13D45 /* HoverButton.swift */,
 			);
 			name = Extensions;
@@ -386,6 +389,7 @@
 				27BD0DBF1BA3897400D13D45 /* SpeechButtonManager.swift in Sources */,
 				27EDB7FF1B9A17BA00BE21BF /* EnableServiceController.swift in Sources */,
 				272B76531B979D5900712AA5 /* AppDelegate.swift in Sources */,
+				2776B1141BA76AA70009D641 /* NSTextView.swift in Sources */,
 				274039F01B9914A200D80E23 /* NSProgressIndicator+Animate.swift in Sources */,
 				27EDB8031B9A193900BE21BF /* Vocalization.swift in Sources */,
 				27A31CA11B9E0F0B003293C7 /* TeleprompterPreferencesController.swift in Sources */,
