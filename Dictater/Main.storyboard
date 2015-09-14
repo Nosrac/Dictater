@@ -459,16 +459,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDM-rk-UUP">
-                                <rect key="frame" x="96" y="133" width="169" height="32"/>
-                                <buttonCell key="cell" type="push" title="System Font Regular" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cTC-dy-gsp">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="openFontPanel:" target="dKQ-UF-5j5" id="f9D-bA-0ff"/>
-                                </connections>
-                            </button>
                             <button toolTip="Smaller Text Size" verticalHuggingPriority="750" fixedFrame="YES" tag="-1" translatesAutoresizingMaskIntoConstraints="NO" id="goY-rs-fDO">
                                 <rect key="frame" x="96" y="107" width="52" height="32"/>
                                 <buttonCell key="cell" type="push" title="-" alternateTitle="Smaller Text Size" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g9T-dm-VrR">
@@ -556,6 +546,20 @@ DQ
                                     <action selector="dismissController:" target="dKQ-UF-5j5" id="8Ay-mm-JNZ"/>
                                 </connections>
                             </button>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GT1-P2-G3p">
+                                <rect key="frame" x="100" y="138" width="162" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="System Font Regular" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="xio-dm-Ukh" id="RQh-4P-4ZX">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="12" name=".HelveticaNeueDeskInterface-Regular"/>
+                                    <menu key="menu" id="Kta-7u-CmM">
+                                        <items>
+                                            <menuItem title="System Font Regular" state="on" id="xio-dm-Ukh"/>
+                                            <menuItem title="Item 2" id="afU-wI-v7d"/>
+                                            <menuItem title="Item 3" id="hfi-6D-9pR"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -565,7 +569,7 @@ DQ
                     </view>
                     <connections>
                         <outlet property="LineHeightMultipleText" destination="0vE-Kj-Sjr" id="ZIy-x0-efa"/>
-                        <outlet property="fontButton" destination="EDM-rk-UUP" id="kCZ-ep-ZRd"/>
+                        <outlet property="fontButton" destination="GT1-P2-G3p" id="vUR-5v-BaM"/>
                         <outlet property="fontSizeDecrementButton" destination="goY-rs-fDO" id="os9-8y-SRg"/>
                         <outlet property="fontSizeText" destination="Asn-Jf-kTA" id="HwY-wq-aQD"/>
                         <outlet property="lineHeightMultipleDecrementButton" destination="Hie-wI-RjX" id="SC9-7z-2R5"/>

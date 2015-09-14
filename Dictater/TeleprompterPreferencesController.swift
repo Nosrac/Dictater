@@ -11,7 +11,7 @@ import Cocoa
 
 class TeleprompterPreferencesController : NSViewController
 {
-	@IBOutlet var fontButton : NSButton?
+	@IBOutlet var fontButton : NSPopUpButton?
 	@IBOutlet var fontSizeText : NSTextField?
 	@IBOutlet var LineHeightMultipleText : NSTextField?
 	
@@ -42,25 +42,35 @@ class TeleprompterPreferencesController : NSViewController
 	
 	override func viewDidLoad() {
 		self.update()
+		
+		self.fontButton?.target = self
+		self.fontButton?.action = "saveFonts"
+		
+		fontButton?.removeAllItems()
+		fontButton?.addItemsWithTitles(NSFontManager.sharedFontManager().availableFontFamilies)
+	}
+	
+	var fontMenu : NSMenu
+	{
+		let menu = NSMenu()
+		
+		for font in NSFontManager.sharedFontManager().availableFontFamilies
+		{
+			let item = NSMenuItem(title: font, action: "saveFonts", keyEquivalent: "")
+			item.attributedTitle = NSAttributedString(string: font, attributes: [
+				NSFontAttributeName : font
+				])
+			item.target = self
+			
+			menu.addItem(item)
+		}
+		
+		return menu
 	}
 	
 	func update()
 	{
-		let font = Dictater.font
-		
-		let name : String
-		
-		if font.fontName == NSFont.messageFontOfSize(1).fontName
-		{
-			name = "System Font"
-		} else if let familyName = font.familyName
-		{
-			name = familyName
-		} else {
-			name = "[Unnamed]"
-		}
-		
-		fontButton?.title = name
+		fontButton?.selectItemWithTitle(Dictater.fontName)
 		
 		let fontSize = Dictater.fontSize
 		if fontSize > self.minFontSize
@@ -83,34 +93,11 @@ class TeleprompterPreferencesController : NSViewController
 		LineHeightMultipleText?.stringValue = "\(Dictater.lineHeightMultiple)x"
 		
 	}
-	
-	var fontPanel : NSFontPanel?
-	
-	@IBAction func openFontPanel(sender: AnyObject?)
-	{
-		let font = Dictater.font
-		NSFontManager.sharedFontManager().target = self
-		NSFontManager.sharedFontManager().setSelectedFont(font, isMultiple: false)
-		
-		self.fontPanel = NSFontPanel.sharedFontPanel()
-		let controller = NSWindowController(window: fontPanel)
-		controller.showWindow(self)
-	}
-	
-	@objc override func changeFont(sender: AnyObject?) {
-	}
-	
 	func saveFonts() {
-		if let font = NSFontManager.sharedFontManager().selectedFont
+		if let fontButton = self.fontButton,
+		let item = fontButton.selectedItem
 		{
-			Dictater.fontName = font.fontName
-			Dictater.fontSize = Int(font.pointSize)
-			
-			self.update()
+			Dictater.fontName = item.title
 		}
-	}
-	
-	func changeAttributes(sender: AnyObject?) {
-		self.performSelector("saveFonts", withObject: nil, afterDelay: 0.1)
 	}
 }
