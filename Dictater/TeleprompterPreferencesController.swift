@@ -48,30 +48,11 @@ class TeleprompterPreferencesController : NSViewController
 		
 		fontButton?.removeAllItems()
 		fontButton?.addItemsWithTitles(NSFontManager.sharedFontManager().availableFontFamilies)
-	}
-	
-	var fontMenu : NSMenu
-	{
-		let menu = NSMenu()
-		
-		for font in NSFontManager.sharedFontManager().availableFontFamilies
-		{
-			let item = NSMenuItem(title: font, action: "saveFonts", keyEquivalent: "")
-			item.attributedTitle = NSAttributedString(string: font, attributes: [
-				NSFontAttributeName : font
-				])
-			item.target = self
-			
-			menu.addItem(item)
-		}
-		
-		return menu
+		fontButton?.selectItemWithTitle(Dictater.fontName)
 	}
 	
 	func update()
-	{
-		fontButton?.selectItemWithTitle(Dictater.fontName)
-		
+	{	
 		let fontSize = Dictater.fontSize
 		if fontSize > self.minFontSize
 		{
