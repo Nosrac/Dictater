@@ -19,6 +19,7 @@ class Dictater
 		case FontSize = "fontSize"
 		case LineHeightMultiple = "lineHeightMultiple"
 		case ProgressBarEnabled = "progressBarEnabled"
+		case AutoScrollEnabled = "autoScrollEnabled"
 	}
 	
 	static let TextAppearanceChangedNotification = "Dictater.FontChanged"
@@ -33,7 +34,8 @@ class Dictater
 				PreferenceKeys.FontName.rawValue : font.fontName,
 				PreferenceKeys.FontSize.rawValue : Double(font.pointSize),
 				PreferenceKeys.LineHeightMultiple.rawValue : 1.2,
-				PreferenceKeys.ProgressBarEnabled.rawValue : true
+				PreferenceKeys.ProgressBarEnabled.rawValue : true,
+				PreferenceKeys.AutoScrollEnabled.rawValue : true,
 			])
 	}
 	
@@ -63,7 +65,18 @@ class Dictater
 		set
 		{
 			NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.HasBeenUsed.rawValue)
-			
+		}
+	}
+	
+	static var autoScrollEnabled : Bool
+	{
+		get
+		{
+			return NSUserDefaults.standardUserDefaults().boolForKey(PreferenceKeys.AutoScrollEnabled.rawValue)
+		}
+		set
+		{
+			NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.AutoScrollEnabled.rawValue)
 		}
 	}
 	

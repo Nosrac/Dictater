@@ -76,6 +76,7 @@ class Teleprompter : NSViewController
 			self.highlightText()
 			
 			if let range = self.speech.range
+			where Dictater.autoScrollEnabled
 			{
 				textView.scrollRangeToVisible(range, smart: true)
 			}
