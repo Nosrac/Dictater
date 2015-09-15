@@ -11,7 +11,7 @@ import Cocoa
 
 class Teleprompter : NSViewController
 {
-	@IBOutlet var textView : NSTextView?
+	@IBOutlet var textView : TeleprompterTextView?
 	@IBOutlet var playPauseButton : NSButton?
 	@IBOutlet var skipBackwardsButton : NSButton?
 	@IBOutlet var skipForwardButton : NSButton?
@@ -101,9 +101,12 @@ class Teleprompter : NSViewController
 		}
 	}
 	
-	let highlightAttributes : [String:AnyObject] = [
-		NSBackgroundColorAttributeName: NSColor(red:1, green:0.832, blue:0.473, alpha:0.5),
-		NSUnderlineColorAttributeName: NSColor(red:1, green:0.832, blue:0.473, alpha:1),
-		NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleThick.rawValue
-	]
+	var highlightAttributes : [String:AnyObject] {
+		let attributes : [String:AnyObject] = [
+			NSBackgroundColorAttributeName: NSColor(red:1, green:0.832, blue:0.473, alpha:0.5),
+			NSUnderlineColorAttributeName: NSColor(red:1, green:0.832, blue:0.473, alpha:1),
+			NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleThick.rawValue
+		]
+		return attributes
+	}
 }

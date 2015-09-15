@@ -24,12 +24,12 @@
 		274039EC1B98FECA00D80E23 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EB1B98FECA00D80E23 /* Application.swift */; settings = {ASSET_TAGS = (); }; };
 		274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039ED1B99023F00D80E23 /* DictaterService.swift */; settings = {ASSET_TAGS = (); }; };
 		274039F01B9914A200D80E23 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
+		276CD7E11BA8DC01008566D2 /* TeleprompterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276CD7E01BA8DC01008566D2 /* TeleprompterTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		2776B1141BA76AA70009D641 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		2797D23F1B9A61BC0019D12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2797D23E1B9A61BC0019D12D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		2797D2411B9CCA7C0019D12D /* usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2797D2401B9CCA7C0019D12D /* usage.png */; settings = {ASSET_TAGS = (); }; };
 		2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797D2421B9CD90A0019D12D /* Teleprompter.swift */; settings = {ASSET_TAGS = (); }; };
 		27A31CA11B9E0F0B003293C7 /* TeleprompterPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */; settings = {ASSET_TAGS = (); }; };
-		27BD0DBD1BA385D700D13D45 /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD0DBC1BA385D700D13D45 /* HoverButton.swift */; settings = {ASSET_TAGS = (); }; };
 		27BD0DBF1BA3897400D13D45 /* SpeechButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */; settings = {ASSET_TAGS = (); }; };
 		27D3DA5F1BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
 		27D3DA601BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
@@ -87,12 +87,12 @@
 		274039EB1B98FECA00D80E23 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		274039ED1B99023F00D80E23 /* DictaterService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictaterService.swift; sourceTree = "<group>"; };
 		274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+Animate.swift"; sourceTree = "<group>"; };
+		276CD7E01BA8DC01008566D2 /* TeleprompterTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleprompterTextView.swift; sourceTree = "<group>"; };
 		2776B1131BA76AA70009D641 /* NSTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextView.swift; sourceTree = "<group>"; };
 		2797D23E1B9A61BC0019D12D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2797D2401B9CCA7C0019D12D /* usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usage.png; sourceTree = "<group>"; };
 		2797D2421B9CD90A0019D12D /* Teleprompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teleprompter.swift; sourceTree = "<group>"; };
 		27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleprompterPreferencesController.swift; sourceTree = "<group>"; };
-		27BD0DBC1BA385D700D13D45 /* HoverButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
 		27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechButtonManager.swift; sourceTree = "<group>"; };
 		27D3DA5E1BA63552001AC20B /* logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_small.png; sourceTree = "<group>"; };
 		27E170261BA3AF41003FFBCA /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -193,6 +193,16 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		276CD7E21BA8DC3F008566D2 /* Teleprompter */ = {
+			isa = PBXGroup;
+			children = (
+				2797D2421B9CD90A0019D12D /* Teleprompter.swift */,
+				27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */,
+				276CD7E01BA8DC01008566D2 /* TeleprompterTextView.swift */,
+			);
+			name = Teleprompter;
+			sourceTree = "<group>";
+		};
 		2797D2391B9A3DE20019D12D /* Speech */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +218,6 @@
 				274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */,
 				272B76811B979D7100712AA5 /* NSView+backgroundColor.swift */,
 				2776B1131BA76AA70009D641 /* NSTextView.swift */,
-				27BD0DBC1BA385D700D13D45 /* HoverButton.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -220,9 +229,8 @@
 				272B76541B979D5900712AA5 /* ViewController.swift */,
 				272B768A1B979DD400712AA5 /* DictaterWindow.swift */,
 				27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */,
-				2797D2421B9CD90A0019D12D /* Teleprompter.swift */,
-				27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */,
 				27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */,
+				276CD7E21BA8DC3F008566D2 /* Teleprompter */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -379,9 +387,9 @@
 			files = (
 				272B76551B979D5900712AA5 /* ViewController.swift in Sources */,
 				274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */,
+				276CD7E11BA8DC01008566D2 /* TeleprompterTextView.swift in Sources */,
 				274039EC1B98FECA00D80E23 /* Application.swift in Sources */,
 				272B76971B97AE3A00712AA5 /* Dictater.swift in Sources */,
-				27BD0DBD1BA385D700D13D45 /* HoverButton.swift in Sources */,
 				2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */,
 				27EDB8081B9A1CF400BE21BF /* Speech.swift in Sources */,
 				272B76821B979D7100712AA5 /* NSView+backgroundColor.swift in Sources */,
