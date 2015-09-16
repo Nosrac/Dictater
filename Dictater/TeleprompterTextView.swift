@@ -17,6 +17,7 @@ class TeleprompterTextView : NSTextView
 		{
 			if char == theEvent.characters
 			{
+				self.nextKeyView?.keyDown(theEvent)
 				return
 			}
 		}
