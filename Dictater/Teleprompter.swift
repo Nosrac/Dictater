@@ -76,11 +76,31 @@ class Teleprompter : NSViewController
 			self.highlightText()
 			
 			if let range = self.speech.range
-			where Dictater.autoScrollEnabled
+			where self.shouldAutoScroll()
 			{
 				textView.scrollRangeToVisible(range, smart: true)
 			}
 		}
+	}
+	
+	func shouldAutoScroll() -> Bool
+	{
+		if !Dictater.autoScrollEnabled
+		{
+			return false
+		}
+		
+		if let date = self.textView?.scrollDate
+		{
+			let seconds = NSDate().timeIntervalSinceDate(date)
+			
+			if seconds <= 3
+			{
+				return false
+			}
+		}
+		
+		return true
 	}
 	
 	func highlightText()

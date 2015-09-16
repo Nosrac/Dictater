@@ -22,4 +22,12 @@ class TeleprompterTextView : NSTextView
 		}
 		super.keyDown(theEvent)
 	}
+	
+	var scrollDate : NSDate?
+	
+	override func scrollWheel(theEvent: NSEvent)
+	{
+		super.scrollWheel(theEvent)
+		self.scrollDate = NSDate()
+	}
 }
