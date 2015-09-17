@@ -28,6 +28,13 @@ extension NSTextView
 		rect.origin.x -= self.textContainerOrigin.x
 		rect.origin.y -= self.textContainerOrigin.y
 		
+		if let paragraphStyle = self.defaultParagraphStyle,
+		let font = self.font
+		{
+			rect.size.height -= paragraphStyle.lineHeightMultiple * font.pointSize
+		}
+		
+		
 		let glyphRange = layoutManager.glyphRangeForBoundingRect(rect, inTextContainer: textContainer)
 		let charRange = layoutManager.characterRangeForGlyphRange(glyphRange, actualGlyphRange: nil)
 		
@@ -48,6 +55,7 @@ extension NSTextView
 		{
 			// Do Nothing
 		} else {
+			Swift.print("Move!!!")
 			self.enclosingScrollView?.hasHorizontalScroller = false
 			self.scrollRangeToVisible(range)
 			self.enclosingScrollView?.hasHorizontalScroller = true
