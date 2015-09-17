@@ -55,6 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		{
 			controller.showWindow(self)
 			self.howToUseController = controller
+			controller.window?.becomeKeyWindow()
+			controller.window?.becomeMainWindow()
 		}
 	}
 }
