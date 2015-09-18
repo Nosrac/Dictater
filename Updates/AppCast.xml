@@ -7,7 +7,7 @@
         <language>en</language>
 
 		<item>
-		    <title>Version 1.1</title>
+		    <title>Version 1.0</title>
 		    <description><![CDATA[
 		            <h2>New Features</h2>
 		            <ul>
@@ -16,8 +16,7 @@
 		        ]]>
 		        </description>
 		    <pubDate>Fri, 18 Sep 2015 16:38:30 -0500</pubDate>
-		    <enclosure url="https://github.com/Nosrac/Dictater/releases/download/1.0/Dictater.app.zip" sparkle:version="1.1" length="2558817" type="application/octet-stream" />
-		    <sparkle:minimumSystemVersion>10.10</sparkle:minimumSystemVersion>
+		    <enclosure url="https://github.com/Nosrac/Dictater/releases/download/1.0/Dictater.app.zip" sparkle:version="1.0" length="2558817" type="application/octet-stream" />
 		</item>
 
     </channel>
