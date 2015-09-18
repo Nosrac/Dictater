@@ -34,6 +34,8 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>Dictater.Application</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/Nosrac/Dictater/master/Updates/AppCast.xml</string>
 	<key>NSServices</key>
 	<array>
 		<dict>
