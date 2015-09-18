@@ -26,6 +26,8 @@
 		274039F01B9914A200D80E23 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
 		276CD7E11BA8DC01008566D2 /* TeleprompterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276CD7E01BA8DC01008566D2 /* TeleprompterTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		2776B1141BA76AA70009D641 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; settings = {ASSET_TAGS = (); }; };
+		279379A51BACB8B700FFF21C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279379A41BACB8B700FFF21C /* Sparkle.framework */; settings = {ASSET_TAGS = (); }; };
+		279379A71BACB8DB00FFF21C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 279379A41BACB8B700FFF21C /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2797D23F1B9A61BC0019D12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2797D23E1B9A61BC0019D12D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		2797D2411B9CCA7C0019D12D /* usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2797D2401B9CCA7C0019D12D /* usage.png */; settings = {ASSET_TAGS = (); }; };
 		2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797D2421B9CD90A0019D12D /* Teleprompter.swift */; settings = {ASSET_TAGS = (); }; };
@@ -69,6 +71,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		279379A61BACB8D300FFF21C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				279379A71BACB8DB00FFF21C /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		272B764F1B979D5900712AA5 /* Dictater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272B76521B979D5900712AA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +104,7 @@
 		274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSProgressIndicator+Animate.swift"; sourceTree = "<group>"; };
 		276CD7E01BA8DC01008566D2 /* TeleprompterTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleprompterTextView.swift; sourceTree = "<group>"; };
 		2776B1131BA76AA70009D641 /* NSTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTextView.swift; sourceTree = "<group>"; };
+		279379A41BACB8B700FFF21C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		2797D23E1B9A61BC0019D12D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2797D2401B9CCA7C0019D12D /* usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usage.png; sourceTree = "<group>"; };
 		2797D2421B9CD90A0019D12D /* Teleprompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teleprompter.swift; sourceTree = "<group>"; };
@@ -108,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279379A51BACB8B700FFF21C /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +202,7 @@
 		274039F31B99195C00D80E23 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				279379A41BACB8B700FFF21C /* Sparkle.framework */,
 				27D3DA5E1BA63552001AC20B /* logo_small.png */,
 				2797D2401B9CCA7C0019D12D /* usage.png */,
 				27EDB7FA1B9A148500BE21BF /* instructions.png */,
@@ -255,6 +273,7 @@
 				272B764B1B979D5900712AA5 /* Sources */,
 				272B764C1B979D5900712AA5 /* Frameworks */,
 				272B764D1B979D5900712AA5 /* Resources */,
+				279379A61BACB8D300FFF21C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -533,8 +552,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dictater",
+				);
 				INFOPLIST_FILE = Dictater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyleacarson.Dictater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -545,8 +569,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dictater",
+				);
 				INFOPLIST_FILE = Dictater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyleacarson.Dictater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

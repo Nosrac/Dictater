@@ -950,6 +950,7 @@ DQ
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="pVG-TV-uWm" customClass="SUUpdater"/>
                 <menu id="6M7-Z9-ggD">
                     <items>
                         <menuItem title="Dictater" image="logo_small" id="kzM-wd-7AY">
@@ -1002,9 +1003,15 @@ DQ
                             </menu>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="S5a-03-xev"/>
-                        <menuItem title="Quit Dictater" keyEquivalent="q" id="MxT-GB-wjU">
+                        <menuItem title="Check For Updates…" id="MxT-GB-wjU">
+                            <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="terminate:" target="rPt-NT-nkU" id="5eb-Le-E5e"/>
+                                <action selector="checkForUpdates:" target="pVG-TV-uWm" id="ek6-aG-M8V"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Quit Dictater" keyEquivalent="q" id="GZc-J5-bUX">
+                            <connections>
+                                <action selector="terminate:" target="rPt-NT-nkU" id="7F6-7g-Sug"/>
                             </connections>
                         </menuItem>
                     </items>
