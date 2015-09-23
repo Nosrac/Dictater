@@ -6,18 +6,23 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
 
-		<item>
-		    <title>Version 1.0</title>
-		    <description><![CDATA[
-		            <h2>New Features</h2>
-		            <ul>
-		            	<li>App Updates!</li>
-		            </ul>
-		        ]]>
-		        </description>
-		    <pubDate>Fri, 18 Sep 2015 16:38:30 -0500</pubDate>
-		    <enclosure url="https://github.com/Nosrac/Dictater/releases/download/1.0/Dictater.app.zip" sparkle:dsaSignature="MCwCFCIJz1WKf/SBwIxQ42slkEdCr3QSAhRVkfsDJ01mswoDrPjLXyhCtdbsGg==" sparkle:version="1.0" length="2558817" type="application/octet-stream" />
-		</item>
+        <item>
+            <title>Version 1.0</title>
+            <description><![CDATA[
+                    <h2>New Features</h2>
+                    <ul>
+                    	<li>Support App Updates</li>
+                    </ul>
+
+                    <h2>Bug Fixes</h2>
+                    <ul>
+                    	<li></li>
+                   	</ul>
+                ]]>
+                </description>
+            <pubDate>Wed, 23 Sep 2015 16:53:57 -0500</pubDate>
+            <enclosure url="https://dl.dropboxusercontent.com/u/3188/Dictater.zip" sparkle:dsaSignature="MC0CFQCrHzOcTVh+sbSnTEl8awMO6wxwjgIUCWsT34ejLMH7KE4sDmH3q1pOhSg=" sparkle:version="1.0" length="3677509" type="application/octet-stream" />
+        </item>
 
     </channel>
 </rss>
