@@ -11,17 +11,12 @@
             <description><![CDATA[
                     <h2>New Features</h2>
                     <ul>
-                    	<li>Support App Updates</li>
+                    	<li>Support updates</li>
                     </ul>
-
-                    <h2>Bug Fixes</h2>
-                    <ul>
-                    	<li></li>
-                   	</ul>
                 ]]>
                 </description>
-            <pubDate>Wed, 23 Sep 2015 16:53:57 -0500</pubDate>
-            <enclosure url="https://dl.dropboxusercontent.com/u/3188/Dictater.zip" sparkle:dsaSignature="MC0CFQCrHzOcTVh+sbSnTEl8awMO6wxwjgIUCWsT34ejLMH7KE4sDmH3q1pOhSg=" sparkle:version="1.0" length="3677509" type="application/octet-stream" />
+            <pubDate>Wed, 23 Sep 2015 17:07:33 -0500</pubDate>
+            <enclosure url="https://dl.dropboxusercontent.com/u/3188/Dictater.zip" sparkle:dsaSignature="MC4CFQCP5dfV77g6OTMICHIHXjL4YGSIJAIVAMB56t1vJiVeLeVU4QDFD8c2sibe" sparkle:version="1.0" length="3677510" type="application/octet-stream" />
         </item>
 
     </channel>
