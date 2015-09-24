@@ -55,7 +55,6 @@ extension NSTextView
 		{
 			// Do Nothing
 		} else {
-			Swift.print("Move!!!")
 			self.enclosingScrollView?.hasHorizontalScroller = false
 			self.scrollRangeToVisible(range)
 			self.enclosingScrollView?.hasHorizontalScroller = true
