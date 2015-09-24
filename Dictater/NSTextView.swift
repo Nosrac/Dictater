@@ -55,9 +55,7 @@ extension NSTextView
 		{
 			// Do Nothing
 		} else {
-			self.enclosingScrollView?.hasHorizontalScroller = false
 			self.scrollRangeToVisible(range)
-			self.enclosingScrollView?.hasHorizontalScroller = true
 		}
 	}
 }
