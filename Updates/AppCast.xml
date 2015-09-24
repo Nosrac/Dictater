@@ -7,6 +7,20 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.1.1</title>
+            <description><![CDATA[
+                    <h2>Bug Fixes</h2>
+                    <ul>
+                        <li>Fixed teleprompter content size issue</li>
+                        <li>Fixed blinking scroll bar/cursor when using teleprompter</li>
+                    </ul>
+                ]]>
+                </description>
+            <pubDate>Thu, 24 Sep 2015 16:34:17 -0500</pubDate>
+            <enclosure url="https://github.com/Nosrac/Dictater/releases/download/1.1.1/Dictater.zip" sparkle:dsaSignature="MC4CFQC+rwKyVh3dSW78Ak3Jl+zUJjtj6QIVAILM2dFePcvWClThPPWgC60UbwtG" sparkle:version="1.1.1" length="3676846" type="application/octet-stream" />
+        </item>
+
+        <item>
             <title>Version 1.1</title>
             <description><![CDATA[
                     <h2>New Features</h2>
