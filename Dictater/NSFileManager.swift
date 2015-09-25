@@ -21,30 +21,42 @@ extension NSFileManager
 		}
 	}
 	
-	func getTemporaryFile(fileExtension : String = "rand") -> String
+	func getTemporaryFile(fileExtension : String = "rand") -> String?
 	{
-		let tempDir = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first!
+		var tempDir = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first!
 		
-		var filename : String?
-		
-		while filename == nil
+		if let identifier = NSBundle.mainBundle().bundleIdentifier
 		{
-			filename = "\(tempDir)/\(rand()).\(fileExtension)"
-			
-			if NSFileManager.defaultManager().fileExistsAtPath(filename!)
-			{
-				filename = nil
-			} else {
-				do
-				{
-					try "".writeToFile(filename!, atomically: true, encoding: NSUTF8StringEncoding)
-				} catch {
-					filename = nil
-				}
-			}
+			tempDir = "\(tempDir)/\(identifier)/"
 		}
 		
-		return filename!
+		do
+		{
+			try NSFileManager.defaultManager().createDirectoryAtPath(tempDir, withIntermediateDirectories: true, attributes: nil)
+			
+			var filename : String?
+			
+			while filename == nil
+			{
+				filename = "\(tempDir)/\(rand()).\(fileExtension)"
+				
+				if NSFileManager.defaultManager().fileExistsAtPath(filename!)
+				{
+					filename = nil
+				} else {
+					do
+					{
+						try "".writeToFile(filename!, atomically: true, encoding: NSUTF8StringEncoding)
+					} catch {
+						filename = nil
+					}
+				}
+			}
+			
+			return filename
+		} catch {
+			return nil
+		}
 	}
 	
 	func getMimeType(file file: String) -> String?

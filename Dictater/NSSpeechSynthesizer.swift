@@ -43,9 +43,8 @@ class NSSpeechSynthesizerTimer : NSObject, NSSpeechSynthesizerDelegate
 	
 	func start() -> Bool
 	{
-		let tempFile = NSFileManager.defaultManager().getTemporaryFile( "AIFF")
-		
-		if let synthesizer = NSSpeechSynthesizer(voice: self.synthesizer.voice())
+		if let tempFile = NSFileManager.defaultManager().getTemporaryFile( "AIFF"),
+		let synthesizer = NSSpeechSynthesizer(voice: self.synthesizer.voice())
 		{
 			synthesizer.rate = self.synthesizer.rate
 			synthesizer.delegate = self
