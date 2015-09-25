@@ -92,11 +92,37 @@ class Speech
 	var text = ""
 	
 	var vocalization : Vocalization?
+	var totalDuration : NSTimeInterval?
+	{
+		didSet {
+			NSNotificationCenter.defaultCenter().postNotificationName(Speech.TotalDurationChangedNotification, object: self)
+		}
+	}
+	
+	var estimatedProgressSeconds : NSTimeInterval?
+	{
+		guard let totalDuration = self.totalDuration else {
+			return nil
+		}
+		
+		let progress = self.progress
+		
+		return Double(progress.completedUnitCount) / Double(progress.totalUnitCount) * totalDuration
+	}
 	
 	func speak(text : String)
 	{
+		self.totalDuration = nil
 		self.text = text
 		self.speak(fromIndex: 0)
+		
+		if let vocalization = self.vocalization
+		{
+			vocalization.synthesizer.getSpeechDuration(self.text)
+			{ (duration) in
+				self.totalDuration = duration
+			}
+		}
 	}
 	
 	enum Boundary : Int
@@ -125,6 +151,7 @@ class Speech
 	}
 	
 	static let ProgressChangedNotification = "Speech.ProgressChangedNotification"
+	static let TotalDurationChangedNotification = "Speech.TotalDurationChangedNotification"
 	
 	var progress : NSProgress
 	{

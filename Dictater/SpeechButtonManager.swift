@@ -16,6 +16,7 @@ class SpeechButtonManager : NSObject
 	weak var skipForwardButton : NSButton?
 	weak var skipBackwardsButton : NSButton?
 	weak var openTeleprompterButton : NSButton?
+	weak var totalDurationView : NSTextField?
 	
 	let speech : Speech
 	let controls : Speech.Controls
@@ -33,6 +34,7 @@ class SpeechButtonManager : NSObject
 	func registerEvents()
 	{
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: speech)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.TotalDurationChangedNotification, object: speech)
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
 		
 		self.playPauseButton?.target = self
@@ -75,6 +77,41 @@ class SpeechButtonManager : NSObject
 				self.progressAnimation = view.animateToDoubleValue( 1.0 )
 			}
 		}
+		
+		if let duration = self.totalDurationText,
+		let view = self.totalDurationView,
+		let vocalization = self.speech.vocalization
+		where !vocalization.didFinish
+		{
+			view.stringValue = duration
+			view.hidden = false
+			
+			if view.alphaValue == 0
+			{
+				view.animator().alphaValue = 1.0
+			}
+		} else {
+			self.totalDurationView?.alphaValue = 0.0
+		}
+	}
+	
+	var totalDurationText : String?
+	{
+		guard let duration = self.speech.totalDuration else {
+			return nil
+		}
+		guard let progressSeconds = self.speech.estimatedProgressSeconds else {
+			return nil
+		}
+		
+		let minutes = (duration - progressSeconds) / 60
+		if minutes < 1
+		{
+			return "< 1m remaining"
+		} else {
+			return "\(Int(ceil(minutes)))m remaining"
+		}
+		
 	}
 	
 	func backwardsButtonMenu() -> NSMenu

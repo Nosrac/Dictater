@@ -923,6 +923,14 @@ DQ
                                     <progressIndicator fixedFrame="YES" maxValue="100" doubleValue="35" displayedWhenStopped="NO" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="L43-z1-53l">
                                         <rect key="frame" x="0.0" y="-10" width="243" height="20"/>
                                     </progressIndicator>
+                                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apU-J6-LYD">
+                                        <rect key="frame" x="154" y="5" width="71" height="11"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="60m remaining" id="ntg-uB-fX7">
+                                            <font key="font" size="8" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -948,6 +956,7 @@ DQ
                         <outlet property="skipBackwardsButton" destination="Jzq-h0-HER" id="ESf-Fx-G0a"/>
                         <outlet property="skipDurationMenuItem" destination="eE1-ip-Xs6" id="JNT-Lb-JMQ"/>
                         <outlet property="skipForwardButton" destination="XRe-PP-DlP" id="McL-ti-jfj"/>
+                        <outlet property="totalDurationView" destination="apU-J6-LYD" id="8Pv-rk-d9r"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
