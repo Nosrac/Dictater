@@ -812,9 +812,10 @@ DQ
                                 <subviews>
                                     <stackView orientation="horizontal" alignment="centerY" spacing="15" hasEqualSpacing="YES" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-na-lRy">
                                         <rect key="frame" x="20" y="0.0" width="203" height="52"/>
+                                        <edgeInsets key="edgeInsets" left="0.0" right="0.0" top="0.0" bottom="3"/>
                                         <beginningViews>
                                             <button toolTip="Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up1-ZJ-vfh">
-                                                <rect key="frame" x="0.0" y="14.5" width="36" height="23"/>
+                                                <rect key="frame" x="0.0" y="13" width="36" height="23"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GSC-39-l5a">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="18" name="FontAwesome"/>
@@ -828,7 +829,7 @@ DQ
                                         </beginningViews>
                                         <middleViews>
                                             <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jzq-h0-HER">
-                                                <rect key="frame" x="0.0" y="14.5" width="21" height="23"/>
+                                                <rect key="frame" x="0.0" y="13" width="21" height="23"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Rz9-z9-Lw4">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="18" name="FontAwesome"/>
@@ -837,7 +838,7 @@ DQ
                                                 <accessibility description="Skip Backward"/>
                                             </button>
                                             <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-iS-tQO">
-                                                <rect key="frame" x="36" y="13.5" width="22" height="25"/>
+                                                <rect key="frame" x="36" y="12" width="22" height="25"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5Hy-Do-i9J">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="20" name="FontAwesome"/>
@@ -848,7 +849,7 @@ IA
                                                 <accessibility description="Play Pause"/>
                                             </button>
                                             <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRe-PP-DlP">
-                                                <rect key="frame" x="73" y="14.5" width="21" height="23"/>
+                                                <rect key="frame" x="73" y="13" width="21" height="23"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="qmy-kp-ZCU">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="18" name="FontAwesome"/>
@@ -862,7 +863,7 @@ IA
                                         </middleViews>
                                         <endViews>
                                             <stackView orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXE-1b-cFx">
-                                                <rect key="frame" x="0.0" y="14.5" width="43" height="23"/>
+                                                <rect key="frame" x="0.0" y="13" width="43" height="23"/>
                                                 <beginningViews>
                                                     <button toolTip="Read Along (⌘1)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4">
                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="23"/>
@@ -905,10 +906,10 @@ DQ
                                             </stackView>
                                         </endViews>
                                         <visibilityPriorities>
+                                            <real value="200"/>
+                                            <real value="610"/>
                                             <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
+                                            <real value="829"/>
                                             <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
