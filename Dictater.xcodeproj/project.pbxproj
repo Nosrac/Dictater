@@ -33,11 +33,21 @@
 		2797D2411B9CCA7C0019D12D /* usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2797D2401B9CCA7C0019D12D /* usage.png */; settings = {ASSET_TAGS = (); }; };
 		2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797D2421B9CD90A0019D12D /* Teleprompter.swift */; settings = {ASSET_TAGS = (); }; };
 		27A31CA11B9E0F0B003293C7 /* TeleprompterPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */; settings = {ASSET_TAGS = (); }; };
+		27A7D47D1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */; settings = {ASSET_TAGS = (); }; };
+		27A7D47E1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */; settings = {ASSET_TAGS = (); }; };
+		27A7D47F1BB4C73B0026BCD5 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; settings = {ASSET_TAGS = (); }; };
+		27A7D4801BB4C73B0026BCD5 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; settings = {ASSET_TAGS = (); }; };
+		27A7D4811BB4C73E0026BCD5 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */; settings = {ASSET_TAGS = (); }; };
+		27A7D4821BB4C73E0026BCD5 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */; settings = {ASSET_TAGS = (); }; };
+		27A7D4831BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
+		27A7D4841BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
 		27BD0DBF1BA3897400D13D45 /* SpeechButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */; settings = {ASSET_TAGS = (); }; };
 		27D3DA5F1BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
 		27D3DA601BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
 		27D3DA611BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
 		27E170271BA3AF41003FFBCA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 27E170261BA3AF41003FFBCA /* Credits.rtf */; settings = {ASSET_TAGS = (); }; };
+		27E75A0C1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */; settings = {ASSET_TAGS = (); }; };
+		27E75A0E1BB4C53C00421CB2 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F71B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F81B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
 		27EDB7F91B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
@@ -114,6 +124,8 @@
 		27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechButtonManager.swift; sourceTree = "<group>"; };
 		27D3DA5E1BA63552001AC20B /* logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_small.png; sourceTree = "<group>"; };
 		27E170261BA3AF41003FFBCA /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSpeechSynthesizer.swift; sourceTree = "<group>"; };
+		27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFileManager.swift; sourceTree = "<group>"; };
 		27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		27EDB7FA1B9A148500BE21BF /* instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instructions.png; sourceTree = "<group>"; };
 		27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnableServiceController.swift; sourceTree = "<group>"; };
@@ -238,6 +250,8 @@
 			children = (
 				274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */,
 				272B76811B979D7100712AA5 /* NSView+backgroundColor.swift */,
+				27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */,
+				27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */,
 				2776B1131BA76AA70009D641 /* NSTextView.swift */,
 			);
 			name = Extensions;
@@ -408,11 +422,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E75A0E1BB4C53C00421CB2 /* NSFileManager.swift in Sources */,
 				272B76551B979D5900712AA5 /* ViewController.swift in Sources */,
 				274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */,
 				276CD7E11BA8DC01008566D2 /* TeleprompterTextView.swift in Sources */,
 				274039EC1B98FECA00D80E23 /* Application.swift in Sources */,
 				272B76971B97AE3A00712AA5 /* Dictater.swift in Sources */,
+				27E75A0C1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift in Sources */,
 				2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */,
 				27EDB8081B9A1CF400BE21BF /* Speech.swift in Sources */,
 				272B76821B979D7100712AA5 /* NSView+backgroundColor.swift in Sources */,
@@ -433,9 +449,13 @@
 			files = (
 				27EDB8091B9A1CF400BE21BF /* Speech.swift in Sources */,
 				27EDB8001B9A17BA00BE21BF /* EnableServiceController.swift in Sources */,
+				27A7D4801BB4C73B0026BCD5 /* NSTextView.swift in Sources */,
 				272B76651B979D5A00712AA5 /* DictaterTests.swift in Sources */,
+				27A7D4811BB4C73E0026BCD5 /* NSFileManager.swift in Sources */,
 				272B768C1B979DD400712AA5 /* DictaterWindow.swift in Sources */,
 				27EDB8041B9A193900BE21BF /* Vocalization.swift in Sources */,
+				27A7D47D1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */,
+				27A7D4831BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */,
 				272B76981B97AE3A00712AA5 /* Dictater.swift in Sources */,
 				272B76831B979D7100712AA5 /* NSView+backgroundColor.swift in Sources */,
 			);
@@ -447,9 +467,13 @@
 			files = (
 				27EDB80A1B9A1CF400BE21BF /* Speech.swift in Sources */,
 				27EDB8011B9A17BA00BE21BF /* EnableServiceController.swift in Sources */,
+				27A7D47F1BB4C73B0026BCD5 /* NSTextView.swift in Sources */,
 				272B76701B979D5A00712AA5 /* DictaterUITests.swift in Sources */,
+				27A7D4821BB4C73E0026BCD5 /* NSFileManager.swift in Sources */,
 				272B768D1B979DD400712AA5 /* DictaterWindow.swift in Sources */,
 				27EDB8051B9A193900BE21BF /* Vocalization.swift in Sources */,
+				27A7D47E1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */,
+				27A7D4841BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */,
 				272B76991B97AE3A00712AA5 /* Dictater.swift in Sources */,
 				272B76841B979D7100712AA5 /* NSView+backgroundColor.swift in Sources */,
 			);
