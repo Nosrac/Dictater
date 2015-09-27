@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2701F40D1BB889C200845078 /* TeleprompterWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		2701F40E1BB88C9C00845078 /* TeleprompterWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		2701F40F1BB88C9D00845078 /* TeleprompterWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		272B76531B979D5900712AA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76521B979D5900712AA5 /* AppDelegate.swift */; };
 		272B76551B979D5900712AA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76541B979D5900712AA5 /* ViewController.swift */; };
 		272B76571B979D5900712AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272B76561B979D5900712AA5 /* Assets.xcassets */; };
@@ -96,6 +99,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleprompterWindowDelegate.swift; sourceTree = "<group>"; };
 		272B764F1B979D5900712AA5 /* Dictater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272B76521B979D5900712AA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		272B76541B979D5900712AA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				2797D2421B9CD90A0019D12D /* Teleprompter.swift */,
 				27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */,
 				276CD7E01BA8DC01008566D2 /* TeleprompterTextView.swift */,
+				2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */,
 			);
 			name = Teleprompter;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */,
 				276CD7E11BA8DC01008566D2 /* TeleprompterTextView.swift in Sources */,
 				274039EC1B98FECA00D80E23 /* Application.swift in Sources */,
+				2701F40D1BB889C200845078 /* TeleprompterWindowDelegate.swift in Sources */,
 				272B76971B97AE3A00712AA5 /* Dictater.swift in Sources */,
 				27E75A0C1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift in Sources */,
 				2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */,
@@ -453,6 +459,7 @@
 				272B76651B979D5A00712AA5 /* DictaterTests.swift in Sources */,
 				27A7D4811BB4C73E0026BCD5 /* NSFileManager.swift in Sources */,
 				272B768C1B979DD400712AA5 /* DictaterWindow.swift in Sources */,
+				2701F40E1BB88C9C00845078 /* TeleprompterWindowDelegate.swift in Sources */,
 				27EDB8041B9A193900BE21BF /* Vocalization.swift in Sources */,
 				27A7D47D1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */,
 				27A7D4831BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */,
@@ -471,6 +478,7 @@
 				272B76701B979D5A00712AA5 /* DictaterUITests.swift in Sources */,
 				27A7D4821BB4C73E0026BCD5 /* NSFileManager.swift in Sources */,
 				272B768D1B979DD400712AA5 /* DictaterWindow.swift in Sources */,
+				2701F40F1BB88C9D00845078 /* TeleprompterWindowDelegate.swift in Sources */,
 				27EDB8051B9A193900BE21BF /* Vocalization.swift in Sources */,
 				27A7D47E1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */,
 				27A7D4841BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */,

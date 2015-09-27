@@ -18,6 +18,8 @@ class Teleprompter : NSViewController
 	@IBOutlet var progressIndicator : NSProgressIndicator?
 	@IBOutlet var remainingTimeView : NSTextField?
 	
+	let windowDelegate : NSWindowDelegate = TeleprompterWindowDelegate()
+	
 	let speech = Speech.sharedSpeech
 	let buttonController = SpeechButtonManager(speech: Speech.sharedSpeech)
 	
@@ -38,6 +40,9 @@ class Teleprompter : NSViewController
 	}
 	
 	override func viewWillAppear() {
+		
+		
+		self.view.window?.delegate = self.windowDelegate
 		
 		self.buttonController.registerEvents()
 		

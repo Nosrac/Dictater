@@ -18,8 +18,21 @@ class DictaterWindow : NSWindow
 		self.opaque = false
 		self.backgroundColor = NSColor.clearColor()
 		self.level = Int(CGWindowLevelForKey(.FloatingWindowLevelKey))
+		
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "didEnterFullScreen", name: TeleprompterWindowDelegate.FullScreenEnteredEvent, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "didExitFullScreen", name: TeleprompterWindowDelegate.FullScreenExitedEvent, object: nil)
 	}
 	
+	func didEnterFullScreen()
+	{
+		self.orderOut(self)
+	}
+	
+	func didExitFullScreen()
+	{
+		self.orderFront(self)
+	}
+
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 	}
