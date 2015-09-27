@@ -19,7 +19,7 @@ class ViewController: NSViewController {
 	@IBOutlet var skipForwardButton : NSButton?
 	@IBOutlet var skipBackwardsButton : NSButton?
 	@IBOutlet var openTeleprompterButton : NSButton?
-	@IBOutlet var totalDurationView : NSTextField?
+	@IBOutlet var remainingTimeView : NSTextField?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,7 +31,7 @@ class ViewController: NSViewController {
 		self.buttonController.playPauseButton = self.playPauseButton
 		self.buttonController.skipForwardButton = self.skipForwardButton
 		self.buttonController.skipBackwardsButton = self.skipBackwardsButton
-		self.buttonController.totalDurationView = self.totalDurationView
+		self.buttonController.remainingTimeView = self.remainingTimeView
 		
 		self.buttonController.update()
 	}

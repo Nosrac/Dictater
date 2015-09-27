@@ -16,6 +16,7 @@ class Teleprompter : NSViewController
 	@IBOutlet var skipBackwardsButton : NSButton?
 	@IBOutlet var skipForwardButton : NSButton?
 	@IBOutlet var progressIndicator : NSProgressIndicator?
+	@IBOutlet var remainingTimeView : NSTextField?
 	
 	let speech = Speech.sharedSpeech
 	let buttonController = SpeechButtonManager(speech: Speech.sharedSpeech)
@@ -31,6 +32,7 @@ class Teleprompter : NSViewController
 		self.buttonController.playPauseButton = self.playPauseButton
 		self.buttonController.skipForwardButton = self.skipForwardButton
 		self.buttonController.skipBackwardsButton = self.skipBackwardsButton
+		self.buttonController.remainingTimeView = self.remainingTimeView
 		
 		self.buttonController.update()
 	}

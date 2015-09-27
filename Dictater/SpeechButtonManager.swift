@@ -16,7 +16,7 @@ class SpeechButtonManager : NSObject
 	weak var skipForwardButton : NSButton?
 	weak var skipBackwardsButton : NSButton?
 	weak var openTeleprompterButton : NSButton?
-	weak var totalDurationView : NSTextField?
+	weak var remainingTimeView : NSTextField?
 	
 	let speech : Speech
 	let controls : Speech.Controls
@@ -79,7 +79,7 @@ class SpeechButtonManager : NSObject
 		}
 		
 		if let duration = self.totalDurationText,
-		let view = self.totalDurationView,
+		let view = self.remainingTimeView,
 		let vocalization = self.speech.vocalization
 		where !vocalization.didFinish
 		{
@@ -91,7 +91,7 @@ class SpeechButtonManager : NSObject
 				view.animator().alphaValue = 1.0
 			}
 		} else {
-			self.totalDurationView?.alphaValue = 0.0
+			self.remainingTimeView?.alphaValue = 0.0
 		}
 	}
 	

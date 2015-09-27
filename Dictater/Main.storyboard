@@ -667,8 +667,16 @@ IA
                                         </middleViews>
                                         <endViews>
                                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PW-Qo-3Do">
-                                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70.5" height="45"/>
                                             </customView>
+                                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jX3-u0-0sd">
+                                                <rect key="frame" x="98.5" y="17" width="64" height="11"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="60m remaining" id="bZb-yG-MA4">
+                                                    <font key="font" size="8" name=".HelveticaNeueDeskInterface-Regular"/>
+                                                    <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                             <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIR-is-jxe">
                                                 <rect key="frame" x="190.5" y="10" width="24" height="25"/>
                                                 <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="right" imageScaling="proportionallyUpOrDown" inset="2" id="Dc6-9U-Snf">
@@ -692,8 +700,10 @@ DQ
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
@@ -789,6 +799,7 @@ DQ
                     <connections>
                         <outlet property="playPauseButton" destination="P7f-HK-Xuc" id="ft8-9M-r1w"/>
                         <outlet property="progressIndicator" destination="yck-xg-jp5" id="VXX-8X-9cN"/>
+                        <outlet property="remainingTimeView" destination="jX3-u0-0sd" id="7km-Ri-tHf"/>
                         <outlet property="skipBackwardsButton" destination="MWY-ZF-M8j" id="eRl-kg-AbY"/>
                         <outlet property="skipForwardButton" destination="rm5-RH-UPd" id="CCB-sm-jU4"/>
                         <outlet property="textView" destination="6Ey-fa-sA0" id="CGr-9d-XHv"/>
@@ -953,10 +964,10 @@ DQ
                         <outlet property="openTeleprompterButton" destination="DVg-IP-FI4" id="AEN-Cq-I4n"/>
                         <outlet property="playPauseButton" destination="soJ-iS-tQO" id="TlW-Y4-3GN"/>
                         <outlet property="progressIndicator" destination="L43-z1-53l" id="Eds-w8-1Eq"/>
+                        <outlet property="remainingTimeView" destination="apU-J6-LYD" id="y1t-Hy-EpD"/>
                         <outlet property="skipBackwardsButton" destination="Jzq-h0-HER" id="ESf-Fx-G0a"/>
                         <outlet property="skipDurationMenuItem" destination="eE1-ip-Xs6" id="JNT-Lb-JMQ"/>
                         <outlet property="skipForwardButton" destination="XRe-PP-DlP" id="McL-ti-jfj"/>
-                        <outlet property="totalDurationView" destination="apU-J6-LYD" id="8Pv-rk-d9r"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1124,7 +1135,7 @@ DQ
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCR-dO-ZUV">
                                 <rect key="frame" x="18" y="278" width="202" height="34"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Notable exceptions include Microsoft Office." id="j9g-1V-E4j">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Notable exceptions include Microsoft Office and PDFs." id="j9g-1V-E4j">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1223,8 +1234,8 @@ Steps
         <image name="usage" width="882" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DMB-NT-eUV"/>
         <segue reference="OGh-cy-NHB"/>
+        <segue reference="DMB-NT-eUV"/>
         <segue reference="vef-bf-I9r"/>
     </inferredMetricsTieBreakers>
 </document>
