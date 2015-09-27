@@ -17,3 +17,8 @@
 - Select text, right click, and choose Dictate!
 - Dictate might be under Services, depending on how many services you already have installed
 ![Usage Image](https://raw.githubusercontent.com/Nosrac/Dictater/master/Dictater/usage.png)
+
+## Scriptability
+- If you're comfortable in the Terminal app, you can open Dictater with a command like this:
+
+`> /Applications/Dictater.app/Contents/MacOS/Dictater "Speak this text!"`
