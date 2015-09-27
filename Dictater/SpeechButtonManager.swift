@@ -76,6 +76,13 @@ class SpeechButtonManager : NSObject
 				view.maxValue = 1
 				self.progressAnimation = view.animateToDoubleValue( 1.0 )
 			}
+			
+			if self.speech.vocalization == nil
+			{
+				view.hidden = true
+			} else {
+				view.hidden = false
+			}
 		}
 		
 		if let duration = self.totalDurationText,
