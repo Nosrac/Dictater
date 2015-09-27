@@ -7,6 +7,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 1.2</title>
+            <description><![CDATA[
+                    <h2>New Features</h2>
+                    <ul>
+                    	<li>Show remaining duration</li>
+                    </ul>
+
+                    <h2>Bug Fixes</h2>
+                    <ul>
+                    	<li>Fix centering of icons</li>
+                    	<li>Hide primary window when entering full screen via the teleprompter</li>
+                   	</ul>
+                ]]>
+                </description>
+            <pubDate>Sun, 27 Sep 2015 16:01:15 -0500</pubDate>
+            <enclosure url="https://github.com/Nosrac/Dictater/releases/download/1.2/Dictater.zip" sparkle:dsaSignature="MCwCFHZGOE/HgNT4h3qqKPHltYjtufLOAhRORAl3S2qmjW0QOSRIvN7KxiJrQA==" sparkle:version="1.2" length="3693642" type="application/octet-stream" />
+        </item>
+
+        <item>
             <title>Version 1.1.1</title>
             <description><![CDATA[
                     <h2>Bug Fixes</h2>
