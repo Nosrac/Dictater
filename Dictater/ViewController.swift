@@ -15,6 +15,7 @@ class ViewController: NSViewController {
 	@IBOutlet var skipDurationMenuItem : NSMenuItem?
 	
 	@IBOutlet var progressIndicator	: NSProgressIndicator?
+	@IBOutlet var progressView	: NSView?
 	@IBOutlet var playPauseButton : NSButton?
 	@IBOutlet var skipForwardButton : NSButton?
 	@IBOutlet var skipBackwardsButton : NSButton?
@@ -27,7 +28,8 @@ class ViewController: NSViewController {
 		self.setupSkipDurationMenuItem()
 		
 		self.buttonController.openTeleprompterButton = self.openTeleprompterButton
-		self.buttonController.progressIndicator = self.progressIndicator
+		self.buttonController.progressView = self.progressView
+		self.buttonController.progressView = self.progressView
 		self.buttonController.playPauseButton = self.playPauseButton
 		self.buttonController.skipForwardButton = self.skipForwardButton
 		self.buttonController.skipBackwardsButton = self.skipBackwardsButton

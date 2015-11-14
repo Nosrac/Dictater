@@ -9,13 +9,13 @@
 import Foundation
 import Cocoa
 
-class Teleprompter : NSViewController
+class Teleprompter : NSViewController, NSWindowDelegate
 {
 	@IBOutlet var textView : TeleprompterTextView?
 	@IBOutlet var playPauseButton : NSButton?
 	@IBOutlet var skipBackwardsButton : NSButton?
 	@IBOutlet var skipForwardButton : NSButton?
-	@IBOutlet var progressIndicator : NSProgressIndicator?
+	@IBOutlet var progressView : NSView?
 	@IBOutlet var remainingTimeView : NSTextField?
 	
 	let windowDelegate : NSWindowDelegate = TeleprompterWindowDelegate()
@@ -30,7 +30,7 @@ class Teleprompter : NSViewController
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.buttonController.progressIndicator = self.progressIndicator
+		self.buttonController.progressView = self.progressView
 		self.buttonController.playPauseButton = self.playPauseButton
 		self.buttonController.skipForwardButton = self.skipForwardButton
 		self.buttonController.skipBackwardsButton = self.skipBackwardsButton
@@ -48,6 +48,8 @@ class Teleprompter : NSViewController
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateFont", name: Dictater.TextAppearanceChangedNotification, object: nil)
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: self.speech)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateButtons", name: TeleprompterWindowDelegate.ResizedEvent, object: nil)
+		
 		
 		self.update()
 		self.updateFont()
@@ -69,6 +71,11 @@ class Teleprompter : NSViewController
 			let range = NSMakeRange(0, textView.attributedString().length)
 			textView.textStorage?.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: range)
 		}
+	}
+	
+	func updateButtons()
+	{
+		self.buttonController.update()
 	}
 	
 	func update()

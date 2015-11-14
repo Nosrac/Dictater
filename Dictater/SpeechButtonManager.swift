@@ -11,7 +11,7 @@ import Cocoa
 
 class SpeechButtonManager : NSObject
 {
-	weak var progressIndicator	: NSProgressIndicator?
+	weak var progressView	: NSView?
 	weak var playPauseButton : NSButton?
 	weak var skipForwardButton : NSButton?
 	weak var skipBackwardsButton : NSButton?
@@ -63,19 +63,23 @@ class SpeechButtonManager : NSObject
 		
 		self.skipBackwardsButton?.menu = self.backwardsButtonMenu()
 		
-		if let view = self.progressIndicator
+		if let view = self.progressView,
+		let superview = view.superview
 		{
-			self.progressAnimation?.stopAnimation()
-			
 			let progress = speech.progress
+			let percent : CGFloat
 			if progress.totalUnitCount > 0
 			{
-				view.maxValue = Double(progress.totalUnitCount)
-				self.progressAnimation = view.animateToDoubleValue( Double(progress.completedUnitCount) )
+				percent = CGFloat(progress.completedUnitCount) / CGFloat(progress.totalUnitCount)
+				
 			} else {
-				view.maxValue = 1
-				self.progressAnimation = view.animateToDoubleValue( 1.0 )
+				percent = 1
 			}
+			
+			var frame = view.frame;
+			frame.size.width = CGFloat(percent) * superview.frame.width
+			
+			view.animator().frame = frame
 			
 			if self.speech.vocalization == nil
 			{

@@ -14,6 +14,7 @@ class TeleprompterWindowDelegate : NSObject, NSWindowDelegate
 {
 	static let FullScreenEnteredEvent = "Teleprompter.FullScreenEntered"
 	static let FullScreenExitedEvent = "Teleprompter.FullScreenExited"
+	static let ResizedEvent = "Teleprompter.Resized"
 	
 	func windowWillEnterFullScreen(notification: NSNotification)
 	{
@@ -23,5 +24,9 @@ class TeleprompterWindowDelegate : NSObject, NSWindowDelegate
 	func windowDidExitFullScreen(notification: NSNotification)
 	{
 		NSNotificationCenter.defaultCenter().postNotificationName(TeleprompterWindowDelegate.FullScreenExitedEvent, object: nil)
+	}
+	
+	func windowDidResize(notification: NSNotification) {
+		NSNotificationCenter.defaultCenter().postNotificationName(TeleprompterWindowDelegate.ResizedEvent, object: nil)
 	}
 }
