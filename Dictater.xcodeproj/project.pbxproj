@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2701F40D1BB889C200845078 /* TeleprompterWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		2701F40E1BB88C9C00845078 /* TeleprompterWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		2701F40F1BB88C9D00845078 /* TeleprompterWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		2701F40D1BB889C200845078 /* TeleprompterWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */; };
+		2701F40E1BB88C9C00845078 /* TeleprompterWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */; };
+		2701F40F1BB88C9D00845078 /* TeleprompterWindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701F40C1BB889C200845078 /* TeleprompterWindowDelegate.swift */; };
 		272B76531B979D5900712AA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76521B979D5900712AA5 /* AppDelegate.swift */; };
 		272B76551B979D5900712AA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76541B979D5900712AA5 /* ViewController.swift */; };
 		272B76571B979D5900712AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272B76561B979D5900712AA5 /* Assets.xcassets */; };
@@ -24,48 +24,50 @@
 		272B76971B97AE3A00712AA5 /* Dictater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76961B97AE3A00712AA5 /* Dictater.swift */; };
 		272B76981B97AE3A00712AA5 /* Dictater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76961B97AE3A00712AA5 /* Dictater.swift */; };
 		272B76991B97AE3A00712AA5 /* Dictater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272B76961B97AE3A00712AA5 /* Dictater.swift */; };
-		274039EC1B98FECA00D80E23 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EB1B98FECA00D80E23 /* Application.swift */; settings = {ASSET_TAGS = (); }; };
-		274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039ED1B99023F00D80E23 /* DictaterService.swift */; settings = {ASSET_TAGS = (); }; };
-		274039F01B9914A200D80E23 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
-		276CD7E11BA8DC01008566D2 /* TeleprompterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276CD7E01BA8DC01008566D2 /* TeleprompterTextView.swift */; settings = {ASSET_TAGS = (); }; };
-		2776B1141BA76AA70009D641 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; settings = {ASSET_TAGS = (); }; };
-		279379A51BACB8B700FFF21C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279379A41BACB8B700FFF21C /* Sparkle.framework */; settings = {ASSET_TAGS = (); }; };
+		274039EC1B98FECA00D80E23 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EB1B98FECA00D80E23 /* Application.swift */; };
+		274039EE1B99023F00D80E23 /* DictaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039ED1B99023F00D80E23 /* DictaterService.swift */; };
+		274039F01B9914A200D80E23 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; };
+		276CD7E11BA8DC01008566D2 /* TeleprompterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276CD7E01BA8DC01008566D2 /* TeleprompterTextView.swift */; };
+		2776B1141BA76AA70009D641 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; };
+		279379A51BACB8B700FFF21C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279379A41BACB8B700FFF21C /* Sparkle.framework */; };
 		279379A71BACB8DB00FFF21C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 279379A41BACB8B700FFF21C /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		279379A91BACC1E100FFF21C /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 279379A81BACC1E100FFF21C /* dsa_pub.pem */; settings = {ASSET_TAGS = (); }; };
-		2797D23F1B9A61BC0019D12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2797D23E1B9A61BC0019D12D /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		2797D2411B9CCA7C0019D12D /* usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2797D2401B9CCA7C0019D12D /* usage.png */; settings = {ASSET_TAGS = (); }; };
-		2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797D2421B9CD90A0019D12D /* Teleprompter.swift */; settings = {ASSET_TAGS = (); }; };
-		27A31CA11B9E0F0B003293C7 /* TeleprompterPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */; settings = {ASSET_TAGS = (); }; };
-		27A7D47D1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */; settings = {ASSET_TAGS = (); }; };
-		27A7D47E1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */; settings = {ASSET_TAGS = (); }; };
-		27A7D47F1BB4C73B0026BCD5 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; settings = {ASSET_TAGS = (); }; };
-		27A7D4801BB4C73B0026BCD5 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; settings = {ASSET_TAGS = (); }; };
-		27A7D4811BB4C73E0026BCD5 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */; settings = {ASSET_TAGS = (); }; };
-		27A7D4821BB4C73E0026BCD5 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */; settings = {ASSET_TAGS = (); }; };
-		27A7D4831BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
-		27A7D4841BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; settings = {ASSET_TAGS = (); }; };
-		27BD0DBF1BA3897400D13D45 /* SpeechButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */; settings = {ASSET_TAGS = (); }; };
-		27D3DA5F1BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
-		27D3DA601BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
-		27D3DA611BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; settings = {ASSET_TAGS = (); }; };
-		27E170271BA3AF41003FFBCA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 27E170261BA3AF41003FFBCA /* Credits.rtf */; settings = {ASSET_TAGS = (); }; };
-		27E75A0C1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */; settings = {ASSET_TAGS = (); }; };
-		27E75A0E1BB4C53C00421CB2 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */; settings = {ASSET_TAGS = (); }; };
-		27EDB7F71B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
-		27EDB7F81B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
-		27EDB7F91B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; settings = {ASSET_TAGS = (); }; };
-		27EDB7FB1B9A148500BE21BF /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7FA1B9A148500BE21BF /* instructions.png */; settings = {ASSET_TAGS = (); }; };
-		27EDB7FC1B9A148500BE21BF /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7FA1B9A148500BE21BF /* instructions.png */; settings = {ASSET_TAGS = (); }; };
-		27EDB7FD1B9A148500BE21BF /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7FA1B9A148500BE21BF /* instructions.png */; settings = {ASSET_TAGS = (); }; };
-		27EDB7FF1B9A17BA00BE21BF /* EnableServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */; settings = {ASSET_TAGS = (); }; };
-		27EDB8001B9A17BA00BE21BF /* EnableServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */; settings = {ASSET_TAGS = (); }; };
-		27EDB8011B9A17BA00BE21BF /* EnableServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */; settings = {ASSET_TAGS = (); }; };
-		27EDB8031B9A193900BE21BF /* Vocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8021B9A193900BE21BF /* Vocalization.swift */; settings = {ASSET_TAGS = (); }; };
-		27EDB8041B9A193900BE21BF /* Vocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8021B9A193900BE21BF /* Vocalization.swift */; settings = {ASSET_TAGS = (); }; };
-		27EDB8051B9A193900BE21BF /* Vocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8021B9A193900BE21BF /* Vocalization.swift */; settings = {ASSET_TAGS = (); }; };
-		27EDB8081B9A1CF400BE21BF /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8071B9A1CF400BE21BF /* Speech.swift */; settings = {ASSET_TAGS = (); }; };
-		27EDB8091B9A1CF400BE21BF /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8071B9A1CF400BE21BF /* Speech.swift */; settings = {ASSET_TAGS = (); }; };
-		27EDB80A1B9A1CF400BE21BF /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8071B9A1CF400BE21BF /* Speech.swift */; settings = {ASSET_TAGS = (); }; };
+		279379A91BACC1E100FFF21C /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 279379A81BACC1E100FFF21C /* dsa_pub.pem */; };
+		2797D23F1B9A61BC0019D12D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2797D23E1B9A61BC0019D12D /* Main.storyboard */; };
+		2797D2411B9CCA7C0019D12D /* usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 2797D2401B9CCA7C0019D12D /* usage.png */; };
+		2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2797D2421B9CD90A0019D12D /* Teleprompter.swift */; };
+		27A31CA11B9E0F0B003293C7 /* TeleprompterPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */; };
+		27A7D47D1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */; };
+		27A7D47E1BB4C6B00026BCD5 /* NSSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */; };
+		27A7D47F1BB4C73B0026BCD5 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; };
+		27A7D4801BB4C73B0026BCD5 /* NSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2776B1131BA76AA70009D641 /* NSTextView.swift */; };
+		27A7D4811BB4C73E0026BCD5 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */; };
+		27A7D4821BB4C73E0026BCD5 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */; };
+		27A7D4831BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; };
+		27A7D4841BB4C7430026BCD5 /* NSProgressIndicator+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274039EF1B9914A200D80E23 /* NSProgressIndicator+Animate.swift */; };
+		27B0D7FA1C56F21A005C037F /* NSProgressBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B0D7F91C56F21A005C037F /* NSProgressBar+Extensions.swift */; };
+		27BD0DBF1BA3897400D13D45 /* SpeechButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */; };
+		27D3DA5F1BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; };
+		27D3DA601BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; };
+		27D3DA611BA63552001AC20B /* logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3DA5E1BA63552001AC20B /* logo_small.png */; };
+		27E170271BA3AF41003FFBCA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 27E170261BA3AF41003FFBCA /* Credits.rtf */; };
+		27E75A0C1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0B1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift */; };
+		27E75A0E1BB4C53C00421CB2 /* NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75A0D1BB4C53C00421CB2 /* NSFileManager.swift */; };
+		27EDB7F71B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; };
+		27EDB7F81B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; };
+		27EDB7F91B9932CD00BE21BF /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7F61B9932CD00BE21BF /* FontAwesome.otf */; };
+		27EDB7FB1B9A148500BE21BF /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7FA1B9A148500BE21BF /* instructions.png */; };
+		27EDB7FC1B9A148500BE21BF /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7FA1B9A148500BE21BF /* instructions.png */; };
+		27EDB7FD1B9A148500BE21BF /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EDB7FA1B9A148500BE21BF /* instructions.png */; };
+		27EDB7FF1B9A17BA00BE21BF /* EnableServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */; };
+		27EDB8001B9A17BA00BE21BF /* EnableServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */; };
+		27EDB8011B9A17BA00BE21BF /* EnableServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */; };
+		27EDB8031B9A193900BE21BF /* Vocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8021B9A193900BE21BF /* Vocalization.swift */; };
+		27EDB8041B9A193900BE21BF /* Vocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8021B9A193900BE21BF /* Vocalization.swift */; };
+		27EDB8051B9A193900BE21BF /* Vocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8021B9A193900BE21BF /* Vocalization.swift */; };
+		27EDB8081B9A1CF400BE21BF /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8071B9A1CF400BE21BF /* Speech.swift */; };
+		27EDB8091B9A1CF400BE21BF /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8071B9A1CF400BE21BF /* Speech.swift */; };
+		27EDB80A1B9A1CF400BE21BF /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDB8071B9A1CF400BE21BF /* Speech.swift */; };
+		B4F2CBF2C92EC82AD7D79706 /* Pods_Dictater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8BFCBCBE1D027EF12075A4 /* Pods_Dictater.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,7 @@
 		2797D2401B9CCA7C0019D12D /* usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usage.png; sourceTree = "<group>"; };
 		2797D2421B9CD90A0019D12D /* Teleprompter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teleprompter.swift; sourceTree = "<group>"; };
 		27A31CA01B9E0F0B003293C7 /* TeleprompterPreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleprompterPreferencesController.swift; sourceTree = "<group>"; };
+		27B0D7F91C56F21A005C037F /* NSProgressBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSProgressBar+Extensions.swift"; sourceTree = "<group>"; };
 		27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechButtonManager.swift; sourceTree = "<group>"; };
 		27D3DA5E1BA63552001AC20B /* logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_small.png; sourceTree = "<group>"; };
 		27E170261BA3AF41003FFBCA /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -135,6 +138,9 @@
 		27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnableServiceController.swift; sourceTree = "<group>"; };
 		27EDB8021B9A193900BE21BF /* Vocalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vocalization.swift; sourceTree = "<group>"; };
 		27EDB8071B9A1CF400BE21BF /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
+		2C8BFCBCBE1D027EF12075A4 /* Pods_Dictater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dictater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		311E99C2CE3696276AE0D215 /* Pods-Dictater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dictater.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dictater/Pods-Dictater.debug.xcconfig"; sourceTree = "<group>"; };
+		87B17EDA9EB11151FD483436 /* Pods-Dictater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dictater.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dictater/Pods-Dictater.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				279379A51BACB8B700FFF21C /* Sparkle.framework in Frameworks */,
+				B4F2CBF2C92EC82AD7D79706 /* Pods_Dictater.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +177,8 @@
 				272B76631B979D5A00712AA5 /* DictaterTests */,
 				272B766E1B979D5A00712AA5 /* DictaterUITests */,
 				272B76501B979D5900712AA5 /* Products */,
+				DC02CA0E01E7CE4FD7018D35 /* Pods */,
+				B297430C4CFD86BD126F0460 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				272B76961B97AE3A00712AA5 /* Dictater.swift */,
-				2797D23C1B9A3E390019D12D /* ObjC */,
+				2797D23C1B9A3E390019D12D /* Cocoa */,
 				2797D2391B9A3DE20019D12D /* Speech */,
 				2797D23B1B9A3E1F0019D12D /* UI */,
 				2797D23A1B9A3DF30019D12D /* Extensions */,
@@ -267,6 +276,7 @@
 			children = (
 				2797D23E1B9A61BC0019D12D /* Main.storyboard */,
 				272B76541B979D5900712AA5 /* ViewController.swift */,
+				27B0D7F91C56F21A005C037F /* NSProgressBar+Extensions.swift */,
 				272B768A1B979DD400712AA5 /* DictaterWindow.swift */,
 				27EDB7FE1B9A17BA00BE21BF /* EnableServiceController.swift */,
 				27BD0DBE1BA3897400D13D45 /* SpeechButtonManager.swift */,
@@ -275,14 +285,31 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
-		2797D23C1B9A3E390019D12D /* ObjC */ = {
+		2797D23C1B9A3E390019D12D /* Cocoa */ = {
 			isa = PBXGroup;
 			children = (
 				272B76521B979D5900712AA5 /* AppDelegate.swift */,
 				274039EB1B98FECA00D80E23 /* Application.swift */,
 				274039ED1B99023F00D80E23 /* DictaterService.swift */,
 			);
-			name = ObjC;
+			name = Cocoa;
+			sourceTree = "<group>";
+		};
+		B297430C4CFD86BD126F0460 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C8BFCBCBE1D027EF12075A4 /* Pods_Dictater.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC02CA0E01E7CE4FD7018D35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				311E99C2CE3696276AE0D215 /* Pods-Dictater.debug.xcconfig */,
+				87B17EDA9EB11151FD483436 /* Pods-Dictater.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,10 +319,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 272B76741B979D5A00712AA5 /* Build configuration list for PBXNativeTarget "Dictater" */;
 			buildPhases = (
+				F28FACF5168B48B7ACE54980 /* Check Pods Manifest.lock */,
 				272B764B1B979D5900712AA5 /* Sources */,
 				272B764C1B979D5900712AA5 /* Frameworks */,
 				272B764D1B979D5900712AA5 /* Resources */,
 				279379A61BACB8D300FFF21C /* CopyFiles */,
+				84C1C55B07EEECD2362DD6D2 /* Embed Pods Frameworks */,
+				637D6377BFB0CA69C32B8B23 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -422,6 +452,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		637D6377BFB0CA69C32B8B23 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictater/Pods-Dictater-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84C1C55B07EEECD2362DD6D2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictater/Pods-Dictater-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F28FACF5168B48B7ACE54980 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		272B764B1B979D5900712AA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -434,6 +512,7 @@
 				274039EC1B98FECA00D80E23 /* Application.swift in Sources */,
 				2701F40D1BB889C200845078 /* TeleprompterWindowDelegate.swift in Sources */,
 				272B76971B97AE3A00712AA5 /* Dictater.swift in Sources */,
+				27B0D7FA1C56F21A005C037F /* NSProgressBar+Extensions.swift in Sources */,
 				27E75A0C1BB4C17B00421CB2 /* NSSpeechSynthesizer.swift in Sources */,
 				2797D2431B9CD90A0019D12D /* Teleprompter.swift in Sources */,
 				27EDB8081B9A1CF400BE21BF /* Speech.swift in Sources */,
@@ -585,6 +664,7 @@
 		};
 		272B76751B979D5A00712AA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 311E99C2CE3696276AE0D215 /* Pods-Dictater.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -594,7 +674,12 @@
 				);
 				INFOPLIST_FILE = Dictater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"ProgressKit\"",
+					"-Wl,-rpath,@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyleacarson.Dictater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -602,6 +687,7 @@
 		};
 		272B76761B979D5A00712AA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87B17EDA9EB11151FD483436 /* Pods-Dictater.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -611,7 +697,12 @@
 				);
 				INFOPLIST_FILE = Dictater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"ProgressKit\"",
+					"-Wl,-rpath,@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyleacarson.Dictater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

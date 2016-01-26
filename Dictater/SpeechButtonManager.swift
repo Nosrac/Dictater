@@ -8,15 +8,17 @@
 
 import Foundation
 import Cocoa
+import ProgressKit
 
 class SpeechButtonManager : NSObject
 {
-	weak var progressView	: NSView?
+	weak var progressView : ProgressBar?
 	weak var playPauseButton : NSButton?
 	weak var skipForwardButton : NSButton?
 	weak var skipBackwardsButton : NSButton?
 	weak var openTeleprompterButton : NSButton?
 	weak var remainingTimeView : NSTextField?
+	
 	
 	let speech : Speech
 	let controls : Speech.Controls
@@ -63,29 +65,21 @@ class SpeechButtonManager : NSObject
 		
 		self.skipBackwardsButton?.menu = self.backwardsButtonMenu()
 		
-		if let view = self.progressView,
-		let superview = view.superview
+		if let progressBar = self.progressView
 		{
-			let progress = speech.progress
-			let percent : CGFloat
-			if progress.totalUnitCount > 0
+			if progressBar.hidden
 			{
-				percent = CGFloat(progress.completedUnitCount) / CGFloat(progress.totalUnitCount)
-				
-			} else {
-				percent = 1
+				progressBar.animated = false
+				progressBar.progress = 0
+				progressBar.animated = true
 			}
 			
-			var frame = view.frame;
-			frame.size.width = CGFloat(percent) * superview.frame.width
-			
-			view.animator().frame = frame
-			
-			if self.speech.vocalization == nil
+			progressBar.progress = CGFloat(speech.progress.percent)
+			if self.speech.vocalization == nil || speech.progress.percent == 1
 			{
-				view.hidden = true
+				progressBar.hidden = true
 			} else {
-				view.hidden = false
+				progressBar.hidden = false
 			}
 		}
 		
@@ -118,9 +112,9 @@ class SpeechButtonManager : NSObject
 		let minutes = (duration - progressSeconds) / 60
 		if minutes < 1
 		{
-			return "< 1m remaining"
+			return "< 1m left"
 		} else {
-			return "\(Int(ceil(minutes)))m remaining"
+			return "\(Int(ceil(minutes)))m left"
 		}
 		
 	}

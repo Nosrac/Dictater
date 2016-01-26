@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import ProgressKit
 
 class Teleprompter : NSViewController, NSWindowDelegate
 {
@@ -15,7 +16,7 @@ class Teleprompter : NSViewController, NSWindowDelegate
 	@IBOutlet var playPauseButton : NSButton?
 	@IBOutlet var skipBackwardsButton : NSButton?
 	@IBOutlet var skipForwardButton : NSButton?
-	@IBOutlet var progressView : NSView?
+	@IBOutlet var progressView : ProgressBar?
 	@IBOutlet var remainingTimeView : NSTextField?
 	
 	let windowDelegate : NSWindowDelegate = TeleprompterWindowDelegate()
@@ -30,11 +31,25 @@ class Teleprompter : NSViewController, NSWindowDelegate
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.buttonController.progressView = self.progressView
 		self.buttonController.playPauseButton = self.playPauseButton
 		self.buttonController.skipForwardButton = self.skipForwardButton
 		self.buttonController.skipBackwardsButton = self.skipBackwardsButton
 		self.buttonController.remainingTimeView = self.remainingTimeView
+		
+		self.buttonController.update()
+	}
+	
+	func updateProgressView()
+	{
+		if Dictater.isProgressBarEnabled
+		{
+			self.progressView?.hidden = false
+			self.buttonController.progressView = self.progressView
+		} else {
+			
+			self.progressView?.hidden = true
+			self.buttonController.progressView = nil
+		}
 		
 		self.buttonController.update()
 	}
@@ -46,9 +61,13 @@ class Teleprompter : NSViewController, NSWindowDelegate
 		
 		self.buttonController.registerEvents()
 		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateFont", name: Dictater.TextAppearanceChangedNotification, object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: self.speech)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateButtons", name: TeleprompterWindowDelegate.ResizedEvent, object: nil)
+		let center = NSNotificationCenter.defaultCenter()
+		
+		center.addObserver(self, selector: "updateFont", name: Dictater.TextAppearanceChangedNotification, object: nil)
+		center.addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: self.speech)
+		center.addObserver(self, selector: "updateButtons", name: TeleprompterWindowDelegate.ResizedEvent, object: nil)
+		
+		center.addObserver(self, selector: "updateProgressView", name:NSUserDefaultsDidChangeNotification, object: nil)
 		
 		
 		self.update()

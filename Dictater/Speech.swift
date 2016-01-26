@@ -256,9 +256,7 @@ class Speech
 				}
 			}
 		}
-		
 	}
-	
 	
 	func skip(by boundary: Speech.Boundary, forward: Bool = true)
 	{

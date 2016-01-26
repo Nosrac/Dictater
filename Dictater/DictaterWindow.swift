@@ -43,7 +43,7 @@ class DictaterWindow : NSWindow
 			{
 				view.wantsLayer = true
 				view.layer?.frame = view.frame
-				view.layer?.cornerRadius = 10.0
+				view.layer?.cornerRadius = 6.0
 				view.layer?.masksToBounds = true
 			}
 			super.contentView = newValue

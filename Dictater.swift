@@ -69,14 +69,25 @@ class Dictater
 	}
 	
 	static var autoScrollEnabled : Bool
-	{
-		get
 		{
-			return NSUserDefaults.standardUserDefaults().boolForKey(PreferenceKeys.AutoScrollEnabled.rawValue)
+		get
+	{
+		return NSUserDefaults.standardUserDefaults().boolForKey(PreferenceKeys.AutoScrollEnabled.rawValue)
+		}
+		set
+	{
+		NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.AutoScrollEnabled.rawValue)
+		}
+	}
+	
+	static var isProgressBarEnabled : Bool
+	{
+		get {
+			return NSUserDefaults.standardUserDefaults().boolForKey(PreferenceKeys.ProgressBarEnabled.rawValue)
 		}
 		set
 		{
-			NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.AutoScrollEnabled.rawValue)
+			NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.ProgressBarEnabled.rawValue)
 		}
 	}
 	
@@ -84,7 +95,6 @@ class Dictater
 	{
 		let cgfloat = CGFloat(self.fontSize)
 		return NSFont(name: self.fontName, size: cgfloat) ?? self.defaultFont
-		
 	}
 	
 	static var defaultFont : NSFont
