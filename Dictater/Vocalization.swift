@@ -21,6 +21,7 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 	lazy var synthesizer : NSSpeechSynthesizer = {
 		let synth = NSSpeechSynthesizer()
 		synth.delegate = self
+		synth.rate = 500
 		
 		return synth
 	}()
