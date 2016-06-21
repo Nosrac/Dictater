@@ -826,16 +826,10 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="657" height="422"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-2r-Oiq">
-                                <rect key="frame" x="0.0" y="374" width="657" height="4"/>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <font key="titleFont" metaFont="system"/>
-                            </box>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="UfA-tM-WhQ">
                                 <rect key="frame" x="0.0" y="377" width="657" height="45"/>
                                 <subviews>
-                                    <stackView orientation="horizontal" alignment="centerY" spacing="30" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7qC-32-W7B">
+                                    <stackView orientation="horizontal" alignment="centerY" spacing="30" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" horizontalClippingResistancePriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7qC-32-W7B">
                                         <rect key="frame" x="20" y="0.0" width="617" height="45"/>
                                         <beginningViews>
                                             <button toolTip="Text Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-LZ-ck8">
@@ -849,7 +843,7 @@ DQ
                                                     <segue destination="dKQ-UF-5j5" kind="popover" popoverAnchorView="mg2-LZ-ck8" popoverBehavior="t" preferredEdge="maxY" id="dox-R6-8ro"/>
                                                 </connections>
                                             </button>
-                                            <customView horizontalHuggingPriority="1" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jme-Mm-Ubq">
+                                            <customView horizontalHuggingPriority="1" horizontalCompressionResistancePriority="1" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jme-Mm-Ubq">
                                                 <rect key="frame" x="51" y="0.0" width="163.5" height="45"/>
                                             </customView>
                                         </beginningViews>
@@ -888,7 +882,7 @@ IA
                                             </button>
                                         </middleViews>
                                         <endViews>
-                                            <customView horizontalHuggingPriority="1" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PW-Qo-3Do">
+                                            <customView horizontalHuggingPriority="1" horizontalCompressionResistancePriority="1" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PW-Qo-3Do">
                                                 <rect key="frame" x="402.5" y="0.0" width="160.5" height="45"/>
                                             </customView>
                                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jX3-u0-0sd">
@@ -916,12 +910,12 @@ DQ
                                         </endViews>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
+                                            <real value="82"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
+                                            <real value="28"/>
                                             <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
@@ -976,17 +970,17 @@ DQ
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>
-                            <scrollView ambiguous="YES" misplaced="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hei-uU-Nx7">
-                                <rect key="frame" x="20" y="20" width="617" height="345"/>
-                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="SvI-jr-Af8">
-                                    <rect key="frame" x="0.0" y="0.0" width="617" height="345"/>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hei-uU-Nx7">
+                                <rect key="frame" x="20" y="20" width="617" height="349"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="SvI-jr-Af8">
+                                    <rect key="frame" x="0.0" y="0.0" width="617" height="349"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView ambiguous="YES" editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6Ey-fa-sA0" customClass="TeleprompterTextView" customModule="Dictater" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="620" height="345"/>
+                                        <textView editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6Ey-fa-sA0" customClass="TeleprompterTextView" customModule="Dictater" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="620" height="349"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="617" height="345"/>
+                                            <size key="minSize" width="617" height="349"/>
                                             <size key="maxSize" width="620" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment>
@@ -998,7 +992,7 @@ DQ
                                                 </fragment>
                                             </attributedString>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="617" height="345"/>
+                                            <size key="minSize" width="617" height="349"/>
                                             <size key="maxSize" width="620" height="10000000"/>
                                             <connections>
                                                 <outlet property="nextKeyView" destination="7qC-32-W7B" id="yyH-6e-e3n"/>
@@ -1013,18 +1007,18 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="0R9-oc-aTP">
-                                    <rect key="frame" x="601" y="0.0" width="16" height="345"/>
+                                    <rect key="frame" x="601" y="0.0" width="16" height="349"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="UfA-tM-WhQ" firstAttribute="top" secondItem="G6G-Ql-wEA" secondAttribute="top" id="13n-UR-CkS"/>
-                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" constant="20" id="5ly-0H-C1J"/>
+                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" constant="20" id="2d9-Ss-fvQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Hei-uU-Nx7" secondAttribute="trailing" constant="20" id="500-ir-mhS"/>
+                            <constraint firstAttribute="bottom" secondItem="Hei-uU-Nx7" secondAttribute="bottom" constant="20" id="AsW-ei-7Ig"/>
                             <constraint firstItem="UfA-tM-WhQ" firstAttribute="leading" secondItem="G6G-Ql-wEA" secondAttribute="leading" id="GIX-0o-HRe"/>
-                            <constraint firstAttribute="trailing" secondItem="Hei-uU-Nx7" secondAttribute="trailing" constant="20" id="O4R-Df-0fX"/>
-                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="aqC-2r-Oiq" secondAttribute="bottom" constant="11" id="QYZ-TN-d2s"/>
-                            <constraint firstAttribute="bottom" secondItem="Hei-uU-Nx7" secondAttribute="bottom" constant="20" id="rDG-SG-3eb"/>
+                            <constraint firstItem="Hei-uU-Nx7" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="bottom" constant="8" id="byK-jU-unU"/>
                             <constraint firstAttribute="trailing" secondItem="UfA-tM-WhQ" secondAttribute="trailing" id="uZd-LM-jjr"/>
                         </constraints>
                     </view>
