@@ -44,7 +44,7 @@ class TeleprompterPreferencesController : NSViewController
 		self.update()
 		
 		self.fontButton?.target = self
-		self.fontButton?.action = "saveFonts"
+		self.fontButton?.action = #selector(self.saveFonts)
 		
 		fontButton?.removeAllItems()
 		fontButton?.addItemsWithTitles(NSFontManager.sharedFontManager().availableFontFamilies)

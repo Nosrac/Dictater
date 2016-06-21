@@ -210,7 +210,7 @@ class Speech
 		
 		vocalization = Vocalization( String(nsstring) )
 		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "progressDidChange", name: Vocalization.ProgressChangedNotification, object: vocalization)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.progressDidChange), name: Vocalization.ProgressChangedNotification, object: vocalization)
 		
 		self.vocalization = vocalization
 		self.skipOffset = index

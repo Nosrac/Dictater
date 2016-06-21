@@ -12,15 +12,15 @@ import Cocoa
 class DictaterWindow : NSWindow
 {
 	override init(contentRect: NSRect, styleMask aStyle: Int, backing bufferingType: NSBackingStoreType, `defer` flag: Bool) {
-		super.init(contentRect: contentRect, styleMask: aStyle, backing: bufferingType, `defer`: flag)
+		super.init(contentRect: contentRect, styleMask: aStyle, backing: bufferingType, defer: flag)
 		
 		self.styleMask = NSBorderlessWindowMask
 		self.opaque = false
 		self.backgroundColor = NSColor.clearColor()
 		self.level = Int(CGWindowLevelForKey(.FloatingWindowLevelKey))
 		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "didEnterFullScreen", name: TeleprompterWindowDelegate.FullScreenEnteredEvent, object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "didExitFullScreen", name: TeleprompterWindowDelegate.FullScreenExitedEvent, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.didEnterFullScreen), name: TeleprompterWindowDelegate.FullScreenEnteredEvent, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.didExitFullScreen), name: TeleprompterWindowDelegate.FullScreenExitedEvent, object: nil)
 	}
 	
 	func didEnterFullScreen()

@@ -63,11 +63,11 @@ class Teleprompter : NSViewController, NSWindowDelegate
 		
 		let center = NSNotificationCenter.defaultCenter()
 		
-		center.addObserver(self, selector: "updateFont", name: Dictater.TextAppearanceChangedNotification, object: nil)
-		center.addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: self.speech)
-		center.addObserver(self, selector: "updateButtons", name: TeleprompterWindowDelegate.ResizedEvent, object: nil)
+		center.addObserver(self, selector: #selector(self.updateFont), name: Dictater.TextAppearanceChangedNotification, object: nil)
+		center.addObserver(self, selector: #selector(self.update), name: Speech.ProgressChangedNotification, object: self.speech)
+		center.addObserver(self, selector: #selector(self.updateButtons), name: TeleprompterWindowDelegate.ResizedEvent, object: nil)
 		
-		center.addObserver(self, selector: "updateProgressView", name:NSUserDefaultsDidChangeNotification, object: nil)
+		center.addObserver(self, selector: #selector(self.updateProgressView), name:NSUserDefaultsDidChangeNotification, object: nil)
 		
 		
 		self.update()

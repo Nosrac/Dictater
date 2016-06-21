@@ -514,8 +514,8 @@ DQ
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAT-pK-ONQ" customClass="ProgressBar" customModule="ProgressKit">
-                                <rect key="frame" x="-5" y="0.0" width="216" height="3"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="yAT-pK-ONQ" customClass="ProgressBar" customModule="ProgressKit">
+                                <rect key="frame" x="-5" y="-1" width="221" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="P7D-KS-uOg"/>
                                 </constraints>
@@ -538,8 +538,8 @@ DQ
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vQ-AX-j0z">
-                                <rect key="frame" x="122" y="3" width="71" height="11"/>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6vQ-AX-j0z">
+                                <rect key="frame" x="122" y="2" width="71" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="qPK-YJ-eF8"/>
                                     <constraint firstAttribute="height" constant="11" id="x7T-pk-xHD"/>

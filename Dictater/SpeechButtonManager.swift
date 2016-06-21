@@ -35,18 +35,18 @@ class SpeechButtonManager : NSObject
 	
 	func registerEvents()
 	{
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.ProgressChangedNotification, object: speech)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Speech.TotalDurationChangedNotification, object: speech)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "update", name: Vocalization.IsSpeakingChangedNotification, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SpeechButtonManager.update), name: Speech.ProgressChangedNotification, object: speech)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SpeechButtonManager.update), name: Speech.TotalDurationChangedNotification, object: speech)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SpeechButtonManager.update), name: Vocalization.IsSpeakingChangedNotification, object: nil)
 		
 		self.playPauseButton?.target = self
-		self.playPauseButton?.action = "playPause"
+		self.playPauseButton?.action = #selector(SpeechButtonManager.playPause)
 		
 		self.skipForwardButton?.target = self
-		self.skipForwardButton?.action = "skipAhead"
+		self.skipForwardButton?.action = #selector(SpeechButtonManager.skipAhead)
 		
 		self.skipBackwardsButton?.target = self
-		self.skipBackwardsButton?.action = "skipBackwards"
+		self.skipBackwardsButton?.action = #selector(SpeechButtonManager.skipBackwards)
 	}
 	
 	func deregisterEvents()
@@ -122,7 +122,7 @@ class SpeechButtonManager : NSObject
 	func backwardsButtonMenu() -> NSMenu
 	{
 		let menu = NSMenu();
-		let restartButton = NSMenuItem(title: "Restart", action: "restart", keyEquivalent: "")
+		let restartButton = NSMenuItem(title: "Restart", action: #selector(SpeechButtonManager.restart), keyEquivalent: "")
 		if self.controls.canSkipBackwards
 		{	
 			restartButton.target = self
