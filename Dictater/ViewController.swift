@@ -53,10 +53,9 @@ class ViewController: NSViewController {
 	
 	@IBAction func openMenu(target: AnyObject?)
 	{
-		if let menu = target?.menu,
-			let view = target as? NSView
+		if let view = target as? NSView
 		{
-			menu?.popUpMenuPositioningItem(nil, atLocation: view.frame.origin, inView: view.superview)
+			view.menu?.popUpMenuPositioningItem(nil, atLocation: view.frame.origin, inView: view.superview)
 		}
 	}
 	
