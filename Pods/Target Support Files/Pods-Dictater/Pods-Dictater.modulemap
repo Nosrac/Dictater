@@ -1,0 +1,6 @@
+framework module Pods_Dictater {
+  umbrella header "Pods-Dictater-umbrella.h"
+
+  export *
+  module * { export * }
+}
