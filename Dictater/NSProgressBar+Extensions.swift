@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSProgress
+extension Progress
 {
 	var percent : Double {
 		guard self.totalUnitCount != 0 else {

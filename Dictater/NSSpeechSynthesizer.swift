@@ -11,13 +11,13 @@ import Cocoa
 
 extension NSSpeechSynthesizer
 {
-	func getSpeechDuration(string: String, callback: ((duration: NSTimeInterval) -> ()))
+	func getSpeechDuration(string: String, callback: @escaping ((_ duration: TimeInterval) -> ()))
 	{
 		let timer = NSSpeechSynthesizerTimer(text: string, synthesizer: self)
 		timer.finished = {
 			if let duration = timer.duration
 			{
-				callback(duration: duration)
+				callback(duration)
 			}
 		}
 		timer.start()
@@ -29,7 +29,7 @@ class NSSpeechSynthesizerTimer : NSObject, NSSpeechSynthesizerDelegate
 	let synthesizer : NSSpeechSynthesizer
 	let text : String
 	
-	var duration : NSTimeInterval?
+	var duration : TimeInterval?
 	
 	var finished : (() -> ())?
 	
@@ -43,12 +43,12 @@ class NSSpeechSynthesizerTimer : NSObject, NSSpeechSynthesizerDelegate
 	
 	func start() -> Bool
 	{
-		if let tempFile = NSFileManager.defaultManager().getTemporaryFile( "AIFF"),
+		if let tempFile = FileManager.default.getTemporaryFile( fileExtension: "AIFF"),
 		let synthesizer = NSSpeechSynthesizer(voice: self.synthesizer.voice())
 		{
 			synthesizer.rate = self.synthesizer.rate
 			synthesizer.delegate = self
-			synthesizer.startSpeakingString(self.text, toURL: NSURL(fileURLWithPath: tempFile))
+			synthesizer.startSpeaking(self.text, to: URL(fileURLWithPath: tempFile))
 			
 			self.tempFile = tempFile
 			return true
@@ -56,7 +56,7 @@ class NSSpeechSynthesizerTimer : NSObject, NSSpeechSynthesizerDelegate
 		return false
 	}
 	
-	func speechSynthesizer(sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool)
+	func speechSynthesizer(_ sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool)
 	{
 		guard let tempFile = self.tempFile else {
 			return
@@ -67,6 +67,6 @@ class NSSpeechSynthesizerTimer : NSObject, NSSpeechSynthesizerDelegate
 			self.duration = sound.duration
 			self.finished?()
 		}
-		try! NSFileManager.defaultManager().removeItemAtPath(tempFile)
+		try! FileManager.default.removeItem(atPath: tempFile)
 	}
 }

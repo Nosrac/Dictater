@@ -13,6 +13,6 @@ class EnableServiceController : NSViewController
 {
 	@IBAction func openKeyboardSettings(sender: AnyObject?)
 	{
-		NSWorkspace.sharedWorkspace().openFile("/System/Library/PreferencePanes/Keyboard.prefPane")
+		NSWorkspace.shared.openFile("/System/Library/PreferencePanes/Keyboard.prefPane")
 	}
 }

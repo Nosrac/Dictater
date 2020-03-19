@@ -11,31 +11,31 @@ import Cocoa
 
 class DictaterWindow : NSWindow
 {
-	override init(contentRect: NSRect, styleMask aStyle: Int, backing bufferingType: NSBackingStoreType, `defer` flag: Bool) {
-		super.init(contentRect: contentRect, styleMask: aStyle, backing: bufferingType, defer: flag)
+	override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing backingStoreType: NSWindow.BackingStoreType, defer flag: Bool) {
+		super.init(contentRect: contentRect, styleMask: style, backing: backingStoreType, defer: flag)
 		
-		self.styleMask = NSBorderlessWindowMask
-		self.opaque = false
-		self.backgroundColor = NSColor.clearColor()
-		self.level = Int(CGWindowLevelForKey(.FloatingWindowLevelKey))
+//		self.styleMask = NSBorderlessWindowMask
+		self.isOpaque = false
+		self.backgroundColor = NSColor.clear
+		self.level = NSWindow.Level.floating
 		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.didEnterFullScreen), name: TeleprompterWindowDelegate.FullScreenEnteredEvent, object: nil)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.didExitFullScreen), name: TeleprompterWindowDelegate.FullScreenExitedEvent, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.didEnterFullScreen), name: NSNotification.Name(rawValue: TeleprompterWindowDelegate.FullScreenEnteredEvent), object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.didExitFullScreen), name: NSNotification.Name(rawValue: TeleprompterWindowDelegate.FullScreenExitedEvent), object: nil)
 	}
 	
-	func didEnterFullScreen()
+	@objc func didEnterFullScreen()
 	{
 		self.orderOut(self)
 	}
 	
-	func didExitFullScreen()
+	@objc func didExitFullScreen()
 	{
 		self.orderFront(self)
 	}
 
-	required init?(coder: NSCoder) {
-		super.init(coder: coder)
-	}
+//	required init?(coder: NSCoder) {
+//		super.init(coder: coder)
+//	}
 	
 	override var contentView : NSView? {
 		set {
@@ -54,14 +54,14 @@ class DictaterWindow : NSWindow
 		}
 	}
 	
-	override var canBecomeMainWindow : Bool
+	override var canBecomeMain : Bool
 		{
 		get {
 			return true
 		}
 	}
 	
-	override var canBecomeKeyWindow : Bool
+	override var canBecomeKey : Bool
 		{
 		get {
 			return true
@@ -72,18 +72,18 @@ class DictaterWindow : NSWindow
 	
 	var initialLocation : NSPoint?
 	
-	override func mouseDown(theEvent: NSEvent) {
-		initialLocation = theEvent.locationInWindow
+	override func mouseDown(with event: NSEvent) {
+		initialLocation = event.locationInWindow
 	}
 	
-	override func mouseDragged(theEvent: NSEvent) {
-		if let screenVisibleFrame = NSScreen.mainScreen()?.visibleFrame,
+	override func mouseDragged(with event: NSEvent) {
+		if let screenVisibleFrame = NSScreen.main?.visibleFrame,
 			let initialLocation = self.initialLocation
 		{
 			let windowFrame = self.frame
 			var newOrigin = windowFrame.origin
 			
-			let currentLocation = theEvent.locationInWindow
+			let currentLocation = event.locationInWindow
 			
 			newOrigin.x += (currentLocation.x - initialLocation.x)
 			newOrigin.y += (currentLocation.y - initialLocation.y)

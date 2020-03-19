@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -399,12 +401,15 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="DictWindow" animationBehavior="default" id="IQv-IB-iLA" customClass="DictaterWindow" customModule="Dictater" customModuleProvider="target">
+                    <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="DictWindow" animationBehavior="default" id="IQv-IB-iLA" customClass="DictaterWindow" customModule="Dictater" customModuleProvider="target">
                         <windowStyleMask key="styleMask" fullSizeContentView="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" moveToActiveSpace="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="87" y="61" width="302" height="53"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="ahE-Va-uOX"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="gYd-ZS-PNL" kind="relationship" relationship="window.shadowedContentViewController" id="QQI-Cm-MdA"/>
@@ -418,18 +423,18 @@
         <scene sceneID="SBH-Jb-zkL">
             <objects>
                 <viewController id="gYd-ZS-PNL" customClass="ViewController" customModule="Dictater" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="oPz-Sf-UxJ">
-                        <rect key="frame" x="0.0" y="0.0" width="211" height="46"/>
+                    <view key="view" appearanceType="aqua" id="oPz-Sf-UxJ">
+                        <rect key="frame" x="0.0" y="0.0" width="229" height="46"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView orientation="horizontal" alignment="centerY" spacing="19" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ksi-ca-B3t">
-                                <rect key="frame" x="20" y="11" width="171" height="25"/>
+                                <rect key="frame" x="20" y="8" width="189" height="30"/>
                                 <beginningViews>
                                     <button toolTip="Read Along (⌘1)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9W-GN-bLf">
-                                        <rect key="frame" x="0.0" y="1" width="22" height="23"/>
-                                        <buttonCell key="cell" type="square" title="" alternateTitle="Read Along (⌘1)" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="8jV-CX-hAB">
+                                        <rect key="frame" x="0.0" y="0.0" width="22" height="30"/>
+                                        <buttonCell key="cell" type="square" alternateTitle="Read Along (⌘1)" bezelStyle="shadowlessSquare" image="NSTouchBarQuickLookTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="8jV-CX-hAB">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="18" name="FontAwesome"/>
+                                            <font key="font" metaFont="system" size="18"/>
                                             <string key="keyEquivalent">1</string>
                                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                         </buttonCell>
@@ -438,34 +443,33 @@
                                             <segue destination="k29-t7-AzP" kind="show" id="ZSf-u1-f8k"/>
                                         </connections>
                                     </button>
-                                    <stackView orientation="horizontal" alignment="centerY" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSh-kW-mhl">
-                                        <rect key="frame" x="41" y="0.0" width="94" height="25"/>
-                                        <beginningViews>
+                                    <stackView orientation="horizontal" alignment="centerY" spacing="23" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSh-kW-mhl">
+                                        <rect key="frame" x="41" y="0.0" width="117" height="30"/>
+                                        <middleViews>
                                             <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEx-sh-JeC">
-                                                <rect key="frame" x="0.0" y="1" width="21" height="23"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="931-3M-U1c">
+                                                <rect key="frame" x="20" y="8" width="9" height="14"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" image="NSGoBackTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="931-3M-U1c">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="18" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="18"/>
                                                     <string key="keyEquivalent"></string>
                                                 </buttonCell>
                                                 <accessibility description="Skip Backward"/>
                                             </button>
-                                            <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLW-53-PtQ">
-                                                <rect key="frame" x="36" y="0.0" width="22" height="25"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5Yr-IE-xMm">
+                                            <button toolTip="Skip Backward" id="4fq-dm-rX7">
+                                                <rect key="frame" x="52" y="0.0" width="14" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" image="NSTouchBarPlayPauseTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9Lh-Oi-Vz0">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="FontAwesome"/>
-                                                    <string key="keyEquivalent" base64-UTF8="YES">
-IA
-</string>
+                                                    <font key="font" metaFont="system" size="22"/>
+                                                    <string key="keyEquivalent"></string>
                                                 </buttonCell>
-                                                <accessibility description="Play Pause"/>
+                                                <accessibility description="Skip Backward"/>
                                             </button>
                                             <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7Q-pH-g2z">
-                                                <rect key="frame" x="73" y="1" width="21" height="23"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ogU-UR-5cA">
+                                                <rect key="frame" x="89" y="8" width="9" height="14"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Skip" bezelStyle="shadowlessSquare" image="NSGoForwardTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ogU-UR-5cA">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="18" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="18"/>
                                                     <string key="keyEquivalent"></string>
                                                 </buttonCell>
                                                 <accessibility description="Skip"/>
@@ -473,7 +477,7 @@ IA
                                                     <outlet property="menu" destination="EPC-gg-xPZ" id="9QY-vq-6CT"/>
                                                 </connections>
                                             </button>
-                                        </beginningViews>
+                                        </middleViews>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
@@ -486,10 +490,10 @@ IA
                                         </customSpacing>
                                     </stackView>
                                     <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fh1-TD-V42">
-                                        <rect key="frame" x="154" y="4" width="17" height="17"/>
-                                        <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NDz-Zn-Ugf">
+                                        <rect key="frame" x="177" y="8" width="12" height="14"/>
+                                        <buttonCell key="cell" type="square" alternateTitle="Done" bezelStyle="shadowlessSquare" image="NSMenuOnStateTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NDz-Zn-Ugf">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="13" name="FontAwesome"/>
+                                            <font key="font" metaFont="system"/>
                                             <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -514,38 +518,14 @@ DQ
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="yAT-pK-ONQ" customClass="ProgressBar" customModule="ProgressKit">
-                                <rect key="frame" x="-5" y="-1" width="221" height="4"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="4" id="P7D-KS-uOg"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animated" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="foreground">
-                                        <color key="value" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="background">
-                                        <color key="value" red="1" green="1" blue="1" alpha="0.079789595170454544" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.74637029869557514" green="0.74637029869557514" blue="0.74637029869557514" alpha="0.0" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </customView>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6vQ-AX-j0z">
-                                <rect key="frame" x="122" y="2" width="71" height="11"/>
+                                <rect key="frame" x="140" y="2" width="71" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="qPK-YJ-eF8"/>
                                     <constraint firstAttribute="height" constant="11" id="x7T-pk-xHD"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="60m remaining" id="6Ir-FP-bfb">
-                                    <font key="font" size="8" name=".HelveticaNeueDeskInterface-Regular"/>
+                                    <font key="font" metaFont="system" size="8"/>
                                     <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -556,14 +536,11 @@ DQ
                             <constraint firstAttribute="bottom" secondItem="6vQ-AX-j0z" secondAttribute="bottom" constant="2" id="IRR-NE-Adw"/>
                             <constraint firstAttribute="trailing" secondItem="6vQ-AX-j0z" secondAttribute="trailing" constant="20" id="Pkt-3g-qH5"/>
                             <constraint firstItem="ksi-ca-B3t" firstAttribute="leading" secondItem="oPz-Sf-UxJ" secondAttribute="leading" constant="20" id="gqw-eE-tOX"/>
-                            <constraint firstItem="yAT-pK-ONQ" firstAttribute="leading" secondItem="oPz-Sf-UxJ" secondAttribute="leading" constant="-5" id="gt8-12-Pcd"/>
-                            <constraint firstAttribute="trailing" secondItem="yAT-pK-ONQ" secondAttribute="trailing" constant="-5" id="if2-Xl-OFu"/>
                             <constraint firstItem="ksi-ca-B3t" firstAttribute="centerY" secondItem="oPz-Sf-UxJ" secondAttribute="centerY" id="jbR-qV-c00"/>
-                            <constraint firstAttribute="bottom" secondItem="yAT-pK-ONQ" secondAttribute="bottom" constant="-1" id="tzL-qX-3Ub"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                <color key="value" red="0.91845271019999997" green="0.91845271019999997" blue="0.91845271019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.94883419689119175" green="0.94883419689119175" blue="0.94883419689119175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
@@ -572,8 +549,7 @@ DQ
                     </view>
                     <connections>
                         <outlet property="openTeleprompterButton" destination="b9W-GN-bLf" id="Vzt-O5-wN0"/>
-                        <outlet property="playPauseButton" destination="nLW-53-PtQ" id="UZe-yn-Yga"/>
-                        <outlet property="progressView" destination="yAT-pK-ONQ" id="GjO-Vg-ILz"/>
+                        <outlet property="playPauseButton" destination="4fq-dm-rX7" id="oCx-CJ-rGC"/>
                         <outlet property="remainingTimeView" destination="6vQ-AX-j0z" id="WyD-TG-VUp"/>
                         <outlet property="skipBackwardsButton" destination="bEx-sh-JeC" id="BOp-Ic-C5P"/>
                         <outlet property="skipForwardButton" destination="D7Q-pH-g2z" id="hkt-UD-d5l"/>
@@ -639,13 +615,16 @@ DQ
         <scene sceneID="523-cc-5RW">
             <objects>
                 <windowController storyboardIdentifier="teleprompter" showSeguePresentationStyle="single" id="k29-t7-AzP" sceneMemberID="viewController">
-                    <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="teleprompter" animationBehavior="default" id="l7d-5m-wB8">
+                    <window key="window" title="Dictater" allowsToolTipsWhenApplicationIsInactive="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="aqua" frameAutosaveName="teleprompter" animationBehavior="default" id="l7d-5m-wB8">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="447" y="340" width="700" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
                         <value key="minSize" type="size" width="400" height="500"/>
+                        <connections>
+                            <outlet property="delegate" destination="k29-t7-AzP" id="JvD-sZ-PYw"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="iPr-UU-04S" kind="relationship" relationship="window.shadowedContentViewController" id="RWp-QF-RKf"/>
@@ -665,6 +644,7 @@ DQ
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gG1-if-lRN">
                                 <rect key="frame" x="60" y="159" width="36" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Font:" id="LdF-UL-uQl">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -673,6 +653,7 @@ DQ
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hOM-1M-4rL">
                                 <rect key="frame" x="62" y="132" width="34" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Size:" id="5vq-e3-Q3Y">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -681,6 +662,7 @@ DQ
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Asn-Jf-kTA">
                                 <rect key="frame" x="164" y="132" width="32" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="16pt" id="pma-au-a72">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -689,6 +671,7 @@ DQ
                             </textField>
                             <button toolTip="Smaller Text Size" verticalHuggingPriority="750" fixedFrame="YES" tag="-1" translatesAutoresizingMaskIntoConstraints="NO" id="goY-rs-fDO">
                                 <rect key="frame" x="96" y="123" width="52" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="-" alternateTitle="Smaller Text Size" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g9T-dm-VrR">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -700,6 +683,7 @@ DQ
                             </button>
                             <button toolTip="Bigger Text Size" verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="P8F-JP-RrD">
                                 <rect key="frame" x="210" y="123" width="55" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8bt-R9-mV4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -711,6 +695,7 @@ DQ
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-Ah-Jtx">
                                 <rect key="frame" x="18" y="106" width="78" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Line Height:" id="T5y-bi-mgh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -719,6 +704,7 @@ DQ
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" tag="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Hie-wI-RjX">
                                 <rect key="frame" x="96" y="97" width="52" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="-" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g4J-az-q8n">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -729,6 +715,7 @@ DQ
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="7vx-An-oQJ">
                                 <rect key="frame" x="210" y="97" width="55" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aix-wk-KTC">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -739,6 +726,7 @@ DQ
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vE-Kj-Sjr">
                                 <rect key="frame" x="161" y="106" width="38" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1.20x" id="gFc-Eq-Js1">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -747,7 +735,8 @@ DQ
                             </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ozz-GT-4y9">
                                 <rect key="frame" x="61" y="68" width="156" height="18"/>
-                                <buttonCell key="cell" type="check" title="Progress Bar Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EUQ-VD-Hee">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Progress Bar Enabled" bezelStyle="regularSquare" imagePosition="left" enabled="NO" inset="2" id="EUQ-VD-Hee">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -757,6 +746,7 @@ DQ
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XVL-Iy-Hvk">
                                 <rect key="frame" x="61" y="48" width="145" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Auto-Scroll Enabled" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wPI-qS-ghe">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -765,17 +755,16 @@ DQ
                                     <binding destination="Jtz-nI-74Y" name="value" keyPath="values.autoScrollEnabled" id="bre-Qt-a1N"/>
                                 </connections>
                             </button>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-2o-CtW">
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-2o-CtW">
                                 <rect key="frame" x="91" y="91" width="96" height="5"/>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <font key="titleFont" metaFont="system"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GT1-P2-G3p">
                                 <rect key="frame" x="100" y="154" width="162" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="System Font Regular" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="xio-dm-Ukh" id="RQh-4P-4ZX">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="12" name=".HelveticaNeueDeskInterface-Regular"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                     <menu key="menu" id="Kta-7u-CmM">
                                         <items>
                                             <menuItem title="System Font Regular" state="on" id="xio-dm-Ukh"/>
@@ -787,6 +776,7 @@ DQ
                             </popUpButton>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Quw-Pp-1Uf">
                                 <rect key="frame" x="55" y="13" width="169" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NG0-rI-AxP">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -833,10 +823,10 @@ DQ
                                         <rect key="frame" x="20" y="0.0" width="617" height="45"/>
                                         <beginningViews>
                                             <button toolTip="Text Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mg2-LZ-ck8">
-                                                <rect key="frame" x="0.0" y="11" width="21" height="23"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Text Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Q8E-JO-mCi">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="45"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Text Options" bezelStyle="shadowlessSquare" image="NSActionTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Q8E-JO-mCi">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="18" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="18"/>
                                                 </buttonCell>
                                                 <accessibility description="Text Options"/>
                                                 <connections>
@@ -844,24 +834,24 @@ DQ
                                                 </connections>
                                             </button>
                                             <customView horizontalHuggingPriority="1" horizontalCompressionResistancePriority="1" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jme-Mm-Ubq">
-                                                <rect key="frame" x="51" y="0.0" width="163.5" height="45"/>
+                                                <rect key="frame" x="62" y="0.0" width="169" height="45"/>
                                             </customView>
                                         </beginningViews>
                                         <middleViews>
                                             <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWY-ZF-M8j">
-                                                <rect key="frame" x="244.5" y="10" width="23" height="25"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="467-zw-2gB">
+                                                <rect key="frame" x="261" y="0.0" width="9" height="45"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="467-zw-2gB">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="20"/>
                                                     <string key="keyEquivalent"></string>
                                                 </buttonCell>
                                                 <accessibility description="Skip Backward"/>
                                             </button>
                                             <button toolTip="Play Pause" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-HK-Xuc">
-                                                <rect key="frame" x="297.5" y="10" width="22" height="25"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aOI-r5-wlN">
+                                                <rect key="frame" x="300" y="0.0" width="23" height="45"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" image="NSTouchBarPlayPauseTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="aOI-r5-wlN">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="20"/>
                                                     <string key="keyEquivalent" base64-UTF8="YES">
 IA
 </string>
@@ -869,10 +859,10 @@ IA
                                                 <accessibility description="Play Pause"/>
                                             </button>
                                             <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-RH-UPd">
-                                                <rect key="frame" x="349.5" y="10" width="23" height="25"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nli-Tv-Tk5">
+                                                <rect key="frame" x="353" y="0.0" width="4" height="45"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Skip" bezelStyle="shadowlessSquare" image="NSGoRightTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="nli-Tv-Tk5">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="20"/>
                                                     <string key="keyEquivalent"></string>
                                                 </buttonCell>
                                                 <accessibility description="Skip"/>
@@ -883,21 +873,22 @@ IA
                                         </middleViews>
                                         <endViews>
                                             <customView horizontalHuggingPriority="1" horizontalCompressionResistancePriority="1" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PW-Qo-3Do">
-                                                <rect key="frame" x="402.5" y="0.0" width="160.5" height="45"/>
+                                                <rect key="frame" x="387" y="0.0" width="196" height="45"/>
                                             </customView>
                                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jX3-u0-0sd">
                                                 <rect key="frame" x="98.5" y="17" width="64" height="11"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="60m remaining" id="bZb-yG-MA4">
-                                                    <font key="font" size="8" name=".HelveticaNeueDeskInterface-Regular"/>
+                                                    <font key="font" metaFont="system" size="8"/>
                                                     <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TIR-is-jxe">
-                                                <rect key="frame" x="593" y="10" width="24" height="25"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="right" imageScaling="proportionallyUpOrDown" inset="2" id="Dc6-9U-Snf">
+                                                <rect key="frame" x="613" y="0.0" width="4" height="45"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Done" bezelStyle="shadowlessSquare" image="NSMenuOnStateTemplate" imagePosition="overlaps" alignment="right" imageScaling="proportionallyUpOrDown" inset="2" id="Dc6-9U-Snf">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="20"/>
                                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -929,40 +920,13 @@ DQ
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Cfn-pO-Mfx" customClass="ProgressBar" customModule="ProgressKit">
-                                        <rect key="frame" x="-5" y="-3" width="667" height="11"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="11" id="9a6-rB-vgE"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="animated" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="foreground">
-                                                <color key="value" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="background">
-                                                <color key="value" red="1" green="1" blue="1" alpha="0.079789595170000005" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="progress">
-                                                <real key="value" value="0.20000000000000001"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.74637029870000005" green="0.74637029870000005" blue="0.74637029870000005" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </customView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="5gk-ZP-VgE"/>
-                                    <constraint firstAttribute="bottom" secondItem="Cfn-pO-Mfx" secondAttribute="bottom" constant="-3" id="FcB-1k-wha"/>
                                     <constraint firstAttribute="trailing" secondItem="7qC-32-W7B" secondAttribute="trailing" constant="20" id="Gcc-KN-1VJ"/>
                                     <constraint firstItem="7qC-32-W7B" firstAttribute="leading" secondItem="UfA-tM-WhQ" secondAttribute="leading" constant="20" id="IPz-h9-tpd"/>
-                                    <constraint firstAttribute="trailing" secondItem="Cfn-pO-Mfx" secondAttribute="trailing" constant="-5" id="S3c-3x-hWk"/>
                                     <constraint firstAttribute="bottom" secondItem="7qC-32-W7B" secondAttribute="bottom" id="aaf-gg-gMI"/>
                                     <constraint firstItem="7qC-32-W7B" firstAttribute="top" secondItem="UfA-tM-WhQ" secondAttribute="top" id="et4-nZ-t80"/>
-                                    <constraint firstItem="Cfn-pO-Mfx" firstAttribute="leading" secondItem="UfA-tM-WhQ" secondAttribute="leading" constant="-5" id="m1l-Xu-Zhd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -976,37 +940,36 @@ DQ
                                     <rect key="frame" x="0.0" y="0.0" width="617" height="349"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView editable="NO" drawsBackground="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6Ey-fa-sA0" customClass="TeleprompterTextView" customModule="Dictater" customModuleProvider="target">
+                                        <textView editable="NO" drawsBackground="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6Ey-fa-sA0" customClass="TeleprompterTextView" customModule="Dictater" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="620" height="349"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <size key="minSize" width="617" height="349"/>
                                             <size key="maxSize" width="620" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment>
                                                     <mutableString key="content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</mutableString>
                                                     <attributes>
-                                                        <font key="NSFont" size="13" name=".HelveticaNeueDeskInterface-Regular"/>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" metaFont="system"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="4" lineHeightMultiple="1.2"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="617" height="349"/>
-                                            <size key="maxSize" width="620" height="10000000"/>
                                             <connections>
                                                 <outlet property="nextKeyView" destination="7qC-32-W7B" id="yyH-6e-e3n"/>
                                             </connections>
                                         </textView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </clipView>
                                 <edgeInsets key="contentInsets" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="eEf-YS-DO8">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="eEf-YS-DO8">
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="0R9-oc-aTP">
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="0R9-oc-aTP">
                                     <rect key="frame" x="601" y="0.0" width="16" height="349"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1024,7 +987,6 @@ DQ
                     </view>
                     <connections>
                         <outlet property="playPauseButton" destination="P7f-HK-Xuc" id="ft8-9M-r1w"/>
-                        <outlet property="progressView" destination="Cfn-pO-Mfx" id="Yni-hg-l1X"/>
                         <outlet property="remainingTimeView" destination="jX3-u0-0sd" id="7km-Ri-tHf"/>
                         <outlet property="skipBackwardsButton" destination="MWY-ZF-M8j" id="eRl-kg-AbY"/>
                         <outlet property="skipForwardButton" destination="rm5-RH-UPd" id="CCB-sm-jU4"/>
@@ -1049,13 +1011,14 @@ DQ
                                 <subviews>
                                     <stackView orientation="horizontal" alignment="centerY" spacing="15" hasEqualSpacing="YES" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-na-lRy">
                                         <rect key="frame" x="20" y="0.0" width="203" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <edgeInsets key="edgeInsets" left="0.0" right="0.0" top="0.0" bottom="3"/>
                                         <beginningViews>
                                             <button toolTip="Options" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="up1-ZJ-vfh">
-                                                <rect key="frame" x="0.0" y="14.5" width="20" height="23"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Options" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GSC-39-l5a">
+                                                <rect key="frame" x="0.0" y="3" width="76" height="46"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Options" bezelStyle="shadowlessSquare" image="NSActionTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="GSC-39-l5a">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="18" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="18"/>
                                                 </buttonCell>
                                                 <accessibility description="Options"/>
                                                 <connections>
@@ -1066,19 +1029,19 @@ DQ
                                         </beginningViews>
                                         <middleViews>
                                             <button toolTip="Skip Backward" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jzq-h0-HER">
-                                                <rect key="frame" x="39" y="14.5" width="21" height="23"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Rz9-z9-Lw4">
+                                                <rect key="frame" x="91" y="3" width="9" height="46"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Skip Backward" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Rz9-z9-Lw4">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="18" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="18"/>
                                                     <string key="keyEquivalent"></string>
                                                 </buttonCell>
                                                 <accessibility description="Skip Backward"/>
                                             </button>
                                             <button toolTip="Play Pause" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-iS-tQO">
-                                                <rect key="frame" x="79" y="13.5" width="22" height="25"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5Hy-Do-i9J">
+                                                <rect key="frame" x="115" y="3" width="14" height="46"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Play Pause" bezelStyle="shadowlessSquare" image="NSTouchBarPlayTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="5Hy-Do-i9J">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="20"/>
                                                     <string key="keyEquivalent" base64-UTF8="YES">
 IA
 </string>
@@ -1086,10 +1049,10 @@ IA
                                                 <accessibility description="Play Pause"/>
                                             </button>
                                             <button toolTip="Skip" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRe-PP-DlP">
-                                                <rect key="frame" x="120" y="14.5" width="21" height="23"/>
-                                                <buttonCell key="cell" type="square" title="" alternateTitle="Skip" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="qmy-kp-ZCU">
+                                                <rect key="frame" x="144" y="3" width="9" height="46"/>
+                                                <buttonCell key="cell" type="square" alternateTitle="Skip" bezelStyle="shadowlessSquare" image="NSRightFacingTriangleTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="qmy-kp-ZCU">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="18" name="FontAwesome"/>
+                                                    <font key="font" metaFont="system" size="18"/>
                                                     <string key="keyEquivalent"></string>
                                                 </buttonCell>
                                                 <accessibility description="Skip"/>
@@ -1100,13 +1063,13 @@ IA
                                         </middleViews>
                                         <endViews>
                                             <stackView orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXE-1b-cFx">
-                                                <rect key="frame" x="160" y="14.5" width="43" height="23"/>
+                                                <rect key="frame" x="168" y="19" width="35" height="14"/>
                                                 <beginningViews>
                                                     <button toolTip="Read Along (⌘1)" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-IP-FI4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="23"/>
-                                                        <buttonCell key="cell" type="square" title="" alternateTitle="Read Along (⌘1)" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="19" height="14"/>
+                                                        <buttonCell key="cell" type="square" alternateTitle="Read Along (⌘1)" bezelStyle="shadowlessSquare" image="NSQuickLookTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="q3u-bx-DHE">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" size="18" name="FontAwesome"/>
+                                                            <font key="font" metaFont="system" size="18"/>
                                                             <string key="keyEquivalent">1</string>
                                                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                                         </buttonCell>
@@ -1118,10 +1081,10 @@ IA
                                                 </beginningViews>
                                                 <endViews>
                                                     <button toolTip="Done" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aau-N4-wSr">
-                                                        <rect key="frame" x="26" y="3" width="17" height="17"/>
-                                                        <buttonCell key="cell" type="square" title="" alternateTitle="Done" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9Yu-Yw-uCd">
+                                                        <rect key="frame" x="23" y="0.0" width="12" height="14"/>
+                                                        <buttonCell key="cell" type="square" alternateTitle="Done" bezelStyle="shadowlessSquare" image="NSMenuOnStateTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9Yu-Yw-uCd">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" size="13" name="FontAwesome"/>
+                                                            <font key="font" metaFont="system"/>
                                                             <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -1159,20 +1122,13 @@ DQ
                                     </stackView>
                                     <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apU-J6-LYD">
                                         <rect key="frame" x="154" y="5" width="71" height="11"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="60m remaining" id="ntg-uB-fX7">
-                                            <font key="font" size="8" name=".HelveticaNeueDeskInterface-Regular"/>
+                                            <font key="font" metaFont="system" size="8"/>
                                             <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GYZ-wv-tKG">
-                                        <rect key="frame" x="0.0" y="0.0" width="243" height="3"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                                <color key="value" red="0.13356229491877325" green="0.40366526260928093" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </customView>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -1194,7 +1150,6 @@ DQ
                     <connections>
                         <outlet property="openTeleprompterButton" destination="DVg-IP-FI4" id="AEN-Cq-I4n"/>
                         <outlet property="playPauseButton" destination="soJ-iS-tQO" id="TlW-Y4-3GN"/>
-                        <outlet property="progressView" destination="GYZ-wv-tKG" id="gol-38-XhD"/>
                         <outlet property="remainingTimeView" destination="apU-J6-LYD" id="y1t-Hy-EpD"/>
                         <outlet property="skipBackwardsButton" destination="Jzq-h0-HER" id="ESf-Fx-G0a"/>
                         <outlet property="skipDurationMenuItem" destination="eE1-ip-Xs6" id="JNT-Lb-JMQ"/>
@@ -1276,11 +1231,14 @@ DQ
         <scene sceneID="TRJ-wW-9b0">
             <objects>
                 <windowController storyboardIdentifier="howToUse" showSeguePresentationStyle="single" id="4Ic-dl-039" sceneMemberID="viewController">
-                    <window key="window" title="How to Use" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="kSm-M1-oQU">
+                    <window key="window" title="How to Use" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="kSm-M1-oQU">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" canJoinAllSpaces="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="4Ic-dl-039" id="ed4-Er-t80"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="2Y2-g3-ILX" kind="relationship" relationship="window.shadowedContentViewController" id="hbO-gh-dXP"/>
@@ -1300,18 +1258,21 @@ DQ
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uIJ-tA-iYZ">
                                 <rect key="frame" x="17" y="17" width="573" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="usage" id="jlG-hW-494"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lcf-vP-oVE">
                                 <rect key="frame" x="18" y="396" width="91" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="How To Use" id="YaP-OZ-NOd">
-                                    <font key="font" size="15" name=".HelveticaNeueDeskInterface-Bold"/>
+                                    <font key="font" metaFont="system" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFY-7B-U2m">
                                 <rect key="frame" x="18" y="320" width="202" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Dictater is accessible from contextual menus when selecting text. It is supported by most applications." id="FxM-P1-b7r">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1320,6 +1281,7 @@ DQ
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-Fe-t7n">
                                 <rect key="frame" x="256" y="278" width="297" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="* May appear under the &quot;Services&quot; menu if you have many services enabled." id="ov1-cX-2Sr">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -1328,6 +1290,7 @@ DQ
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8m-eb-SoO">
                                 <rect key="frame" x="258" y="320" width="291" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="HRo-ja-6at">
                                     <font key="font" metaFont="system"/>
                                     <string key="title">2. Select text
@@ -1339,6 +1302,7 @@ DQ
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hOr-UG-M2n">
                                 <rect key="frame" x="266" y="365" width="135" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Enable Dictater" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3xU-kX-kIx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1350,14 +1314,16 @@ DQ
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zm-uT-ePD">
                                 <rect key="frame" x="258" y="397" width="40" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Steps" id="U9d-01-R1v">
-                                    <font key="font" size="13" name=".HelveticaNeueDeskInterface-Bold"/>
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j9e-70-6FX">
                                 <rect key="frame" x="256" y="374" width="20" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="1. " id="Cik-Ph-oV5">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1366,6 +1332,7 @@ DQ
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCR-dO-ZUV">
                                 <rect key="frame" x="18" y="278" width="202" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Notable exceptions include Microsoft Office and PDFs." id="j9g-1V-E4j">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -1383,12 +1350,15 @@ DQ
         <scene sceneID="zto-3f-0uU">
             <objects>
                 <windowController storyboardIdentifier="enableDictater" showSeguePresentationStyle="single" id="aK3-7w-LpH" sceneMemberID="viewController">
-                    <window key="window" title="Enable Dictater" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="oGR-kX-SB7">
+                    <window key="window" title="Enable Dictater" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="oGR-kX-SB7">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" canJoinAllSpaces="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="840" y="290" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="aK3-7w-LpH" id="TJC-y5-31u"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="M1c-xC-WWU" kind="relationship" relationship="window.shadowedContentViewController" id="ar8-u2-jbg"/>
@@ -1408,10 +1378,12 @@ DQ
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33c-yQ-5ZS">
                                 <rect key="frame" x="223" y="17" width="367" height="330"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="instructions" id="iRB-Gq-phd"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oiN-mA-uhs">
                                 <rect key="frame" x="254" y="30" width="141" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keyboard Preferences" id="ATB-Up-jhY">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1420,14 +1392,16 @@ DQ
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kK4-ux-JNi">
                                 <rect key="frame" x="18" y="326" width="117" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enable Dictater" id="H49-xc-rQv">
-                                    <font key="font" size="15" name=".HelveticaNeueDeskInterface-Bold"/>
+                                    <font key="font" metaFont="system" size="15"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jwo-gS-vNZ">
                                 <rect key="frame" x="14" y="75" width="154" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Keyboard Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YuB-52-QM6">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1438,6 +1412,7 @@ DQ
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Lw-5n-aP9">
                                 <rect key="frame" x="18" y="121" width="196" height="187"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="VBc-7n-ZFP">
                                     <font key="font" metaFont="system"/>
                                     <string key="title">Dictater is accessed by right-clicking selected text in most applications.  This functionality must be enabled before using Dictater.
@@ -1460,13 +1435,24 @@ Steps
         </scene>
     </scenes>
     <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSGoBackTemplate" width="9" height="12"/>
+        <image name="NSGoForwardTemplate" width="9" height="12"/>
+        <image name="NSGoLeftTemplate" width="9" height="12"/>
+        <image name="NSGoRightTemplate" width="9" height="12"/>
+        <image name="NSMenuOnStateTemplate" width="12" height="12"/>
+        <image name="NSQuickLookTemplate" width="19" height="12"/>
+        <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
+        <image name="NSTouchBarPlayPauseTemplate" width="23" height="30"/>
+        <image name="NSTouchBarPlayTemplate" width="14" height="30"/>
+        <image name="NSTouchBarQuickLookTemplate" width="22" height="30"/>
         <image name="instructions" width="864" height="768"/>
         <image name="logo_small" width="61.439998626708984" height="61.439998626708984"/>
         <image name="usage" width="882" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vef-bf-I9r"/>
-        <segue reference="ZSf-u1-f8k"/>
         <segue reference="OGh-cy-NHB"/>
+        <segue reference="ZSf-u1-f8k"/>
     </inferredMetricsTieBreakers>
 </document>

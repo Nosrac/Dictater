@@ -27,8 +27,8 @@ class Dictater
 	static func setupDefaults()
 	{
 		let font = self.defaultFont
-		NSUserDefaults.standardUserDefaults().registerDefaults(
-			[
+		UserDefaults.standard.register(
+			defaults: [
 				PreferenceKeys.SkipBoundary.rawValue : Speech.Boundary.Sentence.rawValue,
 				PreferenceKeys.HasBeenUsed.rawValue : false,
 				PreferenceKeys.FontName.rawValue : font.fontName,
@@ -43,7 +43,7 @@ class Dictater
 	{
 		get
 		{
-			let rawValue = NSUserDefaults.standardUserDefaults().integerForKey(PreferenceKeys.SkipBoundary.rawValue)
+			let rawValue = UserDefaults.standard.integer(forKey: PreferenceKeys.SkipBoundary.rawValue)
 			if let boundary = Speech.Boundary(rawValue: rawValue)
 			{
 				return boundary
@@ -52,7 +52,7 @@ class Dictater
 		}
 		set
 		{
-			NSUserDefaults.standardUserDefaults().setInteger(newValue.rawValue, forKey: PreferenceKeys.SkipBoundary.rawValue)
+			UserDefaults.standard.set(newValue.rawValue, forKey: PreferenceKeys.SkipBoundary.rawValue)
 		}
 	}
 	
@@ -60,11 +60,11 @@ class Dictater
 	{
 		get
 		{
-			return NSUserDefaults.standardUserDefaults().boolForKey(PreferenceKeys.HasBeenUsed.rawValue)
+			return UserDefaults.standard.bool(forKey: PreferenceKeys.HasBeenUsed.rawValue)
 		}
 		set
 		{
-			NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.HasBeenUsed.rawValue)
+			UserDefaults.standard.set(newValue, forKey: PreferenceKeys.HasBeenUsed.rawValue)
 		}
 	}
 	
@@ -72,22 +72,22 @@ class Dictater
 		{
 		get
 	{
-		return NSUserDefaults.standardUserDefaults().boolForKey(PreferenceKeys.AutoScrollEnabled.rawValue)
+		return UserDefaults.standard.bool(forKey: PreferenceKeys.AutoScrollEnabled.rawValue)
 		}
 		set
 	{
-		NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.AutoScrollEnabled.rawValue)
+		UserDefaults.standard.set(newValue, forKey: PreferenceKeys.AutoScrollEnabled.rawValue)
 		}
 	}
 	
 	static var isProgressBarEnabled : Bool
 	{
 		get {
-			return NSUserDefaults.standardUserDefaults().boolForKey(PreferenceKeys.ProgressBarEnabled.rawValue)
+			return UserDefaults.standard.bool(forKey: PreferenceKeys.ProgressBarEnabled.rawValue)
 		}
 		set
 		{
-			NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: PreferenceKeys.ProgressBarEnabled.rawValue)
+			UserDefaults.standard.set(newValue, forKey: PreferenceKeys.ProgressBarEnabled.rawValue)
 		}
 	}
 	
@@ -99,14 +99,14 @@ class Dictater
 	
 	static var defaultFont : NSFont
 	{
-		return NSFont.messageFontOfSize(14)
+		return NSFont.messageFont(ofSize: 14)
 	}
 	
 	
 	static var fontName : String
 	{
 		get {
-			if let string = NSUserDefaults.standardUserDefaults().stringForKey(PreferenceKeys.FontName.rawValue)
+			if let string = UserDefaults.standard.string(forKey: PreferenceKeys.FontName.rawValue)
 			{
 				return string
 			} else {
@@ -115,32 +115,32 @@ class Dictater
 		}
 		
 		set {
-			NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: PreferenceKeys.FontName.rawValue)
-			NSNotificationCenter.defaultCenter().postNotificationName(self.TextAppearanceChangedNotification, object: nil)
+			UserDefaults.standard.set(newValue, forKey: PreferenceKeys.FontName.rawValue)
+			NotificationCenter.default.post(name: NSNotification.Name(rawValue: self.TextAppearanceChangedNotification), object: nil)
 		}
 	}
 	
 	static var fontSize : Int
 	{
 		get {
-			return NSUserDefaults.standardUserDefaults().integerForKey(PreferenceKeys.FontSize.rawValue)
+			return UserDefaults.standard.integer(forKey: PreferenceKeys.FontSize.rawValue)
 		}
 		
 		set {
-			NSUserDefaults.standardUserDefaults().setInteger(newValue, forKey: PreferenceKeys.FontSize.rawValue)
-			NSNotificationCenter.defaultCenter().postNotificationName(self.TextAppearanceChangedNotification, object: nil)
+			UserDefaults.standard.set(newValue, forKey: PreferenceKeys.FontSize.rawValue)
+			NotificationCenter.default.post(name: NSNotification.Name(rawValue: self.TextAppearanceChangedNotification), object: nil)
 		}
 	}
 	
 	static var lineHeightMultiple : Double
 	{
 		get {
-			return NSUserDefaults.standardUserDefaults().doubleForKey(PreferenceKeys.LineHeightMultiple.rawValue)
+			return UserDefaults.standard.double(forKey: PreferenceKeys.LineHeightMultiple.rawValue)
 		}
 		
 		set {
-			NSUserDefaults.standardUserDefaults().setDouble(newValue, forKey: PreferenceKeys.LineHeightMultiple.rawValue)
-			NSNotificationCenter.defaultCenter().postNotificationName(self.TextAppearanceChangedNotification, object: nil)
+			UserDefaults.standard.set(newValue, forKey: PreferenceKeys.LineHeightMultiple.rawValue)
+			NotificationCenter.default.post(name: NSNotification.Name(rawValue: self.TextAppearanceChangedNotification), object: nil)
 		}
 	}
 	

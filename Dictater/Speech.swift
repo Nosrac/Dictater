@@ -35,8 +35,7 @@ class Speech
 		
 		var playPauseIcon : String
 		{
-			if let vocalization = self.speech.vocalization
-			where vocalization.isSpeaking
+			if let vocalization = self.speech.vocalization, vocalization.isSpeaking
 			{
 				return Controls.PauseIcon
 			} else {
@@ -92,14 +91,14 @@ class Speech
 	var text = ""
 	
 	var vocalization : Vocalization?
-	var totalDuration : NSTimeInterval?
+	var totalDuration : TimeInterval?
 	{
 		didSet {
-			NSNotificationCenter.defaultCenter().postNotificationName(Speech.TotalDurationChangedNotification, object: self)
+			NotificationCenter.default.post(name: NSNotification.Name(rawValue: Speech.TotalDurationChangedNotification), object: self)
 		}
 	}
 	
-	var estimatedProgressSeconds : NSTimeInterval?
+	var estimatedProgressSeconds : TimeInterval?
 	{
 		guard let totalDuration = self.totalDuration else {
 			return nil
@@ -118,7 +117,7 @@ class Speech
 		
 		if let vocalization = self.vocalization
 		{
-			vocalization.synthesizer.getSpeechDuration(self.text)
+			vocalization.synthesizer.getSpeechDuration(string: self.text)
 			{ (duration) in
 				self.totalDuration = duration
 			}
@@ -139,13 +138,13 @@ class Speech
 			}
 		}
 		
-		var enumerationOption : NSStringEnumerationOptions
+		var enumerationOption : NSString.EnumerationOptions
 		{
 			if self == .Sentence
 			{
-				return .BySentences
+				return .bySentences
 			} else {
-				return .ByParagraphs
+				return .byParagraphs
 			}
 		}
 	}
@@ -153,12 +152,12 @@ class Speech
 	static let ProgressChangedNotification = "Speech.ProgressChangedNotification"
 	static let TotalDurationChangedNotification = "Speech.TotalDurationChangedNotification"
 	
-	var progress : NSProgress
+	var progress : Progress
 	{
-		let progress = NSProgress()
+		let progress = Progress()
 		if let range = self.range
 		{
-			progress.totalUnitCount = Int64(text.characters.count)
+			progress.totalUnitCount = Int64(text.count)
 			progress.completedUnitCount = Int64(range.location)
 		}
 		return progress
@@ -185,14 +184,14 @@ class Speech
 	
 	@objc func progressDidChange()
 	{
-		NSNotificationCenter.defaultCenter().postNotificationName(Speech.ProgressChangedNotification, object: self)
+		NotificationCenter.default.post(name: NSNotification.Name(rawValue: Speech.ProgressChangedNotification), object: self)
 	}
 	
 	private func speak(fromIndex index: Int)
 	{
 		if let vocalization = self.vocalization
 		{
-			NSNotificationCenter.defaultCenter().removeObserver(self, name: Vocalization.ProgressChangedNotification, object: vocalization)
+			NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: Vocalization.ProgressChangedNotification), object: vocalization)
 			
 			vocalization.pause()
 			self.vocalization = nil
@@ -206,11 +205,11 @@ class Speech
 		}
 		
 		let vocalization : Vocalization
-		let nsstring = NSString(string: self.text).substringFromIndex(effectiveIndex)
+		let nsstring = NSString(string: self.text).substring(from: effectiveIndex)
 		
 		vocalization = Vocalization( String(nsstring) )
 		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.progressDidChange), name: Vocalization.ProgressChangedNotification, object: vocalization)
+		NotificationCenter.default.addObserver(self, selector: #selector(self.progressDidChange), name: NSNotification.Name(rawValue: Vocalization.ProgressChangedNotification), object: vocalization)
 		
 		self.vocalization = vocalization
 		self.skipOffset = index
@@ -280,16 +279,16 @@ class Speech
 		
 		if forward
 		{
-			range = NSRange(location: currentLocation, length: self.text.characters.count - currentLocation)
+			range = NSRange(location: currentLocation, length: self.text.count - currentLocation)
 		} else {
-			options.unionInPlace(.Reverse)
+			// TODO: Maybe a bug here?
+			options = options.union(.reverse)
 			
 			range = NSRange(location: 0, length: currentLocation)
 		}
 			
-		NSString(string: self.text).enumerateSubstringsInRange(range, options: options, usingBlock: { (substring, substringRange, enclosingRange, stop) -> Void in
-			guard let substring = substring
-			where substring.characters.count > 0 else {
+		NSString(string: self.text).enumerateSubstrings(in: range, options: options, using: { (substring, substringRange, enclosingRange, stop) -> Void in
+			guard let substring = substring, substring.count > 0 else {
 				return
 			}
 			
@@ -312,7 +311,7 @@ class Speech
 		{
 			if forward
 			{
-				index = self.text.characters.count
+				index = self.text.count
 			} else {
 				index = 0
 			}

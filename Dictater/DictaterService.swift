@@ -9,13 +9,13 @@
 import Foundation
 import Cocoa
 
-class DictaterService
+public class DictaterService
 {
-	@objc func beginDicatation(pboard: NSPasteboard, userData: NSString, error: NSErrorPointer)
+	@objc func beginDicatation(_ pboard: NSPasteboard, userData: NSString, error: NSErrorPointer)
 	{
-		if let string = pboard.stringForType(NSStringPboardType)
+		if let string = pboard.string(forType: NSPasteboard.PasteboardType.string)
 		{
-			Speech.sharedSpeech.speak( string )
+			Speech.sharedSpeech.speak( text: string )
 			Dictater.hasBeenUsed = true
 		}
 	}

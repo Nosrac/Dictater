@@ -14,14 +14,14 @@ extension NSView
 	@IBInspectable var backgroundColor: NSColor? {
 		get {
 			if let colorRef = self.layer?.backgroundColor {
-				return NSColor(CGColor: colorRef)
+				return NSColor(cgColor: colorRef)
 			} else {
 				return nil
 			}
 		}
 		set {
 			self.wantsLayer = true
-			self.layer?.backgroundColor = newValue?.CGColor
+			self.layer?.backgroundColor = newValue?.cgColor
 		}
 	}
 }

@@ -22,8 +22,8 @@ class ESSProgressBarAnimation : NSAnimation
 		self.initialValue = progressIndicator.doubleValue
 		self.newValue = newValue
 		
-		super.init(duration: 0.2, animationCurve: .EaseIn)
-		self.animationBlockingMode = .NonblockingThreaded
+		super.init(duration: 0.2, animationCurve: .easeIn)
+		self.animationBlockingMode = .nonblockingThreaded
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -35,7 +35,7 @@ class ESSProgressBarAnimation : NSAnimation
 		super.init(coder: aDecoder)
 	}
 	
-	override var currentProgress : NSAnimationProgress
+	override var currentProgress : NSAnimation.Progress
 	{
 		didSet {
 			let delta = self.newValue - self.initialValue
@@ -50,7 +50,7 @@ extension NSProgressIndicator
 	func animateToDoubleValue(value: Double) -> NSAnimation
 	{
 		let animation = ESSProgressBarAnimation(self, newValue: value)
-		animation.startAnimation()
+		animation.start()
 		return animation
 	}
 }

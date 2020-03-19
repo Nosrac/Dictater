@@ -12,23 +12,24 @@ import Cocoa
 class TeleprompterTextView : NSTextView
 {
 	static let skipChars = [ " " ]
-	override func keyDown(theEvent: NSEvent) {
+	
+	override func keyDown(with event: NSEvent) {
 		for char in TeleprompterTextView.skipChars
 		{
-			if char == theEvent.characters
+			if char == event.characters
 			{
-				self.nextKeyView?.keyDown(theEvent)
+				self.nextKeyView?.keyDown(with: event)
 				return
 			}
 		}
-		super.keyDown(theEvent)
+		super.keyDown(with: event)
 	}
 	
 	var scrollDate : NSDate?
 	
-	override func scrollWheel(theEvent: NSEvent)
+	override func scrollWheel(with event: NSEvent)
 	{
-		super.scrollWheel(theEvent)
+		super.scrollWheel(with: event)
 		self.scrollDate = NSDate()
 	}
 }

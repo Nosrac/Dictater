@@ -28,7 +28,7 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 	var currentRange : NSRange? = NSRange()
 	{
 		didSet {
-			NSNotificationCenter.defaultCenter().postNotificationName(Vocalization.ProgressChangedNotification, object: self)
+			NotificationCenter.default.post(name: NSNotification.Name(rawValue: Vocalization.ProgressChangedNotification), object: self)
 
 		}
 	}
@@ -40,25 +40,25 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 		didSet {
 			if oldValue != self.isSpeaking
 			{
-				NSNotificationCenter.defaultCenter().postNotificationName(Vocalization.IsSpeakingChangedNotification, object: self)
+				NotificationCenter.default.post(name: NSNotification.Name(rawValue: Vocalization.IsSpeakingChangedNotification), object: self)
 			}
 		}
 	}
 	
 	var firstWordRange : NSRange
 	{
-		let words = self.text.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-		let length = words.first?.characters.count ?? 0
+		let words = self.text.components(separatedBy: CharacterSet.whitespacesAndNewlines)
+		let length = words.first?.count ?? 0
 		
 		return NSRange.init(location: 0, length: length)
 	}
 
 	func start()
 	{
-		if self.text.characters.count > 0
+		if self.text.count > 0
 		{
 			self.currentRange = self.firstWordRange
-			self.synthesizer.startSpeakingString(self.text)
+			self.synthesizer.startSpeaking(self.text)
 			
 			self.isSpeaking = true
 			self.didFinish = false
@@ -66,13 +66,13 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 			self.isSpeaking = false
 			self.didFinish = true
 			
-			self.currentRange = NSRange.init(location: 0, length: self.text.characters.count)
+			self.currentRange = NSRange.init(location: 0, length: self.text.count)
 		}
 	}
 	
 	func pause()
 	{
-		self.synthesizer.pauseSpeakingAtBoundary(NSSpeechBoundary.ImmediateBoundary)
+		self.synthesizer.pauseSpeaking(at: NSSpeechSynthesizer.Boundary.immediateBoundary)
 		
 		self.isSpeaking = false
 	}
@@ -88,14 +88,14 @@ class Vocalization : NSObject, NSSpeechSynthesizerDelegate
 	static let ProgressChangedNotification = "Vocalization.ProgressChangedNotification"
 	static let IsSpeakingChangedNotification = "Vocalization.IsSpeakingChangedNotification"
 	
-	func speechSynthesizer(sender: NSSpeechSynthesizer, willSpeakWord characterRange: NSRange, ofString string: String)
+	func speechSynthesizer(_ sender: NSSpeechSynthesizer, willSpeakWord characterRange: NSRange, of string: String)
 	{
 		self.currentRange = characterRange
 	}
 	
-	func speechSynthesizer(sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool) {
+	func speechSynthesizer(_ sender: NSSpeechSynthesizer, didFinishSpeaking finishedSpeaking: Bool) {
 		self.didFinish = true
 		self.isSpeaking = false
-		self.currentRange = NSRange.init(location: text.characters.count, length: 0)
+		self.currentRange = NSRange.init(location: text.count, length: 0)
 	}
 }

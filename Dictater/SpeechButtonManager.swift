@@ -8,11 +8,11 @@
 
 import Foundation
 import Cocoa
-import ProgressKit
+//import ProgressKit
 
 class SpeechButtonManager : NSObject
 {
-	weak var progressView : ProgressBar?
+//	weak var progressView : ProgressBar?
 	weak var playPauseButton : NSButton?
 	weak var skipForwardButton : NSButton?
 	weak var skipBackwardsButton : NSButton?
@@ -35,9 +35,9 @@ class SpeechButtonManager : NSObject
 	
 	func registerEvents()
 	{
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SpeechButtonManager.update), name: Speech.ProgressChangedNotification, object: speech)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SpeechButtonManager.update), name: Speech.TotalDurationChangedNotification, object: speech)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SpeechButtonManager.update), name: Vocalization.IsSpeakingChangedNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(SpeechButtonManager.update), name: NSNotification.Name(rawValue: Speech.ProgressChangedNotification), object: speech)
+		NotificationCenter.default.addObserver(self, selector: #selector(SpeechButtonManager.update), name: NSNotification.Name(rawValue: Speech.TotalDurationChangedNotification), object: speech)
+		NotificationCenter.default.addObserver(self, selector: #selector(SpeechButtonManager.update), name: NSNotification.Name(rawValue: Vocalization.IsSpeakingChangedNotification), object: nil)
 		
 		self.playPauseButton?.target = self
 		self.playPauseButton?.action = #selector(SpeechButtonManager.playPause)
@@ -51,45 +51,44 @@ class SpeechButtonManager : NSObject
 	
 	func deregisterEvents()
 	{
-		NSNotificationCenter.defaultCenter().removeObserver(self)
+		NotificationCenter.default.removeObserver(self)
 	}
 	
-	func update()
+	@objc func update()
 	{
-		self.playPauseButton?.title = self.controls.playPauseIcon
+//		self.playPauseButton?.image = self.controls.playPauseIcon
 		
-		self.playPauseButton?.enabled = self.controls.canPlayPause
-		self.skipBackwardsButton?.enabled = self.controls.canSkipBackwards
-		self.skipForwardButton?.enabled = self.controls.canSkipForward
-		self.openTeleprompterButton?.enabled = self.controls.canOpenTeleprompter
+		self.playPauseButton?.isEnabled = self.controls.canPlayPause
+		self.skipBackwardsButton?.isEnabled = self.controls.canSkipBackwards
+		self.skipForwardButton?.isEnabled = self.controls.canSkipForward
+		self.openTeleprompterButton?.isEnabled = self.controls.canOpenTeleprompter
 		
 		self.skipBackwardsButton?.menu = self.backwardsButtonMenu()
 		
-		if let progressBar = self.progressView
-		{
-			if progressBar.hidden
-			{
-				progressBar.animated = false
-				progressBar.progress = 0
-				progressBar.animated = true
-			}
-			
-			progressBar.progress = CGFloat(speech.progress.percent)
-			if self.speech.vocalization == nil || speech.progress.percent == 1
-			{
-				progressBar.hidden = true
-			} else {
-				progressBar.hidden = false
-			}
-		}
+//		if let progressBar = self.progressView
+//		{
+//			if progressBar.hidden
+//			{
+//				progressBar.animated = false
+//				progressBar.progress = 0
+//				progressBar.animated = true
+//			}
+//
+//			progressBar.progress = CGFloat(speech.progress.percent)
+//			if self.speech.vocalization == nil || speech.progress.percent == 1
+//			{
+//				progressBar.hidden = true
+//			} else {
+//				progressBar.hidden = false
+//			}
+//		}
 		
 		if let duration = self.totalDurationText,
 		let view = self.remainingTimeView,
-		let vocalization = self.speech.vocalization
-		where !vocalization.didFinish
+			let vocalization = self.speech.vocalization, !vocalization.didFinish
 		{
 			view.stringValue = duration
-			view.hidden = false
+			view.isHidden = false
 			
 			if view.alphaValue == 0
 			{
@@ -133,22 +132,22 @@ class SpeechButtonManager : NSObject
 		return menu
 	}
 	
-	func restart()
+	@objc func restart()
 	{
-		self.speech.speak( self.speech.text )
+		self.speech.speak( text: self.speech.text )
 	}
 	
-	func playPause()
+	@objc func playPause()
 	{
 		self.speech.playPause()
 	}
 	
-	func skipAhead()
+	@objc func skipAhead()
 	{
 		self.speech.skip(by: Dictater.skipBoundary)
 	}
 	
-	func skipBackwards()
+	@objc func skipBackwards()
 	{
 		self.speech.skip(by: .Sentence, forward: false)
 	}

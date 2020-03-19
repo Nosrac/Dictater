@@ -1,5 +1,5 @@
 //
-//  NSFileManager.swift
+//  FileManager.swift
 //  Converter Box
 //
 //  Created by Kyle Carson on 9/15/15.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-extension NSFileManager
+extension FileManager
 {
 	func directoryExistsAtPath (path : String) -> Bool
 	{
 		var isDirectory : ObjCBool = false
-		if self.fileExistsAtPath(path, isDirectory: &isDirectory)
+		if self.fileExists(atPath: path, isDirectory: &isDirectory)
 		{
-			return Bool(isDirectory)
+			return isDirectory.boolValue
 		} else {
 			return false
 		}
@@ -23,30 +23,30 @@ extension NSFileManager
 	
 	func getTemporaryFile(fileExtension : String = "rand") -> String?
 	{
-		var tempDir = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first!
+		var tempDir = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
 		
-		if let identifier = NSBundle.mainBundle().bundleIdentifier
+		if let identifier = Bundle.main.bundleIdentifier
 		{
 			tempDir = "\(tempDir)/\(identifier)/"
 		}
 		
 		do
 		{
-			try NSFileManager.defaultManager().createDirectoryAtPath(tempDir, withIntermediateDirectories: true, attributes: nil)
+			try FileManager.default.createDirectory(atPath: tempDir, withIntermediateDirectories: true, attributes: nil)
 			
 			var filename : String?
 			
 			while filename == nil
 			{
-				filename = "\(tempDir)/\(rand()).\(fileExtension)"
+				filename = "\(tempDir)/\(arc4random()).\(fileExtension)"
 				
-				if NSFileManager.defaultManager().fileExistsAtPath(filename!)
+				if FileManager.default.fileExists(atPath: filename!)
 				{
 					filename = nil
 				} else {
 					do
 					{
-						try "".writeToFile(filename!, atomically: true, encoding: NSUTF8StringEncoding)
+						try "".write(toFile: filename!, atomically: true, encoding: String.Encoding.utf8)
 					} catch {
 						filename = nil
 					}
@@ -61,7 +61,7 @@ extension NSFileManager
 	
 	func getMimeType(file file: String) -> String?
 	{
-		if !NSFileManager.defaultManager().fileExistsAtPath(file)
+		if !FileManager.default.fileExists(atPath: file)
 		{
 			return nil
 		}
@@ -73,7 +73,7 @@ extension NSFileManager
 		
 		let nsstringFile : NSString = file as NSString
 		
-		if let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, nsstringFile.pathExtension as CFStringRef, nil)?.takeRetainedValue()
+		if let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, nsstringFile.pathExtension as CFString, nil)?.takeRetainedValue()
 		{
 			if let mimeType = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)
 			{

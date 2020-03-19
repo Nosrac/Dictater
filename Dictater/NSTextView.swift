@@ -35,8 +35,8 @@ extension NSTextView
 		}
 		
 		
-		let glyphRange = layoutManager.glyphRangeForBoundingRect(rect, inTextContainer: textContainer)
-		let charRange = layoutManager.characterRangeForGlyphRange(glyphRange, actualGlyphRange: nil)
+		let glyphRange = layoutManager.glyphRange(forBoundingRect: rect, in: textContainer)
+		let charRange = layoutManager.characterRange(forGlyphRange: glyphRange, actualGlyphRange: nil)
 		
 		return charRange
 	}

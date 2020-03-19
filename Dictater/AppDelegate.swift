@@ -11,8 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	
-	func applicationDidFinishLaunching(aNotification: NSNotification)
-	{
+	func applicationDidFinishLaunching(_ notification: Notification) {
 		NSApp.servicesProvider = DictaterService()
 		
 		if !Dictater.hasBeenUsed
@@ -20,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			self.openHowToUseWindow()
 		}
 		
-		let args = NSProcessInfo.processInfo().arguments
+		let args = ProcessInfo.processInfo.arguments
 		var skip = false
 		
 		for arg in args[ 1 ..< args.count ]
@@ -37,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				continue
 			}
 			
-			Speech.sharedSpeech.speak( arg )
+			Speech.sharedSpeech.speak( text: arg )
 			break
 		}
 	}
@@ -50,13 +49,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func openHowToUseWindow()
 	{
-		if let sb = NSApplication.sharedApplication().windows.first?.windowController?.storyboard,
-		let controller = sb.instantiateControllerWithIdentifier("howToUse") as? NSWindowController
+		if let sb = NSApplication.shared.windows.first?.windowController?.storyboard,
+			let controller = sb.instantiateController(withIdentifier: "howToUse") as? NSWindowController
 		{
 			controller.showWindow(self)
 			self.howToUseController = controller
-			controller.window?.becomeKeyWindow()
-			controller.window?.becomeMainWindow()
+			controller.window?.becomeKey()
+			controller.window?.becomeMain()
 		}
 	}
 }
